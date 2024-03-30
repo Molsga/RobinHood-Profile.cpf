@@ -21,10 +21,10 @@
 	1 and 2 -> Needs to be Tested, Values goes Up as Units get better 
 	3 -> Needs to be Tested, Always 0 for Both Guard Types, Ranged and Soldier A; Always 0 for all Allies; Value Going up with increasing Tier
 	4 -> Needs to be Tested, 2 for Knight0, Soldier B and the Merry Man, 1 for Officers and Officer B0's and 0 for everything Else
-	5 -> Needs to be Tested, Value goes down as Units get better: Only Applied to Guard B, Soldier A and Archers: Rest and all Allies is 0
-	6 -> Needs to be Tested, Value goes down as Units get better: Always 0 for Guards, Officer's, and Archers; Always 0 for all Allies
-	7 -> Needs to be Tested, Value goes down as Units get better: Always 0 for Knight0, Soldier B, Soldier A and Archer; Always 0 for all Allies
-	8 -> Needs to be Tested, Value goes down as Units get better: Always 0 for Guard B, Soldier B and Crossbow; Always 0 for all Allies
+	Response_Purse -> Needs to be Tested, Value goes down as Units get better: Only Applied to Guard B, Soldier A and Archers: Rest and all Allies is 0 (Response to Purse)
+	Response_Apple -> Needs to be Tested, Value goes down as Units get better: Only Applied to Soldier A, Soldier B, Knight0 and Crossbow: Rest and all Allies is 0 (Response to Apple)
+	Response_Beer -> Needs to be Tested, Value goes down as Units get better: Only Applied to Guards, Crossbowmen and Officers; Rest and all Allies is 0 (Response to Beer)
+	Response_Whistle -> Needs to be Tested, Value goes down as Units get better: Only Applied to Guard B, Soldier A, Archers, Officers and Knight0; Rest and all Allies is 0 (Response to Whistle)
 	9 -> 11: Merry Man Staff Guy 
 	     12: Lancer 
 	     13: Archers(Merry Man Included) 
@@ -57,10 +57,10 @@
 	<4>0</4>
 	<Weapon>SDHL</Weapon>
 	<Bitflags>1111 0001</Bitflags>
-	<5>0</5>
-	<6>0</6>
-	<7>75</7>
-	<8>25</8>
+	<Response_Purse>0</Response_Purse>
+	<Response_Apple>0</Response_Apple>
+	<Response_Beer>75</Response_Beer>
+	<Response_Whistle>25</Response_Whistle>
 	<9>12</9>
 	<Ranged_Value>0</Ranged_Value>
 	<Mounted_Knight_Value>64</Mounted_Knight_Value>
@@ -83,10 +83,10 @@
 	<4>0</4>
 	<Weapon>SDHL</Weapon>
 	<Bitflags>1111 0001</Bitflags>
-	<5>0</5>
-	<6>0</6>
-	<7>70</7>
-	<8>20</8>
+	<Response_Purse>0</Response_Purse>
+	<Response_Apple>0</Response_Apple>
+	<Response_Beer>70</Response_Beer>
+	<Response_Whistle>20</Response_Whistle>
 	<9>12</9>
 	<Ranged_Value>0</Ranged_Value>
 	<Mounted_Knight_Value>64</Mounted_Knight_Value>
@@ -109,10 +109,10 @@
 	<4>0</4>
 	<Weapon>SDHL</Weapon>
 	<Bitflags>1111 0001</Bitflags>
-	<5>0</5>
-	<6>0</6>
-	<7>65</7>
-	<8>15</8>
+	<Response_Purse>0</Response_Purse>
+	<Response_Apple>0</Response_Apple>
+	<Response_Beer>65</Response_Beer>
+	<Response_Whistle>15</Response_Whistle>
 	<9>12</9>
 	<Ranged_Value>0</Ranged_Value>
 	<Mounted_Knight_Value>64</Mounted_Knight_Value>
@@ -135,10 +135,10 @@
 	<4>0</4>
 	<Weapon>SDHL</Weapon>
 	<Bitflags>1111 0001</Bitflags>
-	<5>0</5>
-	<6>0</6>
-	<7>60</7>
-	<8>10</8>
+	<Response_Purse>0</Response_Purse>
+	<Response_Apple>0</Response_Apple>
+	<Response_Beer>60</Response_Beer>
+	<Response_Whistle>10</Response_Whistle>
 	<9>12</9>
 	<Ranged_Value>0</Ranged_Value>
 	<Mounted_Knight_Value>64</Mounted_Knight_Value>
@@ -161,10 +161,10 @@
 	<4>0</4>
 	<Weapon>SDHL</Weapon>
 	<Bitflags>1111 0001</Bitflags>
-	<5>0</5>
-	<6>0</6>
-	<7>55</7>
-	<8>5</8>
+	<Response_Purse>0</Response_Purse>
+	<Response_Apple>0</Response_Apple>
+	<Response_Beer>55</Response_Beer>
+	<Response_Whistle>5</Response_Whistle>
 	<9>12</9>
 	<Ranged_Value>0</Ranged_Value>
 	<Mounted_Knight_Value>64</Mounted_Knight_Value>
@@ -187,10 +187,10 @@
 	<4>0</4>
 	<Weapon>SDHL</Weapon>
 	<Bitflags>1101 0000</Bitflags>
-	<5>0</5>
-	<6>0</6>
-	<7>0</7>
-	<8>0</8>
+	<Response_Purse>0</Response_Purse>
+	<Response_Apple>0</Response_Apple>
+	<Response_Beer>0</Response_Beer>
+	<Response_Whistle>0</Response_Whistle>
 	<9>12</9>
 	<Ranged_Value>0</Ranged_Value>
 	<Mounted_Knight_Value>64</Mounted_Knight_Value>
@@ -213,10 +213,10 @@
 	<4>0</4>
 	<Weapon>SDSW</Weapon>
 	<Bitflags>1110 0001</Bitflags>
-	<5>50</5>
-	<6>100</6>
-	<7>0</7>
-	<8>75</8>
+	<Response_Purse>50</Response_Purse>
+	<Response_Apple>100</Response_Apple>
+	<Response_Beer>0</Response_Beer>
+	<Response_Whistle>75</Response_Whistle>
 	<9>15</9>
 	<Ranged_Value>0</Ranged_Value>
 	<Mounted_Knight_Value>64</Mounted_Knight_Value>
@@ -239,10 +239,10 @@
 	<4>0</4>
 	<Weapon>SDSW</Weapon>
 	<Bitflags>1110 0001</Bitflags>
-	<5>40</5>
-	<6>95</6>
-	<7>0</7>
-	<8>70</8>
+	<Response_Purse>40</Response_Purse>
+	<Response_Apple>95</Response_Apple>
+	<Response_Beer>0</Response_Beer>
+	<Response_Whistle>70</Response_Whistle>
 	<9>15</9>
 	<Ranged_Value>0</Ranged_Value>
 	<Mounted_Knight_Value>64</Mounted_Knight_Value>
@@ -265,10 +265,10 @@
 	<4>0</4>
 	<Weapon>SDSW</Weapon>
 	<Bitflags>1110 0001</Bitflags>
-	<5>30</5>
-	<6>90</6>
-	<7>0</7>
-	<8>65</8>
+	<Response_Purse>30</Response_Purse>
+	<Response_Apple>90</Response_Apple>
+	<Response_Beer>0</Response_Beer>
+	<Response_Whistle>65</Response_Whistle>
 	<9>15</9>
 	<Ranged_Value>0</Ranged_Value>
 	<Mounted_Knight_Value>64</Mounted_Knight_Value>
@@ -291,10 +291,10 @@
 	<4>0</4>
 	<Weapon>SDSW</Weapon>
 	<Bitflags>1110 0001</Bitflags>
-	<5>20</5>
-	<6>85</6>
-	<7>0</7>
-	<8>60</8>
+	<Response_Purse>20</Response_Purse>
+	<Response_Apple>85</Response_Apple>
+	<Response_Beer>0</Response_Beer>
+	<Response_Whistle>60</Response_Whistle>
 	<9>15</9>
 	<Ranged_Value>0</Ranged_Value>
 	<Mounted_Knight_Value>64</Mounted_Knight_Value>
@@ -317,10 +317,10 @@
 	<4>0</4>
 	<Weapon>SDSW</Weapon>
 	<Bitflags>1110 0001</Bitflags>
-	<5>10</5>
-	<6>80</6>
-	<7>0</7>
-	<8>55</8>
+	<Response_Purse>10</Response_Purse>
+	<Response_Apple>80</Response_Apple>
+	<Response_Beer>0</Response_Beer>
+	<Response_Whistle>55</Response_Whistle>
 	<9>15</9>
 	<Ranged_Value>0</Ranged_Value>
 	<Mounted_Knight_Value>64</Mounted_Knight_Value>
@@ -343,10 +343,10 @@
 	<4>0</4>
 	<Weapon>SDSW</Weapon>
 	<Bitflags>1100 0000</Bitflags>
-	<5>0</5>
-	<6>0</6>
-	<7>0</7>
-	<8>0</8>
+	<Response_Purse>0</Response_Purse>
+	<Response_Apple>0</Response_Apple>
+	<Response_Beer>0</Response_Beer>
+	<Response_Whistle>0</Response_Whistle>
 	<9>15</9>
 	<Ranged_Value>0</Ranged_Value>
 	<Mounted_Knight_Value>64</Mounted_Knight_Value>
@@ -369,10 +369,10 @@
 	<4>0</4>
 	<Weapon>SDBW</Weapon>
 	<Bitflags>1111 0001</Bitflags>
-	<5>100</5>
-	<6>0</6>
-	<7>0</7>
-	<8>50</8>
+	<Response_Purse>100</Response_Purse>
+	<Response_Apple>0</Response_Apple>
+	<Response_Beer>0</Response_Beer>
+	<Response_Whistle>50</Response_Whistle>
 	<9>13</9>
 	<Ranged_Value>3</Ranged_Value>
 	<Mounted_Knight_Value>64</Mounted_Knight_Value>
@@ -395,10 +395,10 @@
 	<4>0</4>
 	<Weapon>SDBW</Weapon>
 	<Bitflags>1111 0001</Bitflags>
-	<5>90</5>
-	<6>0</6>
-	<7>0</7>
-	<8>45</8>
+	<Response_Purse>90</Response_Purse>
+	<Response_Apple>0</Response_Apple>
+	<Response_Beer>0</Response_Beer>
+	<Response_Whistle>45</Response_Whistle>
 	<9>13</9>
 	<Ranged_Value>3</Ranged_Value>
 	<Mounted_Knight_Value>64</Mounted_Knight_Value>
@@ -421,10 +421,10 @@
 	<4>0</4>
 	<Weapon>SDBW</Weapon>
 	<Bitflags>1111 0001</Bitflags>
-	<5>80</5>
-	<6>0</6>
-	<7>0</7>
-	<8>40</8>
+	<Response_Purse>80</Response_Purse>
+	<Response_Apple>0</Response_Apple>
+	<Response_Beer>0</Response_Beer>
+	<Response_Whistle>40</Response_Whistle>
 	<9>13</9>
 	<Ranged_Value>3</Ranged_Value>
 	<Mounted_Knight_Value>64</Mounted_Knight_Value>
@@ -447,10 +447,10 @@
 	<4>0</4>
 	<Weapon>SDBW</Weapon>
 	<Bitflags>1111 0001</Bitflags>
-	<5>70</5>
-	<6>0</6>
-	<7>0</7>
-	<8>35</8>
+	<Response_Purse>70</Response_Purse>
+	<Response_Apple>0</Response_Apple>
+	<Response_Beer>0</Response_Beer>
+	<Response_Whistle>35</Response_Whistle>
 	<9>13</9>
 	<Ranged_Value>3</Ranged_Value>
 	<Mounted_Knight_Value>64</Mounted_Knight_Value>
@@ -473,10 +473,10 @@
 	<4>0</4>
 	<Weapon>SDBW</Weapon>
 	<Bitflags>1111 0001</Bitflags>
-	<5>60</5>
-	<6>0</6>
-	<7>0</7>
-	<8>30</8>
+	<Response_Purse>60</Response_Purse>
+	<Response_Apple>0</Response_Apple>
+	<Response_Beer>0</Response_Beer>
+	<Response_Whistle>30</Response_Whistle>
 	<9>13</9>
 	<Ranged_Value>3</Ranged_Value>
 	<Mounted_Knight_Value>64</Mounted_Knight_Value>
@@ -499,10 +499,10 @@
 	<4>0</4>
 	<Weapon>SDBW</Weapon>
 	<Bitflags>1101 0000</Bitflags>
-	<5>0</5>
-	<6>0</6>
-	<7>0</7>
-	<8>0</8>
+	<Response_Purse>0</Response_Purse>
+	<Response_Apple>0</Response_Apple>
+	<Response_Beer>0</Response_Beer>
+	<Response_Whistle>0</Response_Whistle>
 	<9>13</9>
 	<Ranged_Value>3</Ranged_Value>
 	<Mounted_Knight_Value>64</Mounted_Knight_Value>
@@ -525,10 +525,10 @@
 	<4>1</4>
 	<Weapon>SDOF</Weapon>
 	<Bitflags>1100 0001</Bitflags>
-	<5>0</5>
-	<6>80</6>
-	<7>25</7>
-	<8>100</8>
+	<Response_Purse>0</Response_Purse>
+	<Response_Apple>80</Response_Apple>
+	<Response_Beer>25</Response_Beer>
+	<Response_Whistle>100</Response_Whistle>
 	<9>16</9>
 	<Ranged_Value>0</Ranged_Value>
 	<Mounted_Knight_Value>64</Mounted_Knight_Value>
@@ -551,10 +551,10 @@
 	<4>1</4>
 	<Weapon>SDOF</Weapon>
 	<Bitflags>1100 0001</Bitflags>
-	<5>0</5>
-	<6>75</6>
-	<7>20</7>
-	<8>95</8>
+	<Response_Purse>0</Response_Purse>
+	<Response_Apple>75</Response_Apple>
+	<Response_Beer>20</Response_Beer>
+	<Response_Whistle>95</Response_Whistle>
 	<9>16</9>
 	<Ranged_Value>0</Ranged_Value>
 	<Mounted_Knight_Value>64</Mounted_Knight_Value>
@@ -577,10 +577,10 @@
 	<4>1</4>
 	<Weapon>SDOF</Weapon>
 	<Bitflags>1100 0001</Bitflags>
-	<5>0</5>
-	<6>70</6>
-	<7>15</7>
-	<8>90</8>
+	<Response_Purse>0</Response_Purse>
+	<Response_Apple>70</Response_Apple>
+	<Response_Beer>15</Response_Beer>
+	<Response_Whistle>90</Response_Whistle>
 	<9>16</9>
 	<Ranged_Value>0</Ranged_Value>
 	<Mounted_Knight_Value>64</Mounted_Knight_Value>
@@ -603,10 +603,10 @@
 	<4>1</4>
 	<Weapon>SDOF</Weapon>
 	<Bitflags>1100 0001</Bitflags>
-	<5>0</5>
-	<6>65</6>
-	<7>10</7>
-	<8>85</8>
+	<Response_Purse>0</Response_Purse>
+	<Response_Apple>65</Response_Apple>
+	<Response_Beer>10</Response_Beer>
+	<Response_Whistle>85</Response_Whistle>
 	<9>16</9>
 	<Ranged_Value>0</Ranged_Value>
 	<Mounted_Knight_Value>64</Mounted_Knight_Value>
@@ -629,10 +629,10 @@
 	<4>1</4>
 	<Weapon>SDOF</Weapon>
 	<Bitflags>1100 0001</Bitflags>
-	<5>0</5>
-	<6>60</6>
-	<7>5</7>
-	<8>80</8>
+	<Response_Purse>0</Response_Purse>
+	<Response_Apple>60</Response_Apple>
+	<Response_Beer>5</Response_Beer>
+	<Response_Whistle>80</Response_Whistle>
 	<9>16</9>
 	<Ranged_Value>0</Ranged_Value>
 	<Mounted_Knight_Value>64</Mounted_Knight_Value>
@@ -655,10 +655,10 @@
 	<4>1</4>
 	<Weapon>SDOF</Weapon>
 	<Bitflags>1100 0000</Bitflags>
-	<5>0</5>
-	<6>0</6>
-	<7>0</7>
-	<8>0</8>
+	<Response_Purse>0</Response_Purse>
+	<Response_Apple>0</Response_Apple>
+	<Response_Beer>0</Response_Beer>
+	<Response_Whistle>0</Response_Whistle>
 	<9>16</9>
 	<Ranged_Value>0</Ranged_Value>
 	<Mounted_Knight_Value>64</Mounted_Knight_Value>
@@ -682,10 +682,10 @@
 	<Weapon>SDKN
 </Weapon>
 	<Bitflags>1100 0001</Bitflags>
-	<5>0</5>
-	<6>75</6>
-	<7>0</7>
-	<8>0</8>
+	<Response_Purse>0</Response_Purse>
+	<Response_Apple>75</Response_Apple>
+	<Response_Beer>0</Response_Beer>
+	<Response_Whistle>0</Response_Whistle>
 	<9>17</9>
 	<Ranged_Value>0</Ranged_Value>
 	<Mounted_Knight_Value>64</Mounted_Knight_Value>
@@ -709,10 +709,10 @@
 	<Weapon>SDKN
 </Weapon>
 	<Bitflags>1100 0001</Bitflags>
-	<5>0</5>
-	<6>70</6>
-	<7>0</7>
-	<8>0</8>
+	<Response_Purse>0</Response_Purse>
+	<Response_Apple>70</Response_Apple>
+	<Response_Beer>0</Response_Beer>
+	<Response_Whistle>0</Response_Whistle>
 	<9>17</9>
 	<Ranged_Value>0</Ranged_Value>
 	<Mounted_Knight_Value>64</Mounted_Knight_Value>
@@ -736,10 +736,10 @@
 	<Weapon>SDKN
 </Weapon>
 	<Bitflags>1100 0001</Bitflags>
-	<5>0</5>
-	<6>65</6>
-	<7>0</7>
-	<8>0</8>
+	<Response_Purse>0</Response_Purse>
+	<Response_Apple>65</Response_Apple>
+	<Response_Beer>0</Response_Beer>
+	<Response_Whistle>0</Response_Whistle>
 	<9>17</9>
 	<Ranged_Value>0</Ranged_Value>
 	<Mounted_Knight_Value>64</Mounted_Knight_Value>
@@ -763,10 +763,10 @@
 	<Weapon>SDKN
 </Weapon>
 	<Bitflags>1100 0001</Bitflags>
-	<5>0</5>
-	<6>60</6>
-	<7>0</7>
-	<8>0</8>
+	<Response_Purse>0</Response_Purse>
+	<Response_Apple>60</Response_Apple>
+	<Response_Beer>0</Response_Beer>
+	<Response_Whistle>0</Response_Whistle>
 	<9>17</9>
 	<Ranged_Value>0</Ranged_Value>
 	<Mounted_Knight_Value>64</Mounted_Knight_Value>
@@ -790,10 +790,10 @@
 	<Weapon>SDKN
 </Weapon>
 	<Bitflags>1100 0001</Bitflags>
-	<5>0</5>
-	<6>55</6>
-	<7>0</7>
-	<8>0</8>
+	<Response_Purse>0</Response_Purse>
+	<Response_Apple>55</Response_Apple>
+	<Response_Beer>0</Response_Beer>
+	<Response_Whistle>0</Response_Whistle>
 	<9>17</9>
 	<Ranged_Value>0</Ranged_Value>
 	<Mounted_Knight_Value>64</Mounted_Knight_Value>
@@ -817,10 +817,10 @@
 	<Weapon>SDKN
 </Weapon>
 	<Bitflags>1100 0000</Bitflags>
-	<5>0</5>
-	<6>0</6>
-	<7>0</7>
-	<8>0</8>
+	<Response_Purse>0</Response_Purse>
+	<Response_Apple>0</Response_Apple>
+	<Response_Beer>0</Response_Beer>
+	<Response_Whistle>0</Response_Whistle>
 	<9>17</9>
 	<Ranged_Value>0</Ranged_Value>
 	<Mounted_Knight_Value>64</Mounted_Knight_Value>
@@ -843,10 +843,10 @@
 	<4>0</4>
 	<Weapon>SDLN</Weapon>
 	<Bitflags>1110 0001</Bitflags>
-	<5>75</5>
-	<6>0</6>
-	<7>100</7>
-	<8>0</8>
+	<Response_Purse>75</Response_Purse>
+	<Response_Apple>0</Response_Apple>
+	<Response_Beer>100</Response_Beer>
+	<Response_Whistle>0</Response_Whistle>
 	<9>14</9>
 	<Ranged_Value>0</Ranged_Value>
 	<Mounted_Knight_Value>64</Mounted_Knight_Value>
@@ -869,10 +869,10 @@
 	<4>0</4>
 	<Weapon>SDLN</Weapon>
 	<Bitflags>1110 0001</Bitflags>
-	<5>65</5>
-	<6>0</6>
-	<7>95</7>
-	<8>0</8>
+	<Response_Purse>65</Response_Purse>
+	<Response_Apple>0</Response_Apple>
+	<Response_Beer>95</Response_Beer>
+	<Response_Whistle>0</Response_Whistle>
 	<9>14</9>
 	<Ranged_Value>0</Ranged_Value>
 	<Mounted_Knight_Value>64</Mounted_Knight_Value>
@@ -895,10 +895,10 @@
 	<4>0</4>
 	<Weapon>SDLN</Weapon>
 	<Bitflags>1110 0001</Bitflags>
-	<5>55</5>
-	<6>0</6>
-	<7>90</7>
-	<8>0</8>
+	<Response_Purse>55</Response_Purse>
+	<Response_Apple>0</Response_Apple>
+	<Response_Beer>90</Response_Beer>
+	<Response_Whistle>0</Response_Whistle>
 	<9>14</9>
 	<Ranged_Value>0</Ranged_Value>
 	<Mounted_Knight_Value>64</Mounted_Knight_Value>
@@ -921,10 +921,10 @@
 	<4>0</4>
 	<Weapon>SDLN</Weapon>
 	<Bitflags>1110 0001</Bitflags>
-	<5>45</5>
-	<6>0</6>
-	<7>85</7>
-	<8>0</8>
+	<Response_Purse>45</Response_Purse>
+	<Response_Apple>0</Response_Apple>
+	<Response_Beer>85</Response_Beer>
+	<Response_Whistle>0</Response_Whistle>
 	<9>14</9>
 	<Ranged_Value>0</Ranged_Value>
 	<Mounted_Knight_Value>64</Mounted_Knight_Value>
@@ -947,10 +947,10 @@
 	<4>0</4>
 	<Weapon>SDLN</Weapon>
 	<Bitflags>1110 0001</Bitflags>
-	<5>35</5>
-	<6>0</6>
-	<7>80</7>
-	<8>0</8>
+	<Response_Purse>35</Response_Purse>
+	<Response_Apple>0</Response_Apple>
+	<Response_Beer>80</Response_Beer>
+	<Response_Whistle>0</Response_Whistle>
 	<9>14</9>
 	<Ranged_Value>0</Ranged_Value>
 	<Mounted_Knight_Value>64</Mounted_Knight_Value>
@@ -973,10 +973,10 @@
 	<4>0</4>
 	<Weapon>SDLN</Weapon>
 	<Bitflags>1100 0000</Bitflags>
-	<5>0</5>
-	<6>0</6>
-	<7>0</7>
-	<8>0</8>
+	<Response_Purse>0</Response_Purse>
+	<Response_Apple>0</Response_Apple>
+	<Response_Beer>0</Response_Beer>
+	<Response_Whistle>0</Response_Whistle>
 	<9>14</9>
 	<Ranged_Value>0</Ranged_Value>
 	<Mounted_Knight_Value>64</Mounted_Knight_Value>
@@ -999,10 +999,10 @@
 	<4>0</4>
 	<Weapon>SDCB</Weapon>
 	<Bitflags>1110 0001</Bitflags>
-	<5>0</5>
-	<6>50</6>
-	<7>50</7>
-	<8>0</8>
+	<Response_Purse>0</Response_Purse>
+	<Response_Apple>50</Response_Apple>
+	<Response_Beer>50</Response_Beer>
+	<Response_Whistle>0</Response_Whistle>
 	<9>20</9>
 	<Ranged_Value>4</Ranged_Value>
 	<Mounted_Knight_Value>64</Mounted_Knight_Value>
@@ -1025,10 +1025,10 @@
 	<4>0</4>
 	<Weapon>SDCB</Weapon>
 	<Bitflags>1110 0001</Bitflags>
-	<5>0</5>
-	<6>45</6>
-	<7>45</7>
-	<8>0</8>
+	<Response_Purse>0</Response_Purse>
+	<Response_Apple>45</Response_Apple>
+	<Response_Beer>45</Response_Beer>
+	<Response_Whistle>0</Response_Whistle>
 	<9>20</9>
 	<Ranged_Value>4</Ranged_Value>
 	<Mounted_Knight_Value>64</Mounted_Knight_Value>
@@ -1051,10 +1051,10 @@
 	<4>0</4>
 	<Weapon>SDCB</Weapon>
 	<Bitflags>1110 0001</Bitflags>
-	<5>0</5>
-	<6>40</6>
-	<7>40</7>
-	<8>0</8>
+	<Response_Purse>0</Response_Purse>
+	<Response_Apple>40</Response_Apple>
+	<Response_Beer>40</Response_Beer>
+	<Response_Whistle>0</Response_Whistle>
 	<9>20</9>
 	<Ranged_Value>4</Ranged_Value>
 	<Mounted_Knight_Value>64</Mounted_Knight_Value>
@@ -1077,10 +1077,10 @@
 	<4>0</4>
 	<Weapon>SDCB</Weapon>
 	<Bitflags>1110 0001</Bitflags>
-	<5>0</5>
-	<6>35</6>
-	<7>35</7>
-	<8>0</8>
+	<Response_Purse>0</Response_Purse>
+	<Response_Apple>35</Response_Apple>
+	<Response_Beer>35</Response_Beer>
+	<Response_Whistle>0</Response_Whistle>
 	<9>20</9>
 	<Ranged_Value>4</Ranged_Value>
 	<Mounted_Knight_Value>64</Mounted_Knight_Value>
@@ -1103,10 +1103,10 @@
 	<4>0</4>
 	<Weapon>SDCB</Weapon>
 	<Bitflags>1110 0001</Bitflags>
-	<5>0</5>
-	<6>30</6>
-	<7>30</7>
-	<8>0</8>
+	<Response_Purse>0</Response_Purse>
+	<Response_Apple>30</Response_Apple>
+	<Response_Beer>30</Response_Beer>
+	<Response_Whistle>0</Response_Whistle>
 	<9>20</9>
 	<Ranged_Value>4</Ranged_Value>
 	<Mounted_Knight_Value>64</Mounted_Knight_Value>
@@ -1129,10 +1129,10 @@
 	<4>0</4>
 	<Weapon>SDCB</Weapon>
 	<Bitflags>1100 0000</Bitflags>
-	<5>0</5>
-	<6>0</6>
-	<7>0</7>
-	<8>0</8>
+	<Response_Purse>0</Response_Purse>
+	<Response_Apple>0</Response_Apple>
+	<Response_Beer>0</Response_Beer>
+	<Response_Whistle>0</Response_Whistle>
 	<9>20</9>
 	<Ranged_Value>4</Ranged_Value>
 	<Mounted_Knight_Value>64</Mounted_Knight_Value>
@@ -1155,10 +1155,10 @@
 	<4>2</4>
 	<Weapon>SDMD</Weapon>
 	<Bitflags>1100 0000</Bitflags>
-	<5>0</5>
-	<6>0</6>
-	<7>0</7>
-	<8>0</8>
+	<Response_Purse>0</Response_Purse>
+	<Response_Apple>0</Response_Apple>
+	<Response_Beer>0</Response_Beer>
+	<Response_Whistle>0</Response_Whistle>
 	<9>13</9>
 	<Ranged_Value>2</Ranged_Value>
 	<Mounted_Knight_Value>64</Mounted_Knight_Value>
@@ -1181,10 +1181,10 @@
 	<4>2</4>
 	<Weapon>SDMD</Weapon>
 	<Bitflags>1100 0000</Bitflags>
-	<5>0</5>
-	<6>0</6>
-	<7>0</7>
-	<8>0</8>
+	<Response_Purse>0</Response_Purse>
+	<Response_Apple>0</Response_Apple>
+	<Response_Beer>0</Response_Beer>
+	<Response_Whistle>0</Response_Whistle>
 	<9>11</9>
 	<Ranged_Value>0</Ranged_Value>
 	<Mounted_Knight_Value>64</Mounted_Knight_Value>
@@ -1207,10 +1207,10 @@
 	<4>2</4>
 	<Weapon>SDTM</Weapon>
 	<Bitflags>1101 0001</Bitflags>
-	<5>100</5>
-	<6>100</6>
-	<7>100</7>
-	<8>100</8>
+	<Response_Purse>100</Response_Purse>
+	<Response_Apple>100</Response_Apple>
+	<Response_Beer>100</Response_Beer>
+	<Response_Whistle>100</Response_Whistle>
 	<9>13</9>
 	<Ranged_Value>0</Ranged_Value>
 	<Mounted_Knight_Value>64</Mounted_Knight_Value>
@@ -1233,10 +1233,10 @@
 	<4>0</4>
 	<Weapon>SDHL</Weapon>
 	<Bitflags>1111 0001</Bitflags>
-	<5>0</5>
-	<6>0</6>
-	<7>70</7>
-	<8>20</8>
+	<Response_Purse>0</Response_Purse>
+	<Response_Apple>0</Response_Apple>
+	<Response_Beer>70</Response_Beer>
+	<Response_Whistle>20</Response_Whistle>
 	<9>21</9>
 	<Ranged_Value>0</Ranged_Value>
 	<Mounted_Knight_Value>64</Mounted_Knight_Value>
@@ -1259,10 +1259,10 @@
 	<4>0</4>
 	<Weapon>SDSW</Weapon>
 	<Bitflags>1110 0001</Bitflags>
-	<5>40</5>
-	<6>95</6>
-	<7>0</7>
-	<8>70</8>
+	<Response_Purse>40</Response_Purse>
+	<Response_Apple>95</Response_Apple>
+	<Response_Beer>0</Response_Beer>
+	<Response_Whistle>70</Response_Whistle>
 	<9>24</9>
 	<Ranged_Value>0</Ranged_Value>
 	<Mounted_Knight_Value>64</Mounted_Knight_Value>
@@ -1285,10 +1285,10 @@
 	<4>0</4>
 	<Weapon>SDBW</Weapon>
 	<Bitflags>1111 0001</Bitflags>
-	<5>90</5>
-	<6>0</6>
-	<7>0</7>
-	<8>45</8>
+	<Response_Purse>90</Response_Purse>
+	<Response_Apple>0</Response_Apple>
+	<Response_Beer>0</Response_Beer>
+	<Response_Whistle>45</Response_Whistle>
 	<9>22</9>
 	<Ranged_Value>3</Ranged_Value>
 	<Mounted_Knight_Value>64</Mounted_Knight_Value>
@@ -1311,10 +1311,10 @@
 	<4>1</4>
 	<Weapon>SDOF</Weapon>
 	<Bitflags>1100 0001</Bitflags>
-	<5>0</5>
-	<6>0</6>
-	<7>20</7>
-	<8>95</8>
+	<Response_Purse>0</Response_Purse>
+	<Response_Apple>0</Response_Apple>
+	<Response_Beer>20</Response_Beer>
+	<Response_Whistle>95</Response_Whistle>
 	<9>25</9>
 	<Ranged_Value>0</Ranged_Value>
 	<Mounted_Knight_Value>64</Mounted_Knight_Value>
@@ -1338,10 +1338,10 @@
 	<Weapon>SDKN
 </Weapon>
 	<Bitflags>1100 0001</Bitflags>
-	<5>0</5>
-	<6>70</6>
-	<7>0</7>
-	<8>0</8>
+	<Response_Purse>0</Response_Purse>
+	<Response_Apple>70</Response_Apple>
+	<Response_Beer>0</Response_Beer>
+	<Response_Whistle>0</Response_Whistle>
 	<9>26</9>
 	<Ranged_Value>0</Ranged_Value>
 	<Mounted_Knight_Value>64</Mounted_Knight_Value>
@@ -1364,10 +1364,10 @@
 	<4>0</4>
 	<Weapon>SDLN</Weapon>
 	<Bitflags>1110 0001</Bitflags>
-	<5>65</5>
-	<6>0</6>
-	<7>95</7>
-	<8>0</8>
+	<Response_Purse>65</Response_Purse>
+	<Response_Apple>0</Response_Apple>
+	<Response_Beer>95</Response_Beer>
+	<Response_Whistle>0</Response_Whistle>
 	<9>23</9>
 	<Ranged_Value>0</Ranged_Value>
 	<Mounted_Knight_Value>64</Mounted_Knight_Value>
@@ -1390,10 +1390,10 @@
 	<4>0</4>
 	<Weapon>SDCB</Weapon>
 	<Bitflags>1110 0001</Bitflags>
-	<5>0</5>
-	<6>45</6>
-	<7>45</7>
-	<8>0</8>
+	<Response_Purse>0</Response_Purse>
+	<Response_Apple>45</Response_Apple>
+	<Response_Beer>45</Response_Beer>
+	<Response_Whistle>0</Response_Whistle>
 	<9>27</9>
 	<Ranged_Value>4</Ranged_Value>
 	<Mounted_Knight_Value>64</Mounted_Knight_Value>
@@ -1416,10 +1416,10 @@
 	<4>2</4>
 	<Weapon>SDRD</Weapon>
 	<Bitflags>1100 0111</Bitflags>
-	<5>0</5>
-	<6>25</6>
-	<7>0</7>
-	<8>25</8>
+	<Response_Purse>0</Response_Purse>
+	<Response_Apple>25</Response_Apple>
+	<Response_Beer>0</Response_Beer>
+	<Response_Whistle>25</Response_Whistle>
 	<9>18</9>
 	<Ranged_Value>0</Ranged_Value>
 	<Mounted_Knight_Value>3</Mounted_Knight_Value>
@@ -1442,10 +1442,10 @@
 	<4>2</4>
 	<Weapon>SDRD</Weapon>
 	<Bitflags>1100 0111</Bitflags>
-	<5>0</5>
-	<6>20</6>
-	<7>0</7>
-	<8>20</8>
+	<Response_Purse>0</Response_Purse>
+	<Response_Apple>20</Response_Apple>
+	<Response_Beer>0</Response_Beer>
+	<Response_Whistle>20</Response_Whistle>
 	<9>18</9>
 	<Ranged_Value>0</Ranged_Value>
 	<Mounted_Knight_Value>3</Mounted_Knight_Value>
@@ -1468,10 +1468,10 @@
 	<4>2</4>
 	<Weapon>SDRD</Weapon>
 	<Bitflags>1100 0111</Bitflags>
-	<5>0</5>
-	<6>15</6>
-	<7>0</7>
-	<8>15</8>
+	<Response_Purse>0</Response_Purse>
+	<Response_Apple>15</Response_Apple>
+	<Response_Beer>0</Response_Beer>
+	<Response_Whistle>15</Response_Whistle>
 	<9>18</9>
 	<Ranged_Value>0</Ranged_Value>
 	<Mounted_Knight_Value>3</Mounted_Knight_Value>
@@ -1494,10 +1494,10 @@
 	<4>2</4>
 	<Weapon>SDRD</Weapon>
 	<Bitflags>1100 0111</Bitflags>
-	<5>0</5>
-	<6>10</6>
-	<7>0</7>
-	<8>10</8>
+	<Response_Purse>0</Response_Purse>
+	<Response_Apple>10</Response_Apple>
+	<Response_Beer>0</Response_Beer>
+	<Response_Whistle>10</Response_Whistle>
 	<9>18</9>
 	<Ranged_Value>0</Ranged_Value>
 	<Mounted_Knight_Value>3</Mounted_Knight_Value>
@@ -1520,10 +1520,10 @@
 	<4>2</4>
 	<Weapon>SDRD</Weapon>
 	<Bitflags>1100 0111</Bitflags>
-	<5>0</5>
-	<6>5</6>
-	<7>0</7>
-	<8>5</8>
+	<Response_Purse>0</Response_Purse>
+	<Response_Apple>5</Response_Apple>
+	<Response_Beer>0</Response_Beer>
+	<Response_Whistle>5</Response_Whistle>
 	<9>18</9>
 	<Ranged_Value>0</Ranged_Value>
 	<Mounted_Knight_Value>3</Mounted_Knight_Value>
@@ -1546,10 +1546,10 @@
 	<4>2</4>
 	<Weapon>SDRD</Weapon>
 	<Bitflags>1100 0110</Bitflags>
-	<5>0</5>
-	<6>0</6>
-	<7>0</7>
-	<8>0</8>
+	<Response_Purse>0</Response_Purse>
+	<Response_Apple>0</Response_Apple>
+	<Response_Beer>0</Response_Beer>
+	<Response_Whistle>0</Response_Whistle>
 	<9>18</9>
 	<Ranged_Value>0</Ranged_Value>
 	<Mounted_Knight_Value>3</Mounted_Knight_Value>
@@ -1572,10 +1572,10 @@
 	<4>2</4>
 	<Weapon>SDRD</Weapon>
 	<Bitflags>1100 0111</Bitflags>
-	<5>0</5>
-	<6>0</6>
-	<7>0</7>
-	<8>0</8>
+	<Response_Purse>0</Response_Purse>
+	<Response_Apple>0</Response_Apple>
+	<Response_Beer>0</Response_Beer>
+	<Response_Whistle>0</Response_Whistle>
 	<9>18</9>
 	<Ranged_Value>0</Ranged_Value>
 	<Mounted_Knight_Value>3</Mounted_Knight_Value>
@@ -1599,10 +1599,10 @@
 	<Weapon>VPGG
 </Weapon>
 	<Bitflags>1100 1001</Bitflags>
-	<5>0</5>
-	<6>0</6>
-	<7>0</7>
-	<8>0</8>
+	<Response_Purse>0</Response_Purse>
+	<Response_Apple>0</Response_Apple>
+	<Response_Beer>0</Response_Beer>
+	<Response_Whistle>0</Response_Whistle>
 	<9>19</9>
 	<Ranged_Value>0</Ranged_Value>
 	<Mounted_Knight_Value>10</Mounted_Knight_Value>
@@ -1626,10 +1626,10 @@
 	<Weapon>VPGL
 </Weapon>
 	<Bitflags>1100 1001</Bitflags>
-	<5>0</5>
-	<6>0</6>
-	<7>0</7>
-	<8>0</8>
+	<Response_Purse>0</Response_Purse>
+	<Response_Apple>0</Response_Apple>
+	<Response_Beer>0</Response_Beer>
+	<Response_Whistle>0</Response_Whistle>
 	<9>19</9>
 	<Ranged_Value>0</Ranged_Value>
 	<Mounted_Knight_Value>10</Mounted_Knight_Value>
@@ -1653,10 +1653,10 @@
 	<Weapon>VPSK
 </Weapon>
 	<Bitflags>1100 1001</Bitflags>
-	<5>0</5>
-	<6>0</6>
-	<7>0</7>
-	<8>0</8>
+	<Response_Purse>0</Response_Purse>
+	<Response_Apple>0</Response_Apple>
+	<Response_Beer>0</Response_Beer>
+	<Response_Whistle>0</Response_Whistle>
 	<9>19</9>
 	<Ranged_Value>0</Ranged_Value>
 	<Mounted_Knight_Value>10</Mounted_Knight_Value>
@@ -1680,10 +1680,10 @@
 	<Weapon>VPSN
 </Weapon>
 	<Bitflags>1100 1001</Bitflags>
-	<5>0</5>
-	<6>0</6>
-	<7>0</7>
-	<8>0</8>
+	<Response_Purse>0</Response_Purse>
+	<Response_Apple>0</Response_Apple>
+	<Response_Beer>0</Response_Beer>
+	<Response_Whistle>0</Response_Whistle>
 	<9>19</9>
 	<Ranged_Value>0</Ranged_Value>
 	<Mounted_Knight_Value>10</Mounted_Knight_Value>
@@ -1706,10 +1706,10 @@
 	<4>1</4>
 	<Weapon>SDOF</Weapon>
 	<Bitflags>1100 0001</Bitflags>
-	<5>0</5>
-	<6>0</6>
-	<7>25</7>
-	<8>100</8>
+	<Response_Purse>0</Response_Purse>
+	<Response_Apple>0</Response_Apple>
+	<Response_Beer>25</Response_Beer>
+	<Response_Whistle>100</Response_Whistle>
 	<9>16</9>
 	<Ranged_Value>0</Ranged_Value>
 	<Mounted_Knight_Value>64</Mounted_Knight_Value>
@@ -1732,10 +1732,10 @@
 	<4>1</4>
 	<Weapon>SDOF</Weapon>
 	<Bitflags>1100 0001</Bitflags>
-	<5>0</5>
-	<6>0</6>
-	<7>20</7>
-	<8>95</8>
+	<Response_Purse>0</Response_Purse>
+	<Response_Apple>0</Response_Apple>
+	<Response_Beer>20</Response_Beer>
+	<Response_Whistle>95</Response_Whistle>
 	<9>16</9>
 	<Ranged_Value>0</Ranged_Value>
 	<Mounted_Knight_Value>64</Mounted_Knight_Value>
@@ -1758,10 +1758,10 @@
 	<4>1</4>
 	<Weapon>SDOF</Weapon>
 	<Bitflags>1100 0001</Bitflags>
-	<5>0</5>
-	<6>0</6>
-	<7>15</7>
-	<8>90</8>
+	<Response_Purse>0</Response_Purse>
+	<Response_Apple>0</Response_Apple>
+	<Response_Beer>15</Response_Beer>
+	<Response_Whistle>90</Response_Whistle>
 	<9>16</9>
 	<Ranged_Value>0</Ranged_Value>
 	<Mounted_Knight_Value>64</Mounted_Knight_Value>
@@ -1784,10 +1784,10 @@
 	<4>1</4>
 	<Weapon>SDOF</Weapon>
 	<Bitflags>1100 0001</Bitflags>
-	<5>0</5>
-	<6>0</6>
-	<7>10</7>
-	<8>85</8>
+	<Response_Purse>0</Response_Purse>
+	<Response_Apple>0</Response_Apple>
+	<Response_Beer>10</Response_Beer>
+	<Response_Whistle>85</Response_Whistle>
 	<9>16</9>
 	<Ranged_Value>0</Ranged_Value>
 	<Mounted_Knight_Value>64</Mounted_Knight_Value>
@@ -1810,10 +1810,10 @@
 	<4>1</4>
 	<Weapon>SDOF</Weapon>
 	<Bitflags>1100 0001</Bitflags>
-	<5>0</5>
-	<6>0</6>
-	<7>5</7>
-	<8>80</8>
+	<Response_Purse>0</Response_Purse>
+	<Response_Apple>0</Response_Apple>
+	<Response_Beer>5</Response_Beer>
+	<Response_Whistle>80</Response_Whistle>
 	<9>16</9>
 	<Ranged_Value>0</Ranged_Value>
 	<Mounted_Knight_Value>64</Mounted_Knight_Value>
