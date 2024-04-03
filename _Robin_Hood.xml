@@ -12,13 +12,13 @@
 	Officer Value is Only Set for Officers and Special Officers Decreasing with Increasing Tier; Officers and Special Officers of Same Tier have same value 
 	Guard Value is 1 for Halbardiers and Lancers and 0 for everything else
 	Ranged Attack Rate = Higher number equals more attacks per minute; 0 makes ranged units unable to fire 
- 	Melee Attack Damage scales weird -> Blue Halbardier deals 5 damage on his default value and between 9-19 with 255
-	Melee Attack Rate: Gravitr said that's what that value is for, but didnt see it working in Testing
+ 	<Melee_Attack_Damage> = Attack rate frequency - the higher value, the enemy attacks more frequentlyn	<Melee_Attack_Rate> = Blue bar stamina - the higher value, more often or bigger part of stamina is restored
 	Weapon: String representation of their Weapon or something similar I guess, 'SD' for normal units 'VP' for enemy Heroes. HL -> Halbardier; SW -> Sword; BW -> Bow; etc.
 	Bitflags: 11xx 0yyz -> x what x is needs to be tested; y is 1 for Mounted Knights and 0 for everything else; z is 0 for ally and 1 for enemies
 	Ranged Value = 2 for Merry Men Bow guys in Forrest Missions; 3 for Archers; 4 for Crossbowmen 
 	Mounted Knight Value = 3 for Mounted Knights, 10 for Enemy Heroes and 64 for everything else (Maybe Should be Renamed)
-	1 and 2 -> Needs to be Tested, Values goes Up as Units get better 
+	1 -> Needs to be Tested, Values goes Up as Units get better
+	Thread_Threshold -> The Higher the Value the less likely they flee and get help
 	3 -> Needs to be Tested, Always 0 for Both Guard Types, Ranged and Soldier A; Always 0 for all Allies; Value Going up with increasing Tier
 	4 -> Needs to be Tested, 2 for Knight0, Soldier B and the Merry Man, 1 for Officers and Officer B0's and 0 for everything Else
 	Response_Purse -> Needs to be Tested, Value goes down as Units get better: Only Applied to Guard B, Soldier A and Archers: Rest and all Allies is 0 (Response to Purse)
@@ -33,7 +33,8 @@
 	     16: Officers 
 	     17: Foot Knights 
 	     18: Mounted Knights 
-	     19: Crossbowmen 
+		 19: Enemy Heroes 
+	     20: Crossbowmen 
 	Green Enemies: 
 	     21-27 (No Mounted Knights)
 	10 -> Needs to be Tested, 3 for Guards; 2 for Knight0, Soldier B and Scathlock; 1 for Soldier A, Officers, Guiy of Guisbourne, Longchamp and Sheriff; 0 for all Ranged and Both Merry Man Types
@@ -47,13 +48,13 @@
 	<Unit_Block_Head>R3VhcmQgQTAwBwBHYXJkZSBBEQBIYWxsZWJhcmRpZXIgQmxldQ==</Unit_Block_Head> 
 	<HP>80</HP>
 	<1>10</1>
-	<2>40</2>
+	<Thread_Threshold>40</Thread_Threshold>
 	<Officer_Value>0</Officer_Value>
 	<3>0</3>
 	<Guard_Value>1</Guard_Value>
 	<Ranged_Attack_Rate>0</Ranged_Attack_Rate>
 	<Melee_Attack_Damage>5</Melee_Attack_Damage>
-	<Melee_Attack_Rate?>10</Melee_Attack_Rate?>
+	<Melee_Attack_Rate>10</Melee_Attack_Rate>
 	<4>0</4>
 	<Weapon>SDHL</Weapon>
 	<Bitflags>1111 0001</Bitflags>
@@ -73,13 +74,13 @@
 	<Unit_Block_Head>R3VhcmQgQTAxBwBHYXJkZSBBEgBIYWxsZWJhcmRpZXIgSmF1bmU=</Unit_Block_Head> 
 	<HP>90</HP>
 	<1>15</1>
-	<2>45</2>
+	<Thread_Threshold>45</Thread_Threshold>
 	<Officer_Value>0</Officer_Value>
 	<3>0</3>
 	<Guard_Value>1</Guard_Value>
 	<Ranged_Attack_Rate>0</Ranged_Attack_Rate>
 	<Melee_Attack_Damage>20</Melee_Attack_Damage>
-	<Melee_Attack_Rate?>20</Melee_Attack_Rate?>
+	<Melee_Attack_Rate>20</Melee_Attack_Rate>
 	<4>0</4>
 	<Weapon>SDHL</Weapon>
 	<Bitflags>1111 0001</Bitflags>
@@ -99,13 +100,13 @@
 	<Unit_Block_Head>R3VhcmQgQTAyBwBHYXJkZSBBEwBIYWxsZWJhcmRpZXIgT3Jhbmdl</Unit_Block_Head> 
 	<HP>100</HP>
 	<1>20</1>
-	<2>50</2>
+	<Thread_Threshold>50</Thread_Threshold>
 	<Officer_Value>0</Officer_Value>
 	<3>0</3>
 	<Guard_Value>1</Guard_Value>
 	<Ranged_Attack_Rate>0</Ranged_Attack_Rate>
 	<Melee_Attack_Damage>40</Melee_Attack_Damage>
-	<Melee_Attack_Rate?>30</Melee_Attack_Rate?>
+	<Melee_Attack_Rate>30</Melee_Attack_Rate>
 	<4>0</4>
 	<Weapon>SDHL</Weapon>
 	<Bitflags>1111 0001</Bitflags>
@@ -125,13 +126,13 @@
 	<Unit_Block_Head>R3VhcmQgQTAzBwBHYXJkZSBBEgBIYWxsZWJhcmRpZXIgUm91Z2U=</Unit_Block_Head> 
 	<HP>110</HP>
 	<1>25</1>
-	<2>55</2>
+	<Thread_Threshold>55</Thread_Threshold>
 	<Officer_Value>0</Officer_Value>
 	<3>0</3>
 	<Guard_Value>1</Guard_Value>
 	<Ranged_Attack_Rate>0</Ranged_Attack_Rate>
 	<Melee_Attack_Damage>60</Melee_Attack_Damage>
-	<Melee_Attack_Rate?>40</Melee_Attack_Rate?>
+	<Melee_Attack_Rate>40</Melee_Attack_Rate>
 	<4>0</4>
 	<Weapon>SDHL</Weapon>
 	<Bitflags>1111 0001</Bitflags>
@@ -151,13 +152,13 @@
 	<Unit_Block_Head>R3VhcmQgQTA0BwBHYXJkZSBBEQBIYWxsZWJhcmRpZXIgTm9pcg==</Unit_Block_Head> 
 	<HP>120</HP>
 	<1>30</1>
-	<2>60</2>
+	<Thread_Threshold>60</Thread_Threshold>
 	<Officer_Value>0</Officer_Value>
 	<3>0</3>
 	<Guard_Value>1</Guard_Value>
 	<Ranged_Attack_Rate>0</Ranged_Attack_Rate>
 	<Melee_Attack_Damage>80</Melee_Attack_Damage>
-	<Melee_Attack_Rate?>50</Melee_Attack_Rate?>
+	<Melee_Attack_Rate>50</Melee_Attack_Rate>
 	<4>0</4>
 	<Weapon>SDHL</Weapon>
 	<Bitflags>1111 0001</Bitflags>
@@ -177,13 +178,13 @@
 	<Unit_Block_Head>R3VhcmQgQTA1BwBHYXJkZSBBEQBIYWxsZWJhcmRpZXIgVmVydA==</Unit_Block_Head> 
 	<HP>100</HP>
 	<1>20</1>
-	<2>50</2>
+	<Thread_Threshold>50</Thread_Threshold>
 	<Officer_Value>0</Officer_Value>
 	<3>0</3>
 	<Guard_Value>1</Guard_Value>
 	<Ranged_Attack_Rate>0</Ranged_Attack_Rate>
 	<Melee_Attack_Damage>40</Melee_Attack_Damage>
-	<Melee_Attack_Rate?>30</Melee_Attack_Rate?>
+	<Melee_Attack_Rate>30</Melee_Attack_Rate>
 	<4>0</4>
 	<Weapon>SDHL</Weapon>
 	<Bitflags>1101 0000</Bitflags>
@@ -203,13 +204,13 @@
 	<Unit_Block_Head>U29sZGllciBBMDAIAFNvbGRhdCBBCQBFcGVlIEJsZXU=</Unit_Block_Head> 
 	<HP>80</HP>
 	<1>30</1>
-	<2>40</2>
+	<Thread_Threshold>40</Thread_Threshold>
 	<Officer_Value>0</Officer_Value>
 	<3>0</3>
 	<Guard_Value>0</Guard_Value>
 	<Ranged_Attack_Rate>0</Ranged_Attack_Rate>
 	<Melee_Attack_Damage>5</Melee_Attack_Damage>
-	<Melee_Attack_Rate?>10</Melee_Attack_Rate?>
+	<Melee_Attack_Rate>10</Melee_Attack_Rate>
 	<4>0</4>
 	<Weapon>SDSW</Weapon>
 	<Bitflags>1110 0001</Bitflags>
@@ -229,13 +230,13 @@
 	<Unit_Block_Head>U29sZGllciBBMDEIAFNvbGRhdCBBCgBFcGVlIEphdW5l</Unit_Block_Head> 
 	<HP>90</HP>
 	<1>35</1>
-	<2>45</2>
+	<Thread_Threshold>45</Thread_Threshold>
 	<Officer_Value>0</Officer_Value>
 	<3>0</3>
 	<Guard_Value>0</Guard_Value>
 	<Ranged_Attack_Rate>0</Ranged_Attack_Rate>
 	<Melee_Attack_Damage>20</Melee_Attack_Damage>
-	<Melee_Attack_Rate?>20</Melee_Attack_Rate?>
+	<Melee_Attack_Rate>20</Melee_Attack_Rate>
 	<4>0</4>
 	<Weapon>SDSW</Weapon>
 	<Bitflags>1110 0001</Bitflags>
@@ -255,13 +256,13 @@
 	<Unit_Block_Head>U29sZGllciBBMDIIAFNvbGRhdCBBCwBFcGVlIE9yYW5nZQ==</Unit_Block_Head> 
 	<HP>100</HP>
 	<1>40</1>
-	<2>50</2>
+	<Thread_Threshold>50</Thread_Threshold>
 	<Officer_Value>0</Officer_Value>
 	<3>0</3>
 	<Guard_Value>0</Guard_Value>
 	<Ranged_Attack_Rate>0</Ranged_Attack_Rate>
 	<Melee_Attack_Damage>40</Melee_Attack_Damage>
-	<Melee_Attack_Rate?>30</Melee_Attack_Rate?>
+	<Melee_Attack_Rate>30</Melee_Attack_Rate>
 	<4>0</4>
 	<Weapon>SDSW</Weapon>
 	<Bitflags>1110 0001</Bitflags>
@@ -281,13 +282,13 @@
 	<Unit_Block_Head>U29sZGllciBBMDMIAFNvbGRhdCBBCgBFcGVlIFJvdWdl</Unit_Block_Head> 
 	<HP>110</HP>
 	<1>45</1>
-	<2>55</2>
+	<Thread_Threshold>55</Thread_Threshold>
 	<Officer_Value>0</Officer_Value>
 	<3>0</3>
 	<Guard_Value>0</Guard_Value>
 	<Ranged_Attack_Rate>0</Ranged_Attack_Rate>
 	<Melee_Attack_Damage>60</Melee_Attack_Damage>
-	<Melee_Attack_Rate?>40</Melee_Attack_Rate?>
+	<Melee_Attack_Rate>40</Melee_Attack_Rate>
 	<4>0</4>
 	<Weapon>SDSW</Weapon>
 	<Bitflags>1110 0001</Bitflags>
@@ -307,13 +308,13 @@
 	<Unit_Block_Head>U29sZGllciBBMDQIAFNvbGRhdCBBCQBFcGVlIE5vaXI=</Unit_Block_Head> 
 	<HP>120</HP>
 	<1>50</1>
-	<2>60</2>
+	<Thread_Threshold>60</Thread_Threshold>
 	<Officer_Value>0</Officer_Value>
 	<3>0</3>
 	<Guard_Value>0</Guard_Value>
 	<Ranged_Attack_Rate>0</Ranged_Attack_Rate>
 	<Melee_Attack_Damage>80</Melee_Attack_Damage>
-	<Melee_Attack_Rate?>50</Melee_Attack_Rate?>
+	<Melee_Attack_Rate>50</Melee_Attack_Rate>
 	<4>0</4>
 	<Weapon>SDSW</Weapon>
 	<Bitflags>1110 0001</Bitflags>
@@ -333,13 +334,13 @@
 	<Unit_Block_Head>U29sZGllciBBMDUIAFNvbGRhdCBBCQBFcGVlIFZlcnQ=</Unit_Block_Head> 
 	<HP>100</HP>
 	<1>40</1>
-	<2>50</2>
+	<Thread_Threshold>50</Thread_Threshold>
 	<Officer_Value>0</Officer_Value>
 	<3>0</3>
 	<Guard_Value>0</Guard_Value>
 	<Ranged_Attack_Rate>0</Ranged_Attack_Rate>
 	<Melee_Attack_Damage>40</Melee_Attack_Damage>
-	<Melee_Attack_Rate?>30</Melee_Attack_Rate?>
+	<Melee_Attack_Rate>30</Melee_Attack_Rate>
 	<4>0</4>
 	<Weapon>SDSW</Weapon>
 	<Bitflags>1100 0000</Bitflags>
@@ -359,13 +360,13 @@
 	<Unit_Block_Head>QXJjaGVyMDAGAEFyY2hlcgsAQXJjaGVyIEJsZXU=</Unit_Block_Head> 
 	<HP>30</HP>
 	<1>40</1>
-	<2>0</2>
+	<Thread_Threshold>0</Thread_Threshold>
 	<Officer_Value>0</Officer_Value>
 	<3>0</3>
 	<Guard_Value>0</Guard_Value>
 	<Ranged_Attack_Rate>30</Ranged_Attack_Rate>
 	<Melee_Attack_Damage>30</Melee_Attack_Damage>
-	<Melee_Attack_Rate?>10</Melee_Attack_Rate?>
+	<Melee_Attack_Rate>10</Melee_Attack_Rate>
 	<4>0</4>
 	<Weapon>SDBW</Weapon>
 	<Bitflags>1111 0001</Bitflags>
@@ -385,13 +386,13 @@
 	<Unit_Block_Head>QXJjaGVyMDEGAEFyY2hlcgwAQXJjaGVyIEphdW5l</Unit_Block_Head> 
 	<HP>40</HP>
 	<1>45</1>
-	<2>5</2>
+	<Thread_Threshold>5</Thread_Threshold>
 	<Officer_Value>0</Officer_Value>
 	<3>0</3>
 	<Guard_Value>0</Guard_Value>
 	<Ranged_Attack_Rate>40</Ranged_Attack_Rate>
 	<Melee_Attack_Damage>30</Melee_Attack_Damage>
-	<Melee_Attack_Rate?>10</Melee_Attack_Rate?>
+	<Melee_Attack_Rate>10</Melee_Attack_Rate>
 	<4>0</4>
 	<Weapon>SDBW</Weapon>
 	<Bitflags>1111 0001</Bitflags>
@@ -411,13 +412,13 @@
 	<Unit_Block_Head>QXJjaGVyMDIGAEFyY2hlcg0AQXJjaGVyIE9yYW5nZQ==</Unit_Block_Head> 
 	<HP>50</HP>
 	<1>50</1>
-	<2>10</2>
+	<Thread_Threshold>10</Thread_Threshold>
 	<Officer_Value>0</Officer_Value>
 	<3>0</3>
 	<Guard_Value>0</Guard_Value>
 	<Ranged_Attack_Rate>50</Ranged_Attack_Rate>
 	<Melee_Attack_Damage>30</Melee_Attack_Damage>
-	<Melee_Attack_Rate?>10</Melee_Attack_Rate?>
+	<Melee_Attack_Rate>10</Melee_Attack_Rate>
 	<4>0</4>
 	<Weapon>SDBW</Weapon>
 	<Bitflags>1111 0001</Bitflags>
@@ -437,13 +438,13 @@
 	<Unit_Block_Head>QXJjaGVyMDMGAEFyY2hlcgwAQXJjaGVyIFJvdWdl</Unit_Block_Head> 
 	<HP>60</HP>
 	<1>55</1>
-	<2>15</2>
+	<Thread_Threshold>15</Thread_Threshold>
 	<Officer_Value>0</Officer_Value>
 	<3>0</3>
 	<Guard_Value>0</Guard_Value>
 	<Ranged_Attack_Rate>60</Ranged_Attack_Rate>
 	<Melee_Attack_Damage>30</Melee_Attack_Damage>
-	<Melee_Attack_Rate?>10</Melee_Attack_Rate?>
+	<Melee_Attack_Rate>10</Melee_Attack_Rate>
 	<4>0</4>
 	<Weapon>SDBW</Weapon>
 	<Bitflags>1111 0001</Bitflags>
@@ -463,13 +464,13 @@
 	<Unit_Block_Head>QXJjaGVyMDQGAEFyY2hlcgsAQXJjaGVyIE5vaXI=</Unit_Block_Head> 
 	<HP>70</HP>
 	<1>60</1>
-	<2>20</2>
+	<Thread_Threshold>20</Thread_Threshold>
 	<Officer_Value>0</Officer_Value>
 	<3>0</3>
 	<Guard_Value>0</Guard_Value>
 	<Ranged_Attack_Rate>70</Ranged_Attack_Rate>
 	<Melee_Attack_Damage>30</Melee_Attack_Damage>
-	<Melee_Attack_Rate?>10</Melee_Attack_Rate?>
+	<Melee_Attack_Rate>10</Melee_Attack_Rate>
 	<4>0</4>
 	<Weapon>SDBW</Weapon>
 	<Bitflags>1111 0001</Bitflags>
@@ -489,13 +490,13 @@
 	<Unit_Block_Head>QXJjaGVyMDUGAEFyY2hlcgsAQXJjaGVyIFZlcnQ=</Unit_Block_Head> 
 	<HP>50</HP>
 	<1>50</1>
-	<2>15</2>
+	<Thread_Threshold>15</Thread_Threshold>
 	<Officer_Value>0</Officer_Value>
 	<3>0</3>
 	<Guard_Value>0</Guard_Value>
 	<Ranged_Attack_Rate>50</Ranged_Attack_Rate>
 	<Melee_Attack_Damage>30</Melee_Attack_Damage>
-	<Melee_Attack_Rate?>10</Melee_Attack_Rate?>
+	<Melee_Attack_Rate>10</Melee_Attack_Rate>
 	<4>0</4>
 	<Weapon>SDBW</Weapon>
 	<Bitflags>1101 0000</Bitflags>
@@ -515,13 +516,13 @@
 	<Unit_Block_Head>T2ZmaWNpZXIgQjAwCQBPZmZpY2llckINAE9mZmljaWVyIEJsZXU=</Unit_Block_Head> 
 	<HP>130</HP>
 	<1>70</1>
-	<2>50</2>
+	<Thread_Threshold>50</Thread_Threshold>
 	<Officer_Value>80</Officer_Value>
 	<3>35</3>
 	<Guard_Value>0</Guard_Value>
 	<Ranged_Attack_Rate>0</Ranged_Attack_Rate>
 	<Melee_Attack_Damage>40</Melee_Attack_Damage>
-	<Melee_Attack_Rate?>60</Melee_Attack_Rate?>
+	<Melee_Attack_Rate>60</Melee_Attack_Rate>
 	<4>1</4>
 	<Weapon>SDOF</Weapon>
 	<Bitflags>1100 0001</Bitflags>
@@ -541,13 +542,13 @@
 	<Unit_Block_Head>T2ZmaWNpZXIgQjAxCQBPZmZpY2llckIOAE9mZmljaWVyIEphdW5l</Unit_Block_Head> 
 	<HP>140</HP>
 	<1>75</1>
-	<2>55</2>
+	<Thread_Threshold>55</Thread_Threshold>
 	<Officer_Value>60</Officer_Value>
 	<3>45</3>
 	<Guard_Value>0</Guard_Value>
 	<Ranged_Attack_Rate>0</Ranged_Attack_Rate>
 	<Melee_Attack_Damage>55</Melee_Attack_Damage>
-	<Melee_Attack_Rate?>70</Melee_Attack_Rate?>
+	<Melee_Attack_Rate>70</Melee_Attack_Rate>
 	<4>1</4>
 	<Weapon>SDOF</Weapon>
 	<Bitflags>1100 0001</Bitflags>
@@ -567,13 +568,13 @@
 	<Unit_Block_Head>T2ZmaWNpZXIgQjAyCQBPZmZpY2llckIPAE9mZmljaWVyIE9yYW5nZQ==</Unit_Block_Head> 
 	<HP>150</HP>
 	<1>80</1>
-	<2>60</2>
+	<Thread_Threshold>60</Thread_Threshold>
 	<Officer_Value>40</Officer_Value>
 	<3>55</3>
 	<Guard_Value>0</Guard_Value>
 	<Ranged_Attack_Rate>0</Ranged_Attack_Rate>
 	<Melee_Attack_Damage>70</Melee_Attack_Damage>
-	<Melee_Attack_Rate?>80</Melee_Attack_Rate?>
+	<Melee_Attack_Rate>80</Melee_Attack_Rate>
 	<4>1</4>
 	<Weapon>SDOF</Weapon>
 	<Bitflags>1100 0001</Bitflags>
@@ -593,13 +594,13 @@
 	<Unit_Block_Head>T2ZmaWNpZXIgQjAzCQBPZmZpY2llckIOAE9mZmljaWVyIFJvdWdl</Unit_Block_Head> 
 	<HP>160</HP>
 	<1>85</1>
-	<2>65</2>
+	<Thread_Threshold>65</Thread_Threshold>
 	<Officer_Value>20</Officer_Value>
 	<3>65</3>
 	<Guard_Value>0</Guard_Value>
 	<Ranged_Attack_Rate>0</Ranged_Attack_Rate>
 	<Melee_Attack_Damage>85</Melee_Attack_Damage>
-	<Melee_Attack_Rate?>90</Melee_Attack_Rate?>
+	<Melee_Attack_Rate>90</Melee_Attack_Rate>
 	<4>1</4>
 	<Weapon>SDOF</Weapon>
 	<Bitflags>1100 0001</Bitflags>
@@ -619,13 +620,13 @@
 	<Unit_Block_Head>T2ZmaWNpZXIgQjA0CQBPZmZpY2llckINAE9mZmljaWVyIE5vaXI=</Unit_Block_Head> 
 	<HP>170</HP>
 	<1>90</1>
-	<2>70</2>
+	<Thread_Threshold>70</Thread_Threshold>
 	<Officer_Value>0</Officer_Value>
 	<3>75</3>
 	<Guard_Value>0</Guard_Value>
 	<Ranged_Attack_Rate>0</Ranged_Attack_Rate>
 	<Melee_Attack_Damage>100</Melee_Attack_Damage>
-	<Melee_Attack_Rate?>100</Melee_Attack_Rate?>
+	<Melee_Attack_Rate>100</Melee_Attack_Rate>
 	<4>1</4>
 	<Weapon>SDOF</Weapon>
 	<Bitflags>1100 0001</Bitflags>
@@ -645,13 +646,13 @@
 	<Unit_Block_Head>T2ZmaWNlcjA1CABPZmZpY2llcg0AT2ZmaWNpZXIgVmVydA==</Unit_Block_Head> 
 	<HP>150</HP>
 	<1>80</1>
-	<2>60</2>
+	<Thread_Threshold>60</Thread_Threshold>
 	<Officer_Value>0</Officer_Value>
 	<3>0</3>
 	<Guard_Value>0</Guard_Value>
 	<Ranged_Attack_Rate>0</Ranged_Attack_Rate>
 	<Melee_Attack_Damage>80</Melee_Attack_Damage>
-	<Melee_Attack_Rate?>60</Melee_Attack_Rate?>
+	<Melee_Attack_Rate>60</Melee_Attack_Rate>
 	<4>1</4>
 	<Weapon>SDOF</Weapon>
 	<Bitflags>1100 0000</Bitflags>
@@ -671,13 +672,13 @@
 	<Unit_Block_Head>U29sZGllciBCMDAIAFNvbGRhdCBCDgBDaGV2YWxpZXIgQmxldQ==</Unit_Block_Head> 
 	<HP>105</HP>
 	<1>80</1>
-	<2>80</2>
+	<Thread_Threshold>80</Thread_Threshold>
 	<Officer_Value>0</Officer_Value>
 	<3>50</3>
 	<Guard_Value>0</Guard_Value>
 	<Ranged_Attack_Rate>0</Ranged_Attack_Rate>
 	<Melee_Attack_Damage>60</Melee_Attack_Damage>
-	<Melee_Attack_Rate?>80</Melee_Attack_Rate?>
+	<Melee_Attack_Rate>80</Melee_Attack_Rate>
 	<4>2</4>
 	<Weapon>SDKN
 </Weapon>
@@ -698,13 +699,13 @@
 	<Unit_Block_Head>U29sZGllciBCMDEIAFNvbGRhdCBCDwBDaGV2YWxpZXIgSmF1bmU=</Unit_Block_Head> 
 	<HP>115</HP>
 	<1>85</1>
-	<2>85</2>
+	<Thread_Threshold>85</Thread_Threshold>
 	<Officer_Value>0</Officer_Value>
 	<3>60</3>
 	<Guard_Value>0</Guard_Value>
 	<Ranged_Attack_Rate>0</Ranged_Attack_Rate>
 	<Melee_Attack_Damage>70</Melee_Attack_Damage>
-	<Melee_Attack_Rate?>85</Melee_Attack_Rate?>
+	<Melee_Attack_Rate>85</Melee_Attack_Rate>
 	<4>2</4>
 	<Weapon>SDKN
 </Weapon>
@@ -725,13 +726,13 @@
 	<Unit_Block_Head>U29sZGllciBCMDIIAFNvbGRhdCBCEABDaGV2YWxpZXIgT3Jhbmdl</Unit_Block_Head> 
 	<HP>125</HP>
 	<1>90</1>
-	<2>90</2>
+	<Thread_Threshold>90</Thread_Threshold>
 	<Officer_Value>0</Officer_Value>
 	<3>70</3>
 	<Guard_Value>0</Guard_Value>
 	<Ranged_Attack_Rate>0</Ranged_Attack_Rate>
 	<Melee_Attack_Damage>80</Melee_Attack_Damage>
-	<Melee_Attack_Rate?>90</Melee_Attack_Rate?>
+	<Melee_Attack_Rate>90</Melee_Attack_Rate>
 	<4>2</4>
 	<Weapon>SDKN
 </Weapon>
@@ -752,13 +753,13 @@
 	<Unit_Block_Head>U29sZGllciBCMDMIAFNvbGRhdCBCDwBDaGV2YWxpZXIgUm91Z2U=</Unit_Block_Head> 
 	<HP>135</HP>
 	<1>95</1>
-	<2>95</2>
+	<Thread_Threshold>95</Thread_Threshold>
 	<Officer_Value>0</Officer_Value>
 	<3>80</3>
 	<Guard_Value>0</Guard_Value>
 	<Ranged_Attack_Rate>0</Ranged_Attack_Rate>
 	<Melee_Attack_Damage>90</Melee_Attack_Damage>
-	<Melee_Attack_Rate?>95</Melee_Attack_Rate?>
+	<Melee_Attack_Rate>95</Melee_Attack_Rate>
 	<4>2</4>
 	<Weapon>SDKN
 </Weapon>
@@ -779,13 +780,13 @@
 	<Unit_Block_Head>U29sZGllciBCMDQIAFNvbGRhdCBCDgBDaGV2YWxpZXIgTm9pcg==</Unit_Block_Head> 
 	<HP>145</HP>
 	<1>100</1>
-	<2>100</2>
+	<Thread_Threshold>100</Thread_Threshold>
 	<Officer_Value>0</Officer_Value>
 	<3>90</3>
 	<Guard_Value>0</Guard_Value>
 	<Ranged_Attack_Rate>0</Ranged_Attack_Rate>
 	<Melee_Attack_Damage>100</Melee_Attack_Damage>
-	<Melee_Attack_Rate?>100</Melee_Attack_Rate?>
+	<Melee_Attack_Rate>100</Melee_Attack_Rate>
 	<4>2</4>
 	<Weapon>SDKN
 </Weapon>
@@ -806,13 +807,13 @@
 	<Unit_Block_Head>U29sZGllciBCMDUIAFNvbGRhdCBCDgBDaGV2YWxpZXIgVmVydA==</Unit_Block_Head> 
 	<HP>125</HP>
 	<1>90</1>
-	<2>90</2>
+	<Thread_Threshold>90</Thread_Threshold>
 	<Officer_Value>0</Officer_Value>
 	<3>0</3>
 	<Guard_Value>0</Guard_Value>
 	<Ranged_Attack_Rate>0</Ranged_Attack_Rate>
 	<Melee_Attack_Damage>80</Melee_Attack_Damage>
-	<Melee_Attack_Rate?>90</Melee_Attack_Rate?>
+	<Melee_Attack_Rate>90</Melee_Attack_Rate>
 	<4>2</4>
 	<Weapon>SDKN
 </Weapon>
@@ -833,13 +834,13 @@
 	<Unit_Block_Head>R3VhcmQgQjAwBwBHYXJkZSBCDABMYW5jaWVyIEJsZXU=</Unit_Block_Head> 
 	<HP>45</HP>
 	<1>0</1>
-	<2>10</2>
+	<Thread_Threshold>10</Thread_Threshold>
 	<Officer_Value>0</Officer_Value>
 	<3>0</3>
 	<Guard_Value>1</Guard_Value>
 	<Ranged_Attack_Rate>0</Ranged_Attack_Rate>
 	<Melee_Attack_Damage>0</Melee_Attack_Damage>
-	<Melee_Attack_Rate?>10</Melee_Attack_Rate?>
+	<Melee_Attack_Rate>10</Melee_Attack_Rate>
 	<4>0</4>
 	<Weapon>SDLN</Weapon>
 	<Bitflags>1110 0001</Bitflags>
@@ -859,13 +860,13 @@
 	<Unit_Block_Head>R3VhcmQgQjAxBwBHYXJkZSBCDQBMYW5jaWVyIEphdW5l</Unit_Block_Head> 
 	<HP>55</HP>
 	<1>5</1>
-	<2>15</2>
+	<Thread_Threshold>15</Thread_Threshold>
 	<Officer_Value>0</Officer_Value>
 	<3>0</3>
 	<Guard_Value>1</Guard_Value>
 	<Ranged_Attack_Rate>0</Ranged_Attack_Rate>
 	<Melee_Attack_Damage>15</Melee_Attack_Damage>
-	<Melee_Attack_Rate?>20</Melee_Attack_Rate?>
+	<Melee_Attack_Rate>20</Melee_Attack_Rate>
 	<4>0</4>
 	<Weapon>SDLN</Weapon>
 	<Bitflags>1110 0001</Bitflags>
@@ -885,13 +886,13 @@
 	<Unit_Block_Head>R3VhcmQgQjAyBwBHYXJkZSBCDgBMYW5jaWVyIE9yYW5nZQ==</Unit_Block_Head> 
 	<HP>65</HP>
 	<1>10</1>
-	<2>20</2>
+	<Thread_Threshold>20</Thread_Threshold>
 	<Officer_Value>0</Officer_Value>
 	<3>0</3>
 	<Guard_Value>1</Guard_Value>
 	<Ranged_Attack_Rate>0</Ranged_Attack_Rate>
 	<Melee_Attack_Damage>30</Melee_Attack_Damage>
-	<Melee_Attack_Rate?>30</Melee_Attack_Rate?>
+	<Melee_Attack_Rate>30</Melee_Attack_Rate>
 	<4>0</4>
 	<Weapon>SDLN</Weapon>
 	<Bitflags>1110 0001</Bitflags>
@@ -911,13 +912,13 @@
 	<Unit_Block_Head>R3VhcmQgQjAzBwBHYXJkZSBCDQBMYW5jaWVyIFJvdWdl</Unit_Block_Head> 
 	<HP>75</HP>
 	<1>15</1>
-	<2>25</2>
+	<Thread_Threshold>25</Thread_Threshold>
 	<Officer_Value>0</Officer_Value>
 	<3>0</3>
 	<Guard_Value>1</Guard_Value>
 	<Ranged_Attack_Rate>0</Ranged_Attack_Rate>
 	<Melee_Attack_Damage>45</Melee_Attack_Damage>
-	<Melee_Attack_Rate?>40</Melee_Attack_Rate?>
+	<Melee_Attack_Rate>40</Melee_Attack_Rate>
 	<4>0</4>
 	<Weapon>SDLN</Weapon>
 	<Bitflags>1110 0001</Bitflags>
@@ -937,13 +938,13 @@
 	<Unit_Block_Head>R3VhcmQgQjA0BwBHYXJkZSBCDABMYW5jaWVyIE5vaXI=</Unit_Block_Head> 
 	<HP>85</HP>
 	<1>20</1>
-	<2>30</2>
+	<Thread_Threshold>30</Thread_Threshold>
 	<Officer_Value>0</Officer_Value>
 	<3>0</3>
 	<Guard_Value>1</Guard_Value>
 	<Ranged_Attack_Rate>0</Ranged_Attack_Rate>
 	<Melee_Attack_Damage>60</Melee_Attack_Damage>
-	<Melee_Attack_Rate?>50</Melee_Attack_Rate?>
+	<Melee_Attack_Rate>50</Melee_Attack_Rate>
 	<4>0</4>
 	<Weapon>SDLN</Weapon>
 	<Bitflags>1110 0001</Bitflags>
@@ -963,13 +964,13 @@
 	<Unit_Block_Head>R3VhcmQgQjA1BwBHYXJkZSBCDABMYW5jaWVyIFZlcnQ=</Unit_Block_Head> 
 	<HP>65</HP>
 	<1>10</1>
-	<2>20</2>
+	<Thread_Threshold>20</Thread_Threshold>
 	<Officer_Value>0</Officer_Value>
 	<3>0</3>
 	<Guard_Value>1</Guard_Value>
 	<Ranged_Attack_Rate>0</Ranged_Attack_Rate>
 	<Melee_Attack_Damage>30</Melee_Attack_Damage>
-	<Melee_Attack_Rate?>30</Melee_Attack_Rate?>
+	<Melee_Attack_Rate>30</Melee_Attack_Rate>
 	<4>0</4>
 	<Weapon>SDLN</Weapon>
 	<Bitflags>1100 0000</Bitflags>
@@ -989,13 +990,13 @@
 	<Unit_Block_Head>Q3Jvc3Nib3dtYW4wMAsAQXJiYWxldHJpZXIQAEFyYmFsZXRyaWVyIEJsZXU=</Unit_Block_Head> 
 	<HP>80</HP>
 	<1>20</1>
-	<2>30</2>
+	<Thread_Threshold>30</Thread_Threshold>
 	<Officer_Value>0</Officer_Value>
 	<3>0</3>
 	<Guard_Value>0</Guard_Value>
 	<Ranged_Attack_Rate>30</Ranged_Attack_Rate>
 	<Melee_Attack_Damage>30</Melee_Attack_Damage>
-	<Melee_Attack_Rate?>10</Melee_Attack_Rate?>
+	<Melee_Attack_Rate>10</Melee_Attack_Rate>
 	<4>0</4>
 	<Weapon>SDCB</Weapon>
 	<Bitflags>1110 0001</Bitflags>
@@ -1015,13 +1016,13 @@
 	<Unit_Block_Head>Q3Jvc3Nib3dtYW4wMQsAQXJiYWxldHJpZXIRAEFyYmFsZXRyaWVyIEphdW5l</Unit_Block_Head> 
 	<HP>90</HP>
 	<1>25</1>
-	<2>35</2>
+	<Thread_Threshold>35</Thread_Threshold>
 	<Officer_Value>0</Officer_Value>
 	<3>0</3>
 	<Guard_Value>0</Guard_Value>
 	<Ranged_Attack_Rate>40</Ranged_Attack_Rate>
 	<Melee_Attack_Damage>30</Melee_Attack_Damage>
-	<Melee_Attack_Rate?>10</Melee_Attack_Rate?>
+	<Melee_Attack_Rate>10</Melee_Attack_Rate>
 	<4>0</4>
 	<Weapon>SDCB</Weapon>
 	<Bitflags>1110 0001</Bitflags>
@@ -1041,13 +1042,13 @@
 	<Unit_Block_Head>Q3Jvc3Nib3dtYW4wMgsAQXJiYWxldHJpZXISAEFyYmFsZXRyaWVyIE9yYW5nZQ==</Unit_Block_Head> 
 	<HP>100</HP>
 	<1>30</1>
-	<2>40</2>
+	<Thread_Threshold>40</Thread_Threshold>
 	<Officer_Value>0</Officer_Value>
 	<3>0</3>
 	<Guard_Value>0</Guard_Value>
 	<Ranged_Attack_Rate>50</Ranged_Attack_Rate>
 	<Melee_Attack_Damage>30</Melee_Attack_Damage>
-	<Melee_Attack_Rate?>10</Melee_Attack_Rate?>
+	<Melee_Attack_Rate>10</Melee_Attack_Rate>
 	<4>0</4>
 	<Weapon>SDCB</Weapon>
 	<Bitflags>1110 0001</Bitflags>
@@ -1067,13 +1068,13 @@
 	<Unit_Block_Head>Q3Jvc3Nib3dtYW4wMwsAQXJiYWxldHJpZXIRAEFyYmFsZXRyaWVyIFJvdWdl</Unit_Block_Head> 
 	<HP>110</HP>
 	<1>32</1>
-	<2>45</2>
+	<Thread_Threshold>45</Thread_Threshold>
 	<Officer_Value>0</Officer_Value>
 	<3>0</3>
 	<Guard_Value>0</Guard_Value>
 	<Ranged_Attack_Rate>60</Ranged_Attack_Rate>
 	<Melee_Attack_Damage>30</Melee_Attack_Damage>
-	<Melee_Attack_Rate?>10</Melee_Attack_Rate?>
+	<Melee_Attack_Rate>10</Melee_Attack_Rate>
 	<4>0</4>
 	<Weapon>SDCB</Weapon>
 	<Bitflags>1110 0001</Bitflags>
@@ -1093,13 +1094,13 @@
 	<Unit_Block_Head>Q3Jvc3Nib3dtYW4wNAsAQXJiYWxldHJpZXIQAEFyYmFsZXRyaWVyIE5vaXI=</Unit_Block_Head> 
 	<HP>120</HP>
 	<1>40</1>
-	<2>50</2>
+	<Thread_Threshold>50</Thread_Threshold>
 	<Officer_Value>0</Officer_Value>
 	<3>0</3>
 	<Guard_Value>0</Guard_Value>
 	<Ranged_Attack_Rate>70</Ranged_Attack_Rate>
 	<Melee_Attack_Damage>30</Melee_Attack_Damage>
-	<Melee_Attack_Rate?>10</Melee_Attack_Rate?>
+	<Melee_Attack_Rate>10</Melee_Attack_Rate>
 	<4>0</4>
 	<Weapon>SDCB</Weapon>
 	<Bitflags>1110 0001</Bitflags>
@@ -1119,13 +1120,13 @@
 	<Unit_Block_Head>Q3Jvc3Nib3dtYW4wNQsAQXJiYWxldHJpZXIQAEFyYmFsZXRyaWVyIFZlcnQ=</Unit_Block_Head> 
 	<HP>100</HP>
 	<1>30</1>
-	<2>40</2>
+	<Thread_Threshold>40</Thread_Threshold>
 	<Officer_Value>0</Officer_Value>
 	<3>0</3>
 	<Guard_Value>0</Guard_Value>
 	<Ranged_Attack_Rate>50</Ranged_Attack_Rate>
 	<Melee_Attack_Damage>30</Melee_Attack_Damage>
-	<Melee_Attack_Rate?>10</Melee_Attack_Rate?>
+	<Melee_Attack_Rate>10</Melee_Attack_Rate>
 	<4>0</4>
 	<Weapon>SDCB</Weapon>
 	<Bitflags>1100 0000</Bitflags>
@@ -1145,13 +1146,13 @@
 	<Unit_Block_Head>TWVycnlNYW5Cb3cMAFBheXNhbiBEIEFyYwgATW1lbiBBcmM=</Unit_Block_Head> 
 	<HP>80</HP>
 	<1>80</1>
-	<2>100</2>
+	<Thread_Threshold>100</Thread_Threshold>
 	<Officer_Value>0</Officer_Value>
 	<3>0</3>
 	<Guard_Value>0</Guard_Value>
 	<Ranged_Attack_Rate>100</Ranged_Attack_Rate>
 	<Melee_Attack_Damage>0</Melee_Attack_Damage>
-	<Melee_Attack_Rate?>10</Melee_Attack_Rate?>
+	<Melee_Attack_Rate>10</Melee_Attack_Rate>
 	<4>2</4>
 	<Weapon>SDMD</Weapon>
 	<Bitflags>1100 0000</Bitflags>
@@ -1171,13 +1172,13 @@
 	<Unit_Block_Head>TWVycnlNYW5TdGFmZg4AUGF5c2FuIEQgQmF0b24KAE1tZW4gQmF0b24=</Unit_Block_Head> 
 	<HP>80</HP>
 	<1>80</1>
-	<2>100</2>
+	<Thread_Threshold>100</Thread_Threshold>
 	<Officer_Value>0</Officer_Value>
 	<3>0</3>
 	<Guard_Value>0</Guard_Value>
 	<Ranged_Attack_Rate>80</Ranged_Attack_Rate>
 	<Melee_Attack_Damage>100</Melee_Attack_Damage>
-	<Melee_Attack_Rate?>70</Melee_Attack_Rate?>
+	<Melee_Attack_Rate>70</Melee_Attack_Rate>
 	<4>2</4>
 	<Weapon>SDMD</Weapon>
 	<Bitflags>1100 0000</Bitflags>
@@ -1193,17 +1194,17 @@
 	<12>7</12>
 </MerryMan, Paysan>
 
-<Trainer, Fernandez>
+<MerryMan, Paysan>
 	<Unit_Block_Head>VHJhaW5lcgoARW50cmFpbmV1chgAVHJhaW5lciA6IEx1aXMgRmVybmFuZGV6</Unit_Block_Head> 
 	<HP>80</HP>
 	<1>80</1>
-	<2>100</2>
+	<Thread_Threshold>100</Thread_Threshold>
 	<Officer_Value>0</Officer_Value>
 	<3>95</3>
 	<Guard_Value>0</Guard_Value>
 	<Ranged_Attack_Rate>80</Ranged_Attack_Rate>
 	<Melee_Attack_Damage>90</Melee_Attack_Damage>
-	<Melee_Attack_Rate?>100</Melee_Attack_Rate?>
+	<Melee_Attack_Rate>100</Melee_Attack_Rate>
 	<4>2</4>
 	<Weapon>SDTM</Weapon>
 	<Bitflags>1101 0001</Bitflags>
@@ -1217,19 +1218,19 @@
 	<10>0</10>
 	<11>0</11>
 	<12>9</12>
-</Trainer, Fernandez>
+</MerryMan, Paysan>
 
 <Guard A, Vert Mechant>
 	<Unit_Block_Head>R3VhcmQgQTA1BwBHYXJkZSBBGQBIYWxsZWJhcmRpZXIgVmVydCBNZWNoYW50</Unit_Block_Head> 
 	<HP>90</HP>
 	<1>15</1>
-	<2>45</2>
+	<Thread_Threshold>45</Thread_Threshold>
 	<Officer_Value>0</Officer_Value>
 	<3>0</3>
 	<Guard_Value>1</Guard_Value>
 	<Ranged_Attack_Rate>0</Ranged_Attack_Rate>
 	<Melee_Attack_Damage>20</Melee_Attack_Damage>
-	<Melee_Attack_Rate?>20</Melee_Attack_Rate?>
+	<Melee_Attack_Rate>20</Melee_Attack_Rate>
 	<4>0</4>
 	<Weapon>SDHL</Weapon>
 	<Bitflags>1111 0001</Bitflags>
@@ -1249,13 +1250,13 @@
 	<Unit_Block_Head>U29sZGllciBBMDUIAFNvbGRhdCBBEQBFcGVlIFZlcnQgTWVjaGFudA==</Unit_Block_Head> 
 	<HP>90</HP>
 	<1>35</1>
-	<2>45</2>
+	<Thread_Threshold>45</Thread_Threshold>
 	<Officer_Value>0</Officer_Value>
 	<3>0</3>
 	<Guard_Value>0</Guard_Value>
 	<Ranged_Attack_Rate>0</Ranged_Attack_Rate>
 	<Melee_Attack_Damage>20</Melee_Attack_Damage>
-	<Melee_Attack_Rate?>20</Melee_Attack_Rate?>
+	<Melee_Attack_Rate>20</Melee_Attack_Rate>
 	<4>0</4>
 	<Weapon>SDSW</Weapon>
 	<Bitflags>1110 0001</Bitflags>
@@ -1275,13 +1276,13 @@
 	<Unit_Block_Head>QXJjaGVyMDUGAEFyY2hlchMAQXJjaGVyIFZlcnQgTWVjaGFudA==</Unit_Block_Head> 
 	<HP>40</HP>
 	<1>45</1>
-	<2>5</2>
+	<Thread_Threshold>5</Thread_Threshold>
 	<Officer_Value>0</Officer_Value>
 	<3>0</3>
 	<Guard_Value>0</Guard_Value>
 	<Ranged_Attack_Rate>40</Ranged_Attack_Rate>
 	<Melee_Attack_Damage>30</Melee_Attack_Damage>
-	<Melee_Attack_Rate?>10</Melee_Attack_Rate?>
+	<Melee_Attack_Rate>10</Melee_Attack_Rate>
 	<4>0</4>
 	<Weapon>SDBW</Weapon>
 	<Bitflags>1111 0001</Bitflags>
@@ -1301,13 +1302,13 @@
 	<Unit_Block_Head>T2ZmaWNlcjA1CABPZmZpY2llchUAT2ZmaWNpZXIgVmVydCBNZWNoYW50</Unit_Block_Head> 
 	<HP>140</HP>
 	<1>75</1>
-	<2>55</2>
+	<Thread_Threshold>55</Thread_Threshold>
 	<Officer_Value>60</Officer_Value>
 	<3>45</3>
 	<Guard_Value>0</Guard_Value>
 	<Ranged_Attack_Rate>0</Ranged_Attack_Rate>
 	<Melee_Attack_Damage>55</Melee_Attack_Damage>
-	<Melee_Attack_Rate?>70</Melee_Attack_Rate?>
+	<Melee_Attack_Rate>70</Melee_Attack_Rate>
 	<4>1</4>
 	<Weapon>SDOF</Weapon>
 	<Bitflags>1100 0001</Bitflags>
@@ -1327,13 +1328,13 @@
 	<Unit_Block_Head>U29sZGllciBCMDUIAFNvbGRhdCBCFgBDaGV2YWxpZXIgVmVydCBNZWNoYW50</Unit_Block_Head> 
 	<HP>115</HP>
 	<1>85</1>
-	<2>85</2>
+	<Thread_Threshold>85</Thread_Threshold>
 	<Officer_Value>0</Officer_Value>
 	<3>60</3>
 	<Guard_Value>0</Guard_Value>
 	<Ranged_Attack_Rate>0</Ranged_Attack_Rate>
 	<Melee_Attack_Damage>70</Melee_Attack_Damage>
-	<Melee_Attack_Rate?>85</Melee_Attack_Rate?>
+	<Melee_Attack_Rate>85</Melee_Attack_Rate>
 	<4>2</4>
 	<Weapon>SDKN
 </Weapon>
@@ -1354,13 +1355,13 @@
 	<Unit_Block_Head>R3VhcmQgQjA1BwBHYXJkZSBCFABMYW5jaWVyIFZlcnQgTWVjaGFudA==</Unit_Block_Head> 
 	<HP>55</HP>
 	<1>5</1>
-	<2>15</2>
+	<Thread_Threshold>15</Thread_Threshold>
 	<Officer_Value>0</Officer_Value>
 	<3>0</3>
 	<Guard_Value>1</Guard_Value>
 	<Ranged_Attack_Rate>0</Ranged_Attack_Rate>
 	<Melee_Attack_Damage>15</Melee_Attack_Damage>
-	<Melee_Attack_Rate?>20</Melee_Attack_Rate?>
+	<Melee_Attack_Rate>20</Melee_Attack_Rate>
 	<4>0</4>
 	<Weapon>SDLN</Weapon>
 	<Bitflags>1110 0001</Bitflags>
@@ -1380,13 +1381,13 @@
 	<Unit_Block_Head>Q3Jvc3Nib3dtYW4wNQsAQXJiYWxldHJpZXIYAEFyYmFsZXRyaWVyIFZlcnQgTWVjaGFudA==</Unit_Block_Head> 
 	<HP>90</HP>
 	<1>25</1>
-	<2>35</2>
+	<Thread_Threshold>35</Thread_Threshold>
 	<Officer_Value>0</Officer_Value>
 	<3>0</3>
 	<Guard_Value>0</Guard_Value>
 	<Ranged_Attack_Rate>40</Ranged_Attack_Rate>
 	<Melee_Attack_Damage>30</Melee_Attack_Damage>
-	<Melee_Attack_Rate?>10</Melee_Attack_Rate?>
+	<Melee_Attack_Rate>10</Melee_Attack_Rate>
 	<4>0</4>
 	<Weapon>SDCB</Weapon>
 	<Bitflags>1110 0001</Bitflags>
@@ -1406,13 +1407,13 @@
 	<Unit_Block_Head>S25pZ2h0MDIGAEtuaWdodBAATmUgcGFzIHV0aWxpc2VyMQ==</Unit_Block_Head> 
 	<HP>105</HP>
 	<1>50</1>
-	<2>80</2>
+	<Thread_Threshold>80</Thread_Threshold>
 	<Officer_Value>0</Officer_Value>
 	<3>60</3>
 	<Guard_Value>0</Guard_Value>
 	<Ranged_Attack_Rate>0</Ranged_Attack_Rate>
 	<Melee_Attack_Damage>60</Melee_Attack_Damage>
-	<Melee_Attack_Rate?>80</Melee_Attack_Rate?>
+	<Melee_Attack_Rate>80</Melee_Attack_Rate>
 	<4>2</4>
 	<Weapon>SDRD</Weapon>
 	<Bitflags>1100 0111</Bitflags>
@@ -1432,13 +1433,13 @@
 	<Unit_Block_Head>S25pZ2h0MDEGAEtuaWdodA4AQ2F2YWxpZXIgSmF1bmU=</Unit_Block_Head> 
 	<HP>115</HP>
 	<1>60</1>
-	<2>85</2>
+	<Thread_Threshold>85</Thread_Threshold>
 	<Officer_Value>0</Officer_Value>
 	<3>70</3>
 	<Guard_Value>0</Guard_Value>
 	<Ranged_Attack_Rate>0</Ranged_Attack_Rate>
 	<Melee_Attack_Damage>70</Melee_Attack_Damage>
-	<Melee_Attack_Rate?>85</Melee_Attack_Rate?>
+	<Melee_Attack_Rate>85</Melee_Attack_Rate>
 	<4>2</4>
 	<Weapon>SDRD</Weapon>
 	<Bitflags>1100 0111</Bitflags>
@@ -1458,13 +1459,13 @@
 	<Unit_Block_Head>S25pZ2h0MDIGAEtuaWdodA8AQ2F2YWxpZXIgT3Jhbmdl</Unit_Block_Head> 
 	<HP>125</HP>
 	<1>70</1>
-	<2>90</2>
+	<Thread_Threshold>90</Thread_Threshold>
 	<Officer_Value>0</Officer_Value>
 	<3>80</3>
 	<Guard_Value>0</Guard_Value>
 	<Ranged_Attack_Rate>0</Ranged_Attack_Rate>
 	<Melee_Attack_Damage>80</Melee_Attack_Damage>
-	<Melee_Attack_Rate?>90</Melee_Attack_Rate?>
+	<Melee_Attack_Rate>90</Melee_Attack_Rate>
 	<4>2</4>
 	<Weapon>SDRD</Weapon>
 	<Bitflags>1100 0111</Bitflags>
@@ -1484,13 +1485,13 @@
 	<Unit_Block_Head>S25pZ2h0MDMGAEtuaWdodA4AQ2F2YWxpZXIgUm91Z2U=</Unit_Block_Head> 
 	<HP>135</HP>
 	<1>80</1>
-	<2>95</2>
+	<Thread_Threshold>95</Thread_Threshold>
 	<Officer_Value>0</Officer_Value>
 	<3>90</3>
 	<Guard_Value>0</Guard_Value>
 	<Ranged_Attack_Rate>0</Ranged_Attack_Rate>
 	<Melee_Attack_Damage>90</Melee_Attack_Damage>
-	<Melee_Attack_Rate?>95</Melee_Attack_Rate?>
+	<Melee_Attack_Rate>95</Melee_Attack_Rate>
 	<4>2</4>
 	<Weapon>SDRD</Weapon>
 	<Bitflags>1100 0111</Bitflags>
@@ -1510,13 +1511,13 @@
 	<Unit_Block_Head>S25pZ2h0MDIGAEtuaWdodBAATmUgcGFzIHV0aWxpc2VyMg==</Unit_Block_Head> 
 	<HP>145</HP>
 	<1>90</1>
-	<2>100</2>
+	<Thread_Threshold>100</Thread_Threshold>
 	<Officer_Value>0</Officer_Value>
 	<3>100</3>
 	<Guard_Value>0</Guard_Value>
 	<Ranged_Attack_Rate>0</Ranged_Attack_Rate>
 	<Melee_Attack_Damage>100</Melee_Attack_Damage>
-	<Melee_Attack_Rate?>100</Melee_Attack_Rate?>
+	<Melee_Attack_Rate>100</Melee_Attack_Rate>
 	<4>2</4>
 	<Weapon>SDRD</Weapon>
 	<Bitflags>1100 0111</Bitflags>
@@ -1536,13 +1537,13 @@
 	<Unit_Block_Head>S25pZ2h0MDIGAEtuaWdodBAATmUgcGFzIHV0aWxpc2VyMw==</Unit_Block_Head> 
 	<HP>125</HP>
 	<1>70</1>
-	<2>90</2>
+	<Thread_Threshold>90</Thread_Threshold>
 	<Officer_Value>0</Officer_Value>
 	<3>0</3>
 	<Guard_Value>0</Guard_Value>
 	<Ranged_Attack_Rate>0</Ranged_Attack_Rate>
 	<Melee_Attack_Damage>80</Melee_Attack_Damage>
-	<Melee_Attack_Rate?>90</Melee_Attack_Rate?>
+	<Melee_Attack_Rate>90</Melee_Attack_Rate>
 	<4>2</4>
 	<Weapon>SDRD</Weapon>
 	<Bitflags>1100 0110</Bitflags>
@@ -1562,13 +1563,13 @@
 	<Unit_Block_Head>S25pZ2h0MDIGAEtuaWdodBAATmUgcGFzIHV0aWxpc2VyNA==</Unit_Block_Head> 
 	<HP>125</HP>
 	<1>70</1>
-	<2>90</2>
+	<Thread_Threshold>90</Thread_Threshold>
 	<Officer_Value>0</Officer_Value>
 	<3>0</3>
 	<Guard_Value>0</Guard_Value>
 	<Ranged_Attack_Rate>0</Ranged_Attack_Rate>
 	<Melee_Attack_Damage>80</Melee_Attack_Damage>
-	<Melee_Attack_Rate?>90</Melee_Attack_Rate?>
+	<Melee_Attack_Rate>90</Melee_Attack_Rate>
 	<4>2</4>
 	<Weapon>SDRD</Weapon>
 	<Bitflags>1100 0111</Bitflags>
@@ -1588,13 +1589,13 @@
 	<Unit_Block_Head>R3Vpc2JvdXJuZQoAR3Vpc2JvdXJuZREAR3V5IG9mIEd1aXNib3VybmU=</Unit_Block_Head> 
 	<HP>250</HP>
 	<1>100</1>
-	<2>100</2>
+	<Thread_Threshold>100</Thread_Threshold>
 	<Officer_Value>0</Officer_Value>
 	<3>100</3>
 	<Guard_Value>0</Guard_Value>
 	<Ranged_Attack_Rate>0</Ranged_Attack_Rate>
 	<Melee_Attack_Damage>100</Melee_Attack_Damage>
-	<Melee_Attack_Rate?>100</Melee_Attack_Rate?>
+	<Melee_Attack_Rate>100</Melee_Attack_Rate>
 	<4>2</4>
 	<Weapon>VPGG
 </Weapon>
@@ -1615,13 +1616,13 @@
 	<Unit_Block_Head>TG9uZ2NoYW1wCQBMb25nY2hhbXAQAExvbmdjaGFtcCAoWW9yayk=</Unit_Block_Head> 
 	<HP>250</HP>
 	<1>100</1>
-	<2>100</2>
+	<Thread_Threshold>100</Thread_Threshold>
 	<Officer_Value>0</Officer_Value>
 	<3>100</3>
 	<Guard_Value>0</Guard_Value>
 	<Ranged_Attack_Rate>0</Ranged_Attack_Rate>
 	<Melee_Attack_Damage>100</Melee_Attack_Damage>
-	<Melee_Attack_Rate?>100</Melee_Attack_Rate?>
+	<Melee_Attack_Rate>100</Melee_Attack_Rate>
 	<4>2</4>
 	<Weapon>VPGL
 </Weapon>
@@ -1642,13 +1643,13 @@
 	<Unit_Block_Head>U2NhdGxvY2sIAFNjYXRsb2NrEQBTY2F0aGxvY2sgKERlcmJ5KQ==</Unit_Block_Head> 
 	<HP>250</HP>
 	<1>100</1>
-	<2>100</2>
+	<Thread_Threshold>100</Thread_Threshold>
 	<Officer_Value>0</Officer_Value>
 	<3>100</3>
 	<Guard_Value>0</Guard_Value>
 	<Ranged_Attack_Rate>0</Ranged_Attack_Rate>
 	<Melee_Attack_Damage>100</Melee_Attack_Damage>
-	<Melee_Attack_Rate?>100</Melee_Attack_Rate?>
+	<Melee_Attack_Rate>100</Melee_Attack_Rate>
 	<4>2</4>
 	<Weapon>VPSK
 </Weapon>
@@ -1669,13 +1670,13 @@
 	<Unit_Block_Head>c2hlcmlmBgBTaGVyaWYVAFNoZXJpZmYgb2YgTm90dGluZ2hhbQ==</Unit_Block_Head> 
 	<HP>250</HP>
 	<1>100</1>
-	<2>100</2>
+	<Thread_Threshold>100</Thread_Threshold>
 	<Officer_Value>0</Officer_Value>
 	<3>100</3>
 	<Guard_Value>0</Guard_Value>
 	<Ranged_Attack_Rate>0</Ranged_Attack_Rate>
 	<Melee_Attack_Damage>100</Melee_Attack_Damage>
-	<Melee_Attack_Rate?>100</Melee_Attack_Rate?>
+	<Melee_Attack_Rate>100</Melee_Attack_Rate>
 	<4>2</4>
 	<Weapon>VPSN
 </Weapon>
@@ -1696,13 +1697,13 @@
 	<Unit_Block_Head>T2ZmaWNlcjAyCABPZmZpY2llchAATmUgcGFzIHV0aWxpc2VyNQ==</Unit_Block_Head> 
 	<HP>130</HP>
 	<1>70</1>
-	<2>50</2>
+	<Thread_Threshold>50</Thread_Threshold>
 	<Officer_Value>80</Officer_Value>
 	<3>35</3>
 	<Guard_Value>0</Guard_Value>
 	<Ranged_Attack_Rate>0</Ranged_Attack_Rate>
 	<Melee_Attack_Damage>40</Melee_Attack_Damage>
-	<Melee_Attack_Rate?>60</Melee_Attack_Rate?>
+	<Melee_Attack_Rate>60</Melee_Attack_Rate>
 	<4>1</4>
 	<Weapon>SDOF</Weapon>
 	<Bitflags>1100 0001</Bitflags>
@@ -1722,13 +1723,13 @@
 	<Unit_Block_Head>T2ZmaWNlcjAyCABPZmZpY2llchAATmUgcGFzIHV0aWxpc2VyNg==</Unit_Block_Head> 
 	<HP>140</HP>
 	<1>75</1>
-	<2>55</2>
+	<Thread_Threshold>55</Thread_Threshold>
 	<Officer_Value>60</Officer_Value>
 	<3>45</3>
 	<Guard_Value>0</Guard_Value>
 	<Ranged_Attack_Rate>0</Ranged_Attack_Rate>
 	<Melee_Attack_Damage>55</Melee_Attack_Damage>
-	<Melee_Attack_Rate?>70</Melee_Attack_Rate?>
+	<Melee_Attack_Rate>70</Melee_Attack_Rate>
 	<4>1</4>
 	<Weapon>SDOF</Weapon>
 	<Bitflags>1100 0001</Bitflags>
@@ -1748,13 +1749,13 @@
 	<Unit_Block_Head>T2ZmaWNlcjAyCABPZmZpY2llchcAT2ZmaWNpZXIgU3BlY2lhbCBPcmFuZ2U=</Unit_Block_Head> 
 	<HP>150</HP>
 	<1>80</1>
-	<2>60</2>
+	<Thread_Threshold>60</Thread_Threshold>
 	<Officer_Value>40</Officer_Value>
 	<3>55</3>
 	<Guard_Value>0</Guard_Value>
 	<Ranged_Attack_Rate>0</Ranged_Attack_Rate>
 	<Melee_Attack_Damage>70</Melee_Attack_Damage>
-	<Melee_Attack_Rate?>80</Melee_Attack_Rate?>
+	<Melee_Attack_Rate>80</Melee_Attack_Rate>
 	<4>1</4>
 	<Weapon>SDOF</Weapon>
 	<Bitflags>1100 0001</Bitflags>
@@ -1774,13 +1775,13 @@
 	<Unit_Block_Head>T2ZmaWNlcjAzCABPZmZpY2llchYAT2ZmaWNpZXIgU3BlY2lhbCBSb3VnZQ==</Unit_Block_Head> 
 	<HP>160</HP>
 	<1>85</1>
-	<2>65</2>
+	<Thread_Threshold>65</Thread_Threshold>
 	<Officer_Value>20</Officer_Value>
 	<3>65</3>
 	<Guard_Value>0</Guard_Value>
 	<Ranged_Attack_Rate>0</Ranged_Attack_Rate>
 	<Melee_Attack_Damage>85</Melee_Attack_Damage>
-	<Melee_Attack_Rate?>90</Melee_Attack_Rate?>
+	<Melee_Attack_Rate>90</Melee_Attack_Rate>
 	<4>1</4>
 	<Weapon>SDOF</Weapon>
 	<Bitflags>1100 0001</Bitflags>
@@ -1800,13 +1801,13 @@
 	<Unit_Block_Head>T2ZmaWNlcjA0CABPZmZpY2llchUAT2ZmaWNpZXIgU3BlY2lhbCBOb2ly</Unit_Block_Head> 
 	<HP>170</HP>
 	<1>90</1>
-	<2>70</2>
+	<Thread_Threshold>70</Thread_Threshold>
 	<Officer_Value>0</Officer_Value>
 	<3>75</3>
 	<Guard_Value>0</Guard_Value>
 	<Ranged_Attack_Rate>0</Ranged_Attack_Rate>
 	<Melee_Attack_Damage>100</Melee_Attack_Damage>
-	<Melee_Attack_Rate?>100</Melee_Attack_Rate?>
+	<Melee_Attack_Rate>100</Melee_Attack_Rate>
 	<4>1</4>
 	<Weapon>SDOF</Weapon>
 	<Bitflags>1100 0001</Bitflags>
