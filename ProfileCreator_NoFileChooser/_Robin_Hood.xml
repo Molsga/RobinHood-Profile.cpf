@@ -8,24 +8,24 @@
  	Officer = Special Officer 				Vert = Green
 	Knight0 = Mounted Knight 				Vert Mechant = Green Enemies
  
-	HP = Health Points; 
-	Officer Value is Only Set for Officers and Special Officers Decreasing with Increasing Tier; Officers and Special Officers of Same Tier have same value 
-	Guard Value is 1 for Halbardiers and Lancers and 0 for everything else
-	Ranged Attack Rate = Higher number equals more attacks per minute; 0 makes ranged units unable to fire 
- 	<Melee_Attack_Damage> = Attack rate frequency - the higher value, the enemy attacks more frequentlyn	<Melee_Attack_Rate> = Blue bar stamina - the higher value, more often or bigger part of stamina is restored
-	Weapon: String representation of their Weapon or something similar I guess, 'SD' for normal units 'VP' for enemy Heroes. HL -> Halbardier; SW -> Sword; BW -> Bow; etc.
-	Bitflags: 11xx 0yyz -> x what x is needs to be tested; y is 1 for Mounted Knights and 0 for everything else; z is 0 for ally and 1 for enemies
-	Ranged Value = 2 for Merry Men Bow guys in Forrest Missions; 3 for Archers; 4 for Crossbowmen 
-	Mounted Knight Value = 3 for Mounted Knights, 10 for Enemy Heroes and 64 for everything else (Maybe Should be Renamed)
-	1 -> Needs to be Tested, Values goes Up as Units get better
-	Thread_Threshold -> The Higher the Value the less likely they flee and get help
-	3 -> Needs to be Tested, Always 0 for Both Guard Types, Ranged and Soldier A; Always 0 for all Allies; Value Going up with increasing Tier
-	4 -> Needs to be Tested, 2 for Knight0, Soldier B and the Merry Man, 1 for Officers and Officer B0's and 0 for everything Else
-	Response_Purse -> Needs to be Tested, Value goes down as Units get better: Only Applied to Guard B, Soldier A and Archers: Rest and all Allies is 0 (Response to Purse)
-	Response_Apple -> Needs to be Tested, Value goes down as Units get better: Only Applied to Soldier A, Soldier B, Knight0 and Crossbow: Rest and all Allies is 0 (Response to Apple)
-	Response_Beer -> Needs to be Tested, Value goes down as Units get better: Only Applied to Guards, Crossbowmen and Officers; Rest and all Allies is 0 (Response to Beer)
-	Response_Whistle -> Needs to be Tested, Value goes down as Units get better: Only Applied to Guard B, Soldier A, Archers, Officers and Knight0; Rest and all Allies is 0 (Response to Whistle)
-	9 -> 11: Merry Man Staff Guy 
+	<HP> = Health Points; 
+	<1> -> Needs to be Tested, Values goes Up as Units get better
+	<Thread_Threshold> -> The Higher the Value the less likely they flee and get help
+	<Officer Value> -> is Only Set for Officers and Special Officers Decreasing with Increasing Tier; Officers and Special Officers of Same Tier have same value 
+	<3> -> Needs to be Tested, Always 0 for Both Guard Types, Ranged and Soldier A; Always 0 for all Allies; Value Going up with increasing Tier
+	<Guard Value> is 1 for Halbardiers and Lancers and 0 for everything else 
+	<Ranged Attack Rate> = Higher number equals more attacks per minute; 0 makes ranged units unable to fire 
+	<Melee_Attack_Damage> = Increases the Damage the Unit can Deal; Maximum seems to be at 100 
+ 	<Melee_Attack_Rate> = Blue bar stamina - the higher value, more often or bigger part of stamina is restored
+	<4> -> Needs to be Tested, 2 for Knight0, Soldier B and the Merry Man, 1 for Officers and Officer B0's and 0 for everything Else
+	<Weapon_String> -> String representation of their Weapon or something similar I guess, 'SD' for normal units 'VP' for enemy Heroes. HL -> Halbardier; SW -> Sword; BW -> Bow;
+	<Weapon_Byte> -> Some Information about the behaivior of the Weapon; 3 for Guards; 5 for Swordsmen and Ranged Melee Attacks; 7 for Officers; 10 for Knights and Enemy Heroes and 15 for Mounted Knights 
+	<Bitflags>: 11xx Ayyz -> x needs to be tested; A is 1 for Enemy Heroes; y is 1 for Mounted Knights; z is 0 for Allies and 1 for Enemies 
+	<Response_Purse> -> Needs to be Tested, Value goes down as Units get better: Only Applied to Guard B, Soldier A and Archers: Rest and all Allies is 0 (Response to Purse)
+	<Response_Apple> -> Needs to be Tested, Value goes down as Units get better: Only Applied to Soldier A, Soldier B, Knight0 and Crossbow: Rest and all Allies is 0 (Response to Apple)
+	<Response_Beer> -> Needs to be Tested, Value goes down as Units get better: Only Applied to Guards, Crossbowmen and Officers; Rest and all Allies is 0 (Response to Beer)
+	<Response_Whistle> -> Needs to be Tested, Value goes down as Units get better: Only Applied to Guard B, Soldier A, Archers, Officers and Knight0; Rest and all Allies is 0 (Response to Whistle)
+	<9> -> 11: Merry Man Staff Guy 
 	     12: Lancer 
 	     13: Archers(Merry Man Included) 
 	     14: Halbardier 
@@ -37,9 +37,11 @@
 	     20: Crossbowmen 
 	Green Enemies: 
 	     21-27 (No Mounted Knights)
-	10 -> Needs to be Tested, 3 for Guards; 2 for Knight0, Soldier B and Scathlock; 1 for Soldier A, Officers, Guiy of Guisbourne, Longchamp and Sheriff; 0 for all Ranged and Both Merry Man Types
-	11 -> Needs to be Tested, 2 for Knight0, Soldier B, Guard A and Guy of Guisbourne; 1 for Soldier A, Officers, Crossbowmen and Scathlock, 0 for Guard B, Archers, Longchamp and Sheriff
-	12 -> Needs to be Tested, Weirdest Field of them All, maybe another Bitflag Field, couldn't figure anything out 
+	<Ranged_Value> = 2 for Merry Men Bow guys in Forrest Missions; 3 for Archers; 4 for Crossbowmen 
+	<Mounted_Knight_Value> = 3 for Mounted Knights, 10 for Enemy Heroes and 64 for everything else (Maybe Should be Renamed) 
+	<10> -> Needs to be Tested, 3 for Guards; 2 for Knight0, Soldier B and Scathlock; 1 for Soldier A, Officers, Guiy of Guisbourne, Longchamp and Sheriff; 0 for all Ranged and Both Merry Man Types
+	<11> -> Needs to be Tested, 2 for Knight0, Soldier B, Guard A and Guy of Guisbourne; 1 for Soldier A, Officers, Crossbowmen and Scathlock, 0 for Guard B, Archers, Longchamp and Sheriff
+	<12> -> Needs to be Tested, Weirdest Field of them All, maybe another Bitflag Field, couldn't figure anything out 
 		Guards, Soldiers, Knight0, Archer and Crossbow have the Same Value for 'normal' enemies, and extra value for Green Enemies and Green Allies; 
 		Black Officers have a diffrent Value than other Officers all together
 </Comment> 
@@ -56,7 +58,8 @@
 	<Melee_Attack_Damage>5</Melee_Attack_Damage>
 	<Melee_Attack_Rate>10</Melee_Attack_Rate>
 	<4>0</4>
-	<Weapon>SDHL</Weapon>
+	<Weapon_String>SDHL</Weapon_String>
+	<Weapon_Byte>3</Weapon_Byte>
 	<Bitflags>1111 0001</Bitflags>
 	<Response_Purse>0</Response_Purse>
 	<Response_Apple>0</Response_Apple>
@@ -82,7 +85,8 @@
 	<Melee_Attack_Damage>20</Melee_Attack_Damage>
 	<Melee_Attack_Rate>20</Melee_Attack_Rate>
 	<4>0</4>
-	<Weapon>SDHL</Weapon>
+	<Weapon_String>SDHL</Weapon_String>
+	<Weapon_Byte>3</Weapon_Byte>
 	<Bitflags>1111 0001</Bitflags>
 	<Response_Purse>0</Response_Purse>
 	<Response_Apple>0</Response_Apple>
@@ -108,7 +112,8 @@
 	<Melee_Attack_Damage>40</Melee_Attack_Damage>
 	<Melee_Attack_Rate>30</Melee_Attack_Rate>
 	<4>0</4>
-	<Weapon>SDHL</Weapon>
+	<Weapon_String>SDHL</Weapon_String>
+	<Weapon_Byte>3</Weapon_Byte>
 	<Bitflags>1111 0001</Bitflags>
 	<Response_Purse>0</Response_Purse>
 	<Response_Apple>0</Response_Apple>
@@ -134,7 +139,8 @@
 	<Melee_Attack_Damage>60</Melee_Attack_Damage>
 	<Melee_Attack_Rate>40</Melee_Attack_Rate>
 	<4>0</4>
-	<Weapon>SDHL</Weapon>
+	<Weapon_String>SDHL</Weapon_String>
+	<Weapon_Byte>3</Weapon_Byte>
 	<Bitflags>1111 0001</Bitflags>
 	<Response_Purse>0</Response_Purse>
 	<Response_Apple>0</Response_Apple>
@@ -160,7 +166,8 @@
 	<Melee_Attack_Damage>80</Melee_Attack_Damage>
 	<Melee_Attack_Rate>50</Melee_Attack_Rate>
 	<4>0</4>
-	<Weapon>SDHL</Weapon>
+	<Weapon_String>SDHL</Weapon_String>
+	<Weapon_Byte>3</Weapon_Byte>
 	<Bitflags>1111 0001</Bitflags>
 	<Response_Purse>0</Response_Purse>
 	<Response_Apple>0</Response_Apple>
@@ -186,7 +193,8 @@
 	<Melee_Attack_Damage>40</Melee_Attack_Damage>
 	<Melee_Attack_Rate>30</Melee_Attack_Rate>
 	<4>0</4>
-	<Weapon>SDHL</Weapon>
+	<Weapon_String>SDHL</Weapon_String>
+	<Weapon_Byte>3</Weapon_Byte>
 	<Bitflags>1101 0000</Bitflags>
 	<Response_Purse>0</Response_Purse>
 	<Response_Apple>0</Response_Apple>
@@ -212,7 +220,8 @@
 	<Melee_Attack_Damage>5</Melee_Attack_Damage>
 	<Melee_Attack_Rate>10</Melee_Attack_Rate>
 	<4>0</4>
-	<Weapon>SDSW</Weapon>
+	<Weapon_String>SDSW</Weapon_String>
+	<Weapon_Byte>5</Weapon_Byte>
 	<Bitflags>1110 0001</Bitflags>
 	<Response_Purse>50</Response_Purse>
 	<Response_Apple>100</Response_Apple>
@@ -238,7 +247,8 @@
 	<Melee_Attack_Damage>20</Melee_Attack_Damage>
 	<Melee_Attack_Rate>20</Melee_Attack_Rate>
 	<4>0</4>
-	<Weapon>SDSW</Weapon>
+	<Weapon_String>SDSW</Weapon_String>
+	<Weapon_Byte>5</Weapon_Byte>
 	<Bitflags>1110 0001</Bitflags>
 	<Response_Purse>40</Response_Purse>
 	<Response_Apple>95</Response_Apple>
@@ -264,7 +274,8 @@
 	<Melee_Attack_Damage>40</Melee_Attack_Damage>
 	<Melee_Attack_Rate>30</Melee_Attack_Rate>
 	<4>0</4>
-	<Weapon>SDSW</Weapon>
+	<Weapon_String>SDSW</Weapon_String>
+	<Weapon_Byte>5</Weapon_Byte>
 	<Bitflags>1110 0001</Bitflags>
 	<Response_Purse>30</Response_Purse>
 	<Response_Apple>90</Response_Apple>
@@ -290,7 +301,8 @@
 	<Melee_Attack_Damage>60</Melee_Attack_Damage>
 	<Melee_Attack_Rate>40</Melee_Attack_Rate>
 	<4>0</4>
-	<Weapon>SDSW</Weapon>
+	<Weapon_String>SDSW</Weapon_String>
+	<Weapon_Byte>5</Weapon_Byte>
 	<Bitflags>1110 0001</Bitflags>
 	<Response_Purse>20</Response_Purse>
 	<Response_Apple>85</Response_Apple>
@@ -316,7 +328,8 @@
 	<Melee_Attack_Damage>80</Melee_Attack_Damage>
 	<Melee_Attack_Rate>50</Melee_Attack_Rate>
 	<4>0</4>
-	<Weapon>SDSW</Weapon>
+	<Weapon_String>SDSW</Weapon_String>
+	<Weapon_Byte>5</Weapon_Byte>
 	<Bitflags>1110 0001</Bitflags>
 	<Response_Purse>10</Response_Purse>
 	<Response_Apple>80</Response_Apple>
@@ -342,7 +355,8 @@
 	<Melee_Attack_Damage>40</Melee_Attack_Damage>
 	<Melee_Attack_Rate>30</Melee_Attack_Rate>
 	<4>0</4>
-	<Weapon>SDSW</Weapon>
+	<Weapon_String>SDSW</Weapon_String>
+	<Weapon_Byte>5</Weapon_Byte>
 	<Bitflags>1100 0000</Bitflags>
 	<Response_Purse>0</Response_Purse>
 	<Response_Apple>0</Response_Apple>
@@ -368,7 +382,8 @@
 	<Melee_Attack_Damage>30</Melee_Attack_Damage>
 	<Melee_Attack_Rate>10</Melee_Attack_Rate>
 	<4>0</4>
-	<Weapon>SDBW</Weapon>
+	<Weapon_String>SDBW</Weapon_String>
+	<Weapon_Byte>5</Weapon_Byte>
 	<Bitflags>1111 0001</Bitflags>
 	<Response_Purse>100</Response_Purse>
 	<Response_Apple>0</Response_Apple>
@@ -394,7 +409,8 @@
 	<Melee_Attack_Damage>30</Melee_Attack_Damage>
 	<Melee_Attack_Rate>10</Melee_Attack_Rate>
 	<4>0</4>
-	<Weapon>SDBW</Weapon>
+	<Weapon_String>SDBW</Weapon_String>
+	<Weapon_Byte>5</Weapon_Byte>
 	<Bitflags>1111 0001</Bitflags>
 	<Response_Purse>90</Response_Purse>
 	<Response_Apple>0</Response_Apple>
@@ -420,7 +436,8 @@
 	<Melee_Attack_Damage>30</Melee_Attack_Damage>
 	<Melee_Attack_Rate>10</Melee_Attack_Rate>
 	<4>0</4>
-	<Weapon>SDBW</Weapon>
+	<Weapon_String>SDBW</Weapon_String>
+	<Weapon_Byte>5</Weapon_Byte>
 	<Bitflags>1111 0001</Bitflags>
 	<Response_Purse>80</Response_Purse>
 	<Response_Apple>0</Response_Apple>
@@ -446,7 +463,8 @@
 	<Melee_Attack_Damage>30</Melee_Attack_Damage>
 	<Melee_Attack_Rate>10</Melee_Attack_Rate>
 	<4>0</4>
-	<Weapon>SDBW</Weapon>
+	<Weapon_String>SDBW</Weapon_String>
+	<Weapon_Byte>5</Weapon_Byte>
 	<Bitflags>1111 0001</Bitflags>
 	<Response_Purse>70</Response_Purse>
 	<Response_Apple>0</Response_Apple>
@@ -472,7 +490,8 @@
 	<Melee_Attack_Damage>30</Melee_Attack_Damage>
 	<Melee_Attack_Rate>10</Melee_Attack_Rate>
 	<4>0</4>
-	<Weapon>SDBW</Weapon>
+	<Weapon_String>SDBW</Weapon_String>
+	<Weapon_Byte>5</Weapon_Byte>
 	<Bitflags>1111 0001</Bitflags>
 	<Response_Purse>60</Response_Purse>
 	<Response_Apple>0</Response_Apple>
@@ -498,7 +517,8 @@
 	<Melee_Attack_Damage>30</Melee_Attack_Damage>
 	<Melee_Attack_Rate>10</Melee_Attack_Rate>
 	<4>0</4>
-	<Weapon>SDBW</Weapon>
+	<Weapon_String>SDBW</Weapon_String>
+	<Weapon_Byte>5</Weapon_Byte>
 	<Bitflags>1101 0000</Bitflags>
 	<Response_Purse>0</Response_Purse>
 	<Response_Apple>0</Response_Apple>
@@ -524,7 +544,8 @@
 	<Melee_Attack_Damage>40</Melee_Attack_Damage>
 	<Melee_Attack_Rate>60</Melee_Attack_Rate>
 	<4>1</4>
-	<Weapon>SDOF</Weapon>
+	<Weapon_String>SDOF</Weapon_String>
+	<Weapon_Byte>7</Weapon_Byte>
 	<Bitflags>1100 0001</Bitflags>
 	<Response_Purse>0</Response_Purse>
 	<Response_Apple>80</Response_Apple>
@@ -550,7 +571,8 @@
 	<Melee_Attack_Damage>55</Melee_Attack_Damage>
 	<Melee_Attack_Rate>70</Melee_Attack_Rate>
 	<4>1</4>
-	<Weapon>SDOF</Weapon>
+	<Weapon_String>SDOF</Weapon_String>
+	<Weapon_Byte>7</Weapon_Byte>
 	<Bitflags>1100 0001</Bitflags>
 	<Response_Purse>0</Response_Purse>
 	<Response_Apple>75</Response_Apple>
@@ -576,7 +598,8 @@
 	<Melee_Attack_Damage>70</Melee_Attack_Damage>
 	<Melee_Attack_Rate>80</Melee_Attack_Rate>
 	<4>1</4>
-	<Weapon>SDOF</Weapon>
+	<Weapon_String>SDOF</Weapon_String>
+	<Weapon_Byte>7</Weapon_Byte>
 	<Bitflags>1100 0001</Bitflags>
 	<Response_Purse>0</Response_Purse>
 	<Response_Apple>70</Response_Apple>
@@ -602,7 +625,8 @@
 	<Melee_Attack_Damage>85</Melee_Attack_Damage>
 	<Melee_Attack_Rate>90</Melee_Attack_Rate>
 	<4>1</4>
-	<Weapon>SDOF</Weapon>
+	<Weapon_String>SDOF</Weapon_String>
+	<Weapon_Byte>7</Weapon_Byte>
 	<Bitflags>1100 0001</Bitflags>
 	<Response_Purse>0</Response_Purse>
 	<Response_Apple>65</Response_Apple>
@@ -628,7 +652,8 @@
 	<Melee_Attack_Damage>100</Melee_Attack_Damage>
 	<Melee_Attack_Rate>100</Melee_Attack_Rate>
 	<4>1</4>
-	<Weapon>SDOF</Weapon>
+	<Weapon_String>SDOF</Weapon_String>
+	<Weapon_Byte>7</Weapon_Byte>
 	<Bitflags>1100 0001</Bitflags>
 	<Response_Purse>0</Response_Purse>
 	<Response_Apple>60</Response_Apple>
@@ -654,7 +679,8 @@
 	<Melee_Attack_Damage>80</Melee_Attack_Damage>
 	<Melee_Attack_Rate>60</Melee_Attack_Rate>
 	<4>1</4>
-	<Weapon>SDOF</Weapon>
+	<Weapon_String>SDOF</Weapon_String>
+	<Weapon_Byte>7</Weapon_Byte>
 	<Bitflags>1100 0000</Bitflags>
 	<Response_Purse>0</Response_Purse>
 	<Response_Apple>0</Response_Apple>
@@ -680,8 +706,8 @@
 	<Melee_Attack_Damage>60</Melee_Attack_Damage>
 	<Melee_Attack_Rate>80</Melee_Attack_Rate>
 	<4>2</4>
-	<Weapon>SDKN
-</Weapon>
+	<Weapon_String>SDKN</Weapon_String>
+	<Weapon_Byte>10</Weapon_Byte>
 	<Bitflags>1100 0001</Bitflags>
 	<Response_Purse>0</Response_Purse>
 	<Response_Apple>75</Response_Apple>
@@ -707,8 +733,8 @@
 	<Melee_Attack_Damage>70</Melee_Attack_Damage>
 	<Melee_Attack_Rate>85</Melee_Attack_Rate>
 	<4>2</4>
-	<Weapon>SDKN
-</Weapon>
+	<Weapon_String>SDKN</Weapon_String>
+	<Weapon_Byte>10</Weapon_Byte>
 	<Bitflags>1100 0001</Bitflags>
 	<Response_Purse>0</Response_Purse>
 	<Response_Apple>70</Response_Apple>
@@ -734,8 +760,8 @@
 	<Melee_Attack_Damage>80</Melee_Attack_Damage>
 	<Melee_Attack_Rate>90</Melee_Attack_Rate>
 	<4>2</4>
-	<Weapon>SDKN
-</Weapon>
+	<Weapon_String>SDKN</Weapon_String>
+	<Weapon_Byte>10</Weapon_Byte>
 	<Bitflags>1100 0001</Bitflags>
 	<Response_Purse>0</Response_Purse>
 	<Response_Apple>65</Response_Apple>
@@ -761,8 +787,8 @@
 	<Melee_Attack_Damage>90</Melee_Attack_Damage>
 	<Melee_Attack_Rate>95</Melee_Attack_Rate>
 	<4>2</4>
-	<Weapon>SDKN
-</Weapon>
+	<Weapon_String>SDKN</Weapon_String>
+	<Weapon_Byte>10</Weapon_Byte>
 	<Bitflags>1100 0001</Bitflags>
 	<Response_Purse>0</Response_Purse>
 	<Response_Apple>60</Response_Apple>
@@ -788,8 +814,8 @@
 	<Melee_Attack_Damage>100</Melee_Attack_Damage>
 	<Melee_Attack_Rate>100</Melee_Attack_Rate>
 	<4>2</4>
-	<Weapon>SDKN
-</Weapon>
+	<Weapon_String>SDKN</Weapon_String>
+	<Weapon_Byte>10</Weapon_Byte>
 	<Bitflags>1100 0001</Bitflags>
 	<Response_Purse>0</Response_Purse>
 	<Response_Apple>55</Response_Apple>
@@ -815,8 +841,8 @@
 	<Melee_Attack_Damage>80</Melee_Attack_Damage>
 	<Melee_Attack_Rate>90</Melee_Attack_Rate>
 	<4>2</4>
-	<Weapon>SDKN
-</Weapon>
+	<Weapon_String>SDKN</Weapon_String>
+	<Weapon_Byte>10</Weapon_Byte>
 	<Bitflags>1100 0000</Bitflags>
 	<Response_Purse>0</Response_Purse>
 	<Response_Apple>0</Response_Apple>
@@ -842,7 +868,8 @@
 	<Melee_Attack_Damage>0</Melee_Attack_Damage>
 	<Melee_Attack_Rate>10</Melee_Attack_Rate>
 	<4>0</4>
-	<Weapon>SDLN</Weapon>
+	<Weapon_String>SDLN</Weapon_String>
+	<Weapon_Byte>3</Weapon_Byte>
 	<Bitflags>1110 0001</Bitflags>
 	<Response_Purse>75</Response_Purse>
 	<Response_Apple>0</Response_Apple>
@@ -868,7 +895,8 @@
 	<Melee_Attack_Damage>15</Melee_Attack_Damage>
 	<Melee_Attack_Rate>20</Melee_Attack_Rate>
 	<4>0</4>
-	<Weapon>SDLN</Weapon>
+	<Weapon_String>SDLN</Weapon_String>
+	<Weapon_Byte>3</Weapon_Byte>
 	<Bitflags>1110 0001</Bitflags>
 	<Response_Purse>65</Response_Purse>
 	<Response_Apple>0</Response_Apple>
@@ -894,7 +922,8 @@
 	<Melee_Attack_Damage>30</Melee_Attack_Damage>
 	<Melee_Attack_Rate>30</Melee_Attack_Rate>
 	<4>0</4>
-	<Weapon>SDLN</Weapon>
+	<Weapon_String>SDLN</Weapon_String>
+	<Weapon_Byte>3</Weapon_Byte>
 	<Bitflags>1110 0001</Bitflags>
 	<Response_Purse>55</Response_Purse>
 	<Response_Apple>0</Response_Apple>
@@ -920,7 +949,8 @@
 	<Melee_Attack_Damage>45</Melee_Attack_Damage>
 	<Melee_Attack_Rate>40</Melee_Attack_Rate>
 	<4>0</4>
-	<Weapon>SDLN</Weapon>
+	<Weapon_String>SDLN</Weapon_String>
+	<Weapon_Byte>3</Weapon_Byte>
 	<Bitflags>1110 0001</Bitflags>
 	<Response_Purse>45</Response_Purse>
 	<Response_Apple>0</Response_Apple>
@@ -946,7 +976,8 @@
 	<Melee_Attack_Damage>60</Melee_Attack_Damage>
 	<Melee_Attack_Rate>50</Melee_Attack_Rate>
 	<4>0</4>
-	<Weapon>SDLN</Weapon>
+	<Weapon_String>SDLN</Weapon_String>
+	<Weapon_Byte>3</Weapon_Byte>
 	<Bitflags>1110 0001</Bitflags>
 	<Response_Purse>35</Response_Purse>
 	<Response_Apple>0</Response_Apple>
@@ -972,7 +1003,8 @@
 	<Melee_Attack_Damage>30</Melee_Attack_Damage>
 	<Melee_Attack_Rate>30</Melee_Attack_Rate>
 	<4>0</4>
-	<Weapon>SDLN</Weapon>
+	<Weapon_String>SDLN</Weapon_String>
+	<Weapon_Byte>3</Weapon_Byte>
 	<Bitflags>1100 0000</Bitflags>
 	<Response_Purse>0</Response_Purse>
 	<Response_Apple>0</Response_Apple>
@@ -998,7 +1030,8 @@
 	<Melee_Attack_Damage>30</Melee_Attack_Damage>
 	<Melee_Attack_Rate>10</Melee_Attack_Rate>
 	<4>0</4>
-	<Weapon>SDCB</Weapon>
+	<Weapon_String>SDCB</Weapon_String>
+	<Weapon_Byte>5</Weapon_Byte>
 	<Bitflags>1110 0001</Bitflags>
 	<Response_Purse>0</Response_Purse>
 	<Response_Apple>50</Response_Apple>
@@ -1024,7 +1057,8 @@
 	<Melee_Attack_Damage>30</Melee_Attack_Damage>
 	<Melee_Attack_Rate>10</Melee_Attack_Rate>
 	<4>0</4>
-	<Weapon>SDCB</Weapon>
+	<Weapon_String>SDCB</Weapon_String>
+	<Weapon_Byte>5</Weapon_Byte>
 	<Bitflags>1110 0001</Bitflags>
 	<Response_Purse>0</Response_Purse>
 	<Response_Apple>45</Response_Apple>
@@ -1050,7 +1084,8 @@
 	<Melee_Attack_Damage>30</Melee_Attack_Damage>
 	<Melee_Attack_Rate>10</Melee_Attack_Rate>
 	<4>0</4>
-	<Weapon>SDCB</Weapon>
+	<Weapon_String>SDCB</Weapon_String>
+	<Weapon_Byte>5</Weapon_Byte>
 	<Bitflags>1110 0001</Bitflags>
 	<Response_Purse>0</Response_Purse>
 	<Response_Apple>40</Response_Apple>
@@ -1076,7 +1111,8 @@
 	<Melee_Attack_Damage>30</Melee_Attack_Damage>
 	<Melee_Attack_Rate>10</Melee_Attack_Rate>
 	<4>0</4>
-	<Weapon>SDCB</Weapon>
+	<Weapon_String>SDCB</Weapon_String>
+	<Weapon_Byte>5</Weapon_Byte>
 	<Bitflags>1110 0001</Bitflags>
 	<Response_Purse>0</Response_Purse>
 	<Response_Apple>35</Response_Apple>
@@ -1102,7 +1138,8 @@
 	<Melee_Attack_Damage>30</Melee_Attack_Damage>
 	<Melee_Attack_Rate>10</Melee_Attack_Rate>
 	<4>0</4>
-	<Weapon>SDCB</Weapon>
+	<Weapon_String>SDCB</Weapon_String>
+	<Weapon_Byte>5</Weapon_Byte>
 	<Bitflags>1110 0001</Bitflags>
 	<Response_Purse>0</Response_Purse>
 	<Response_Apple>30</Response_Apple>
@@ -1128,7 +1165,8 @@
 	<Melee_Attack_Damage>30</Melee_Attack_Damage>
 	<Melee_Attack_Rate>10</Melee_Attack_Rate>
 	<4>0</4>
-	<Weapon>SDCB</Weapon>
+	<Weapon_String>SDCB</Weapon_String>
+	<Weapon_Byte>5</Weapon_Byte>
 	<Bitflags>1100 0000</Bitflags>
 	<Response_Purse>0</Response_Purse>
 	<Response_Apple>0</Response_Apple>
@@ -1154,7 +1192,8 @@
 	<Melee_Attack_Damage>0</Melee_Attack_Damage>
 	<Melee_Attack_Rate>10</Melee_Attack_Rate>
 	<4>2</4>
-	<Weapon>SDMD</Weapon>
+	<Weapon_String>SDMD</Weapon_String>
+	<Weapon_Byte>1</Weapon_Byte>
 	<Bitflags>1100 0000</Bitflags>
 	<Response_Purse>0</Response_Purse>
 	<Response_Apple>0</Response_Apple>
@@ -1180,7 +1219,8 @@
 	<Melee_Attack_Damage>100</Melee_Attack_Damage>
 	<Melee_Attack_Rate>70</Melee_Attack_Rate>
 	<4>2</4>
-	<Weapon>SDMD</Weapon>
+	<Weapon_String>SDMD</Weapon_String>
+	<Weapon_Byte>1</Weapon_Byte>
 	<Bitflags>1100 0000</Bitflags>
 	<Response_Purse>0</Response_Purse>
 	<Response_Apple>0</Response_Apple>
@@ -1206,7 +1246,8 @@
 	<Melee_Attack_Damage>90</Melee_Attack_Damage>
 	<Melee_Attack_Rate>100</Melee_Attack_Rate>
 	<4>2</4>
-	<Weapon>SDTM</Weapon>
+	<Weapon_String>SDTM</Weapon_String>
+	<Weapon_Byte>5</Weapon_Byte>
 	<Bitflags>1101 0001</Bitflags>
 	<Response_Purse>100</Response_Purse>
 	<Response_Apple>100</Response_Apple>
@@ -1232,7 +1273,8 @@
 	<Melee_Attack_Damage>20</Melee_Attack_Damage>
 	<Melee_Attack_Rate>20</Melee_Attack_Rate>
 	<4>0</4>
-	<Weapon>SDHL</Weapon>
+	<Weapon_String>SDHL</Weapon_String>
+	<Weapon_Byte>3</Weapon_Byte>
 	<Bitflags>1111 0001</Bitflags>
 	<Response_Purse>0</Response_Purse>
 	<Response_Apple>0</Response_Apple>
@@ -1258,7 +1300,8 @@
 	<Melee_Attack_Damage>20</Melee_Attack_Damage>
 	<Melee_Attack_Rate>20</Melee_Attack_Rate>
 	<4>0</4>
-	<Weapon>SDSW</Weapon>
+	<Weapon_String>SDSW</Weapon_String>
+	<Weapon_Byte>5</Weapon_Byte>
 	<Bitflags>1110 0001</Bitflags>
 	<Response_Purse>40</Response_Purse>
 	<Response_Apple>95</Response_Apple>
@@ -1284,7 +1327,8 @@
 	<Melee_Attack_Damage>30</Melee_Attack_Damage>
 	<Melee_Attack_Rate>10</Melee_Attack_Rate>
 	<4>0</4>
-	<Weapon>SDBW</Weapon>
+	<Weapon_String>SDBW</Weapon_String>
+	<Weapon_Byte>5</Weapon_Byte>
 	<Bitflags>1111 0001</Bitflags>
 	<Response_Purse>90</Response_Purse>
 	<Response_Apple>0</Response_Apple>
@@ -1310,7 +1354,8 @@
 	<Melee_Attack_Damage>55</Melee_Attack_Damage>
 	<Melee_Attack_Rate>70</Melee_Attack_Rate>
 	<4>1</4>
-	<Weapon>SDOF</Weapon>
+	<Weapon_String>SDOF</Weapon_String>
+	<Weapon_Byte>7</Weapon_Byte>
 	<Bitflags>1100 0001</Bitflags>
 	<Response_Purse>0</Response_Purse>
 	<Response_Apple>0</Response_Apple>
@@ -1336,8 +1381,8 @@
 	<Melee_Attack_Damage>70</Melee_Attack_Damage>
 	<Melee_Attack_Rate>85</Melee_Attack_Rate>
 	<4>2</4>
-	<Weapon>SDKN
-</Weapon>
+	<Weapon_String>SDKN</Weapon_String>
+	<Weapon_Byte>10</Weapon_Byte>
 	<Bitflags>1100 0001</Bitflags>
 	<Response_Purse>0</Response_Purse>
 	<Response_Apple>70</Response_Apple>
@@ -1363,7 +1408,8 @@
 	<Melee_Attack_Damage>15</Melee_Attack_Damage>
 	<Melee_Attack_Rate>20</Melee_Attack_Rate>
 	<4>0</4>
-	<Weapon>SDLN</Weapon>
+	<Weapon_String>SDLN</Weapon_String>
+	<Weapon_Byte>3</Weapon_Byte>
 	<Bitflags>1110 0001</Bitflags>
 	<Response_Purse>65</Response_Purse>
 	<Response_Apple>0</Response_Apple>
@@ -1389,7 +1435,8 @@
 	<Melee_Attack_Damage>30</Melee_Attack_Damage>
 	<Melee_Attack_Rate>10</Melee_Attack_Rate>
 	<4>0</4>
-	<Weapon>SDCB</Weapon>
+	<Weapon_String>SDCB</Weapon_String>
+	<Weapon_Byte>5</Weapon_Byte>
 	<Bitflags>1110 0001</Bitflags>
 	<Response_Purse>0</Response_Purse>
 	<Response_Apple>45</Response_Apple>
@@ -1415,7 +1462,8 @@
 	<Melee_Attack_Damage>60</Melee_Attack_Damage>
 	<Melee_Attack_Rate>80</Melee_Attack_Rate>
 	<4>2</4>
-	<Weapon>SDRD</Weapon>
+	<Weapon_String>SDRD</Weapon_String>
+	<Weapon_Byte>15</Weapon_Byte>
 	<Bitflags>1100 0111</Bitflags>
 	<Response_Purse>0</Response_Purse>
 	<Response_Apple>25</Response_Apple>
@@ -1441,7 +1489,8 @@
 	<Melee_Attack_Damage>70</Melee_Attack_Damage>
 	<Melee_Attack_Rate>85</Melee_Attack_Rate>
 	<4>2</4>
-	<Weapon>SDRD</Weapon>
+	<Weapon_String>SDRD</Weapon_String>
+	<Weapon_Byte>15</Weapon_Byte>
 	<Bitflags>1100 0111</Bitflags>
 	<Response_Purse>0</Response_Purse>
 	<Response_Apple>20</Response_Apple>
@@ -1467,7 +1516,8 @@
 	<Melee_Attack_Damage>80</Melee_Attack_Damage>
 	<Melee_Attack_Rate>90</Melee_Attack_Rate>
 	<4>2</4>
-	<Weapon>SDRD</Weapon>
+	<Weapon_String>SDRD</Weapon_String>
+	<Weapon_Byte>15</Weapon_Byte>
 	<Bitflags>1100 0111</Bitflags>
 	<Response_Purse>0</Response_Purse>
 	<Response_Apple>15</Response_Apple>
@@ -1493,7 +1543,8 @@
 	<Melee_Attack_Damage>90</Melee_Attack_Damage>
 	<Melee_Attack_Rate>95</Melee_Attack_Rate>
 	<4>2</4>
-	<Weapon>SDRD</Weapon>
+	<Weapon_String>SDRD</Weapon_String>
+	<Weapon_Byte>15</Weapon_Byte>
 	<Bitflags>1100 0111</Bitflags>
 	<Response_Purse>0</Response_Purse>
 	<Response_Apple>10</Response_Apple>
@@ -1519,7 +1570,8 @@
 	<Melee_Attack_Damage>100</Melee_Attack_Damage>
 	<Melee_Attack_Rate>100</Melee_Attack_Rate>
 	<4>2</4>
-	<Weapon>SDRD</Weapon>
+	<Weapon_String>SDRD</Weapon_String>
+	<Weapon_Byte>15</Weapon_Byte>
 	<Bitflags>1100 0111</Bitflags>
 	<Response_Purse>0</Response_Purse>
 	<Response_Apple>5</Response_Apple>
@@ -1545,7 +1597,8 @@
 	<Melee_Attack_Damage>80</Melee_Attack_Damage>
 	<Melee_Attack_Rate>90</Melee_Attack_Rate>
 	<4>2</4>
-	<Weapon>SDRD</Weapon>
+	<Weapon_String>SDRD</Weapon_String>
+	<Weapon_Byte>15</Weapon_Byte>
 	<Bitflags>1100 0110</Bitflags>
 	<Response_Purse>0</Response_Purse>
 	<Response_Apple>0</Response_Apple>
@@ -1571,7 +1624,8 @@
 	<Melee_Attack_Damage>80</Melee_Attack_Damage>
 	<Melee_Attack_Rate>90</Melee_Attack_Rate>
 	<4>2</4>
-	<Weapon>SDRD</Weapon>
+	<Weapon_String>SDRD</Weapon_String>
+	<Weapon_Byte>15</Weapon_Byte>
 	<Bitflags>1100 0111</Bitflags>
 	<Response_Purse>0</Response_Purse>
 	<Response_Apple>0</Response_Apple>
@@ -1597,8 +1651,8 @@
 	<Melee_Attack_Damage>100</Melee_Attack_Damage>
 	<Melee_Attack_Rate>100</Melee_Attack_Rate>
 	<4>2</4>
-	<Weapon>VPGG
-</Weapon>
+	<Weapon_String>VPGG</Weapon_String>
+	<Weapon_Byte>10</Weapon_Byte>
 	<Bitflags>1100 1001</Bitflags>
 	<Response_Purse>0</Response_Purse>
 	<Response_Apple>0</Response_Apple>
@@ -1624,8 +1678,8 @@
 	<Melee_Attack_Damage>100</Melee_Attack_Damage>
 	<Melee_Attack_Rate>100</Melee_Attack_Rate>
 	<4>2</4>
-	<Weapon>VPGL
-</Weapon>
+	<Weapon_String>VPGL</Weapon_String>
+	<Weapon_Byte>10</Weapon_Byte>
 	<Bitflags>1100 1001</Bitflags>
 	<Response_Purse>0</Response_Purse>
 	<Response_Apple>0</Response_Apple>
@@ -1651,8 +1705,8 @@
 	<Melee_Attack_Damage>100</Melee_Attack_Damage>
 	<Melee_Attack_Rate>100</Melee_Attack_Rate>
 	<4>2</4>
-	<Weapon>VPSK
-</Weapon>
+	<Weapon_String>VPSK</Weapon_String>
+	<Weapon_Byte>10</Weapon_Byte>
 	<Bitflags>1100 1001</Bitflags>
 	<Response_Purse>0</Response_Purse>
 	<Response_Apple>0</Response_Apple>
@@ -1678,8 +1732,8 @@
 	<Melee_Attack_Damage>100</Melee_Attack_Damage>
 	<Melee_Attack_Rate>100</Melee_Attack_Rate>
 	<4>2</4>
-	<Weapon>VPSN
-</Weapon>
+	<Weapon_String>VPSN</Weapon_String>
+	<Weapon_Byte>10</Weapon_Byte>
 	<Bitflags>1100 1001</Bitflags>
 	<Response_Purse>0</Response_Purse>
 	<Response_Apple>0</Response_Apple>
@@ -1705,7 +1759,8 @@
 	<Melee_Attack_Damage>40</Melee_Attack_Damage>
 	<Melee_Attack_Rate>60</Melee_Attack_Rate>
 	<4>1</4>
-	<Weapon>SDOF</Weapon>
+	<Weapon_String>SDOF</Weapon_String>
+	<Weapon_Byte>7</Weapon_Byte>
 	<Bitflags>1100 0001</Bitflags>
 	<Response_Purse>0</Response_Purse>
 	<Response_Apple>0</Response_Apple>
@@ -1731,7 +1786,8 @@
 	<Melee_Attack_Damage>55</Melee_Attack_Damage>
 	<Melee_Attack_Rate>70</Melee_Attack_Rate>
 	<4>1</4>
-	<Weapon>SDOF</Weapon>
+	<Weapon_String>SDOF</Weapon_String>
+	<Weapon_Byte>7</Weapon_Byte>
 	<Bitflags>1100 0001</Bitflags>
 	<Response_Purse>0</Response_Purse>
 	<Response_Apple>0</Response_Apple>
@@ -1757,7 +1813,8 @@
 	<Melee_Attack_Damage>70</Melee_Attack_Damage>
 	<Melee_Attack_Rate>80</Melee_Attack_Rate>
 	<4>1</4>
-	<Weapon>SDOF</Weapon>
+	<Weapon_String>SDOF</Weapon_String>
+	<Weapon_Byte>7</Weapon_Byte>
 	<Bitflags>1100 0001</Bitflags>
 	<Response_Purse>0</Response_Purse>
 	<Response_Apple>0</Response_Apple>
@@ -1783,7 +1840,8 @@
 	<Melee_Attack_Damage>85</Melee_Attack_Damage>
 	<Melee_Attack_Rate>90</Melee_Attack_Rate>
 	<4>1</4>
-	<Weapon>SDOF</Weapon>
+	<Weapon_String>SDOF</Weapon_String>
+	<Weapon_Byte>7</Weapon_Byte>
 	<Bitflags>1100 0001</Bitflags>
 	<Response_Purse>0</Response_Purse>
 	<Response_Apple>0</Response_Apple>
@@ -1809,7 +1867,8 @@
 	<Melee_Attack_Damage>100</Melee_Attack_Damage>
 	<Melee_Attack_Rate>100</Melee_Attack_Rate>
 	<4>1</4>
-	<Weapon>SDOF</Weapon>
+	<Weapon_String>SDOF</Weapon_String>
+	<Weapon_Byte>7</Weapon_Byte>
 	<Bitflags>1100 0001</Bitflags>
 	<Response_Purse>0</Response_Purse>
 	<Response_Apple>0</Response_Apple>
