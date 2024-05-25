@@ -8,24 +8,29 @@
  	Officer = Special Officer 				Vert = Green
 	Knight0 = Mounted Knight 				Vert Mechant = Green Enemies
  
-	<HP> = Health Points; 
-	<1> -> Needs to be Tested, Values goes Up as Units get better
-	<Thread_Threshold> -> The Higher the Value the less likely they flee and get help
-	<Officer Value> -> is Only Set for Officers and Special Officers Decreasing with Increasing Tier; Officers and Special Officers of Same Tier have same value 
-	<3> -> Needs to be Tested, Always 0 for Both Guard Types, Ranged and Soldier A; Always 0 for all Allies; Value Going up with increasing Tier
-	<Guard Value> is 1 for Halbardiers and Lancers and 0 for everything else 
-	<Ranged Attack Rate> = Higher number equals more attacks per minute; 0 makes ranged units unable to fire 
-	<Melee_Attack_Damage> = Increases the Damage the Unit can Deal; Maximum seems to be at 100 
- 	<Melee_Attack_Rate> = Blue bar stamina - the higher value, more often or bigger part of stamina is restored
-	<4> -> Needs to be Tested, 2 for Knight0, Soldier B and the Merry Man, 1 for Officers and Officer B0's and 0 for everything Else
+	<LifePoint>
+	<Intelligence>
+	<Courage> -> The Higher the Value the less likely they flee and get help
+	<Initiative>
+	<Pride>
+	<Formation> is 1 for Halbardiers and Lancers and 0 for everything else 
+	<Shooting> = Higher number equals more attacks per minute; 0 makes ranged units unable to fire 
+	<Fighting> = Increases the Damage the Unit can Deal; Maximum seems to be at 100 
+ 	<Endurance> = Blue bar stamina - the higher value, more often or bigger part of stamina is restored
+	<Rank> -> Needs to be Tested, 2 for Knight0, Soldier B and the Merry Man, 1 for Officers and Officer B0's and 0 for everything Else
 	<Weapon_String> -> String representation of their Weapon or something similar I guess, 'SD' for normal units 'VP' for enemy Heroes. HL -> Halbardier; SW -> Sword; BW -> Bow;
-	<Weapon_Byte> -> Some Information about the behaivior of the Weapon; 3 for Guards; 5 for Swordsmen and Ranged Melee Attacks; 7 for Officers; 10 for Knights and Enemy Heroes and 15 for Mounted Knights 
-	<Bitflags>: 11xx Ayyz -> x needs to be tested; A is 1 for Enemy Heroes; y is 1 for Mounted Knights; z is 0 for Allies and 1 for Enemies 
-	<Response_Purse> -> Needs to be Tested, Value goes down as Units get better: Only Applied to Guard B, Soldier A and Archers: Rest and all Allies is 0 (Response to Purse)
-	<Response_Apple> -> Needs to be Tested, Value goes down as Units get better: Only Applied to Soldier A, Soldier B, Knight0 and Crossbow: Rest and all Allies is 0 (Response to Apple)
-	<Response_Beer> -> Needs to be Tested, Value goes down as Units get better: Only Applied to Guards, Crossbowmen and Officers; Rest and all Allies is 0 (Response to Beer)
-	<Response_Whistle> -> Needs to be Tested, Value goes down as Units get better: Only Applied to Guard B, Soldier A, Archers, Officers and Knight0; Rest and all Allies is 0 (Response to Whistle)
-	<9> -> 11: Merry Man Staff Guy 
+	<Bee_Time> -> 3 for Guards; 5 for Swordsmen and Ranged; 7 for Officers; 10 for Knights and Enemy Heroes and 15 for Mounted Knights 
+	<Hostile>: 0 for Allies and 1 for Enemies 
+	<Rider>: 1 for Mounted 0 for else 
+	<Heavy>: 1 for Heavy (Only Mounted Knights are Heavy) 0 for else 
+	<VIP>: 1 for Enemy Heroes 0 for else 
+	<Duty>: 
+	<Strangle>: 1 can Strangle, 0 can't Strangle 
+	<Response_Purse>
+	<Response_Apple>
+	<Response_Beer>
+	<Response_Whistle>
+	<Melee_Weapon_ID> -> 11: Merry Man Staff Guy 
 	     12: Lancer 
 	     13: Archers(Merry Man Included) 
 	     14: Halbardier 
@@ -37,1848 +42,2186 @@
 	     20: Crossbowmen 
 	Green Enemies: 
 	     21-27 (No Mounted Knights)
-	<Ranged_Value> = 2 for Merry Men Bow guys in Forrest Missions; 3 for Archers; 4 for Crossbowmen 
-	<Mounted_Knight_Value> = 3 for Mounted Knights, 10 for Enemy Heroes and 64 for everything else (Maybe Should be Renamed) 
-	<10> -> Needs to be Tested, 3 for Guards; 2 for Knight0, Soldier B and Scathlock; 1 for Soldier A, Officers, Guiy of Guisbourne, Longchamp and Sheriff; 0 for all Ranged and Both Merry Man Types
-	<11> -> Needs to be Tested, 2 for Knight0, Soldier B, Guard A and Guy of Guisbourne; 1 for Soldier A, Officers, Crossbowmen and Scathlock, 0 for Guard B, Archers, Longchamp and Sheriff
-	<12> -> Needs to be Tested, Weirdest Field of them All, maybe another Bitflag Field, couldn't figure anything out 
-		Guards, Soldiers, Knight0, Archer and Crossbow have the Same Value for 'normal' enemies, and extra value for Green Enemies and Green Allies; 
-		Black Officers have a diffrent Value than other Officers all together
+	<Ranged_Weapon_ID> = 2 for Merry Men Bow guys in Forrest Missions; 3 for Archers; 4 for Crossbowmen 
+	<MK> = Don't touch 
+	<WakeUp> -> Needs to be Tested, 3 for Guards; 2 for Knight0, Soldier B and Scathlock; 1 for Soldier A, Officers, Guiy of Guisbourne, Longchamp and Sheriff; 0 for all Ranged and Both Merry Man Types
+	<Weapon_Material> 2 for Knight0, Soldier B, Guard A and Guy of Guisbourne; 1 for Soldier A, Officers, Crossbowmen and Scathlock, 0 for Guard B, Archers, Longchamp and Sheriff
+	<Armor_Material>
 </Comment> 
 
 <Guard A, Bleu>
 	<Unit_Block_Head>R3VhcmQgQTAwBwBHYXJkZSBBEQBIYWxsZWJhcmRpZXIgQmxldQ==</Unit_Block_Head> 
-	<HP>100</HP>
-	<1>10</1>
-	<Thread_Threshold>40</Thread_Threshold>
-	<Officer_Value>0</Officer_Value>
-	<3>0</3>
-	<Guard_Value>1</Guard_Value>
-	<Ranged_Attack_Rate>0</Ranged_Attack_Rate>
-	<Melee_Attack_Damage>5</Melee_Attack_Damage>
-	<Melee_Attack_Rate>10</Melee_Attack_Rate>
-	<4>0</4>
+	<LifePoint>80</LifePoint>
+	<Intelligence>10</Intelligence>
+	<Courage>40</Courage>
+	<Initiative>0</Initiative>
+	<Pride>0</Pride>
+	<Formation>1</Formation>
+	<Shooting>0</Shooting>
+	<Fighting>5</Fighting>
+	<Endurance>10</Endurance>
+	<Rank>0</Rank>
 	<Weapon_String>SDHL</Weapon_String>
-	<Weapon_Byte>3</Weapon_Byte>
-	<Bitflags>1111 0001</Bitflags>
+	<Bee_Time>3</Bee_Time>
+	<Hostile>1</Hostile>
+	<Rider>0</Rider>
+	<Heavy>0</Heavy>
+	<VIP>0</VIP>
+	<Duty>1</Duty>
+	<Strangle>1</Strangle>
 	<Response_Purse>0</Response_Purse>
 	<Response_Apple>0</Response_Apple>
 	<Response_Beer>75</Response_Beer>
 	<Response_Whistle>25</Response_Whistle>
-	<9>12</9>
-	<Ranged_Value>0</Ranged_Value>
-	<Mounted_Knight_Value>64</Mounted_Knight_Value>
-	<10>3</10>
-	<11>2</11>
-	<12>9</12>
+	<Melee_Weapon_ID>12</Melee_Weapon_ID>
+	<Ranged_Weapon_ID>0</Ranged_Weapon_ID>
+	<MK>64</MK>
+	<WakeUp>3</WakeUp>
+	<Weapon_Material>2</Weapon_Material>
+	<Armor_Material>9</Armor_Material>
 </Guard A, Bleu>
 
 <Guard A, Jaune>
 	<Unit_Block_Head>R3VhcmQgQTAxBwBHYXJkZSBBEgBIYWxsZWJhcmRpZXIgSmF1bmU=</Unit_Block_Head> 
-	<HP>90</HP>
-	<1>15</1>
-	<Thread_Threshold>45</Thread_Threshold>
-	<Officer_Value>0</Officer_Value>
-	<3>0</3>
-	<Guard_Value>1</Guard_Value>
-	<Ranged_Attack_Rate>0</Ranged_Attack_Rate>
-	<Melee_Attack_Damage>20</Melee_Attack_Damage>
-	<Melee_Attack_Rate>20</Melee_Attack_Rate>
-	<4>0</4>
+	<LifePoint>90</LifePoint>
+	<Intelligence>15</Intelligence>
+	<Courage>45</Courage>
+	<Initiative>0</Initiative>
+	<Pride>0</Pride>
+	<Formation>1</Formation>
+	<Shooting>0</Shooting>
+	<Fighting>20</Fighting>
+	<Endurance>20</Endurance>
+	<Rank>0</Rank>
 	<Weapon_String>SDHL</Weapon_String>
-	<Weapon_Byte>3</Weapon_Byte>
-	<Bitflags>1111 0001</Bitflags>
+	<Bee_Time>3</Bee_Time>
+	<Hostile>1</Hostile>
+	<Rider>0</Rider>
+	<Heavy>0</Heavy>
+	<VIP>0</VIP>
+	<Duty>1</Duty>
+	<Strangle>1</Strangle>
 	<Response_Purse>0</Response_Purse>
 	<Response_Apple>0</Response_Apple>
 	<Response_Beer>70</Response_Beer>
 	<Response_Whistle>20</Response_Whistle>
-	<9>12</9>
-	<Ranged_Value>0</Ranged_Value>
-	<Mounted_Knight_Value>64</Mounted_Knight_Value>
-	<10>3</10>
-	<11>2</11>
-	<12>9</12>
+	<Melee_Weapon_ID>12</Melee_Weapon_ID>
+	<Ranged_Weapon_ID>0</Ranged_Weapon_ID>
+	<MK>64</MK>
+	<WakeUp>3</WakeUp>
+	<Weapon_Material>2</Weapon_Material>
+	<Armor_Material>9</Armor_Material>
 </Guard A, Jaune>
 
 <Guard A, Orange>
 	<Unit_Block_Head>R3VhcmQgQTAyBwBHYXJkZSBBEwBIYWxsZWJhcmRpZXIgT3Jhbmdl</Unit_Block_Head> 
-	<HP>100</HP>
-	<1>20</1>
-	<Thread_Threshold>50</Thread_Threshold>
-	<Officer_Value>0</Officer_Value>
-	<3>0</3>
-	<Guard_Value>1</Guard_Value>
-	<Ranged_Attack_Rate>0</Ranged_Attack_Rate>
-	<Melee_Attack_Damage>40</Melee_Attack_Damage>
-	<Melee_Attack_Rate>30</Melee_Attack_Rate>
-	<4>0</4>
+	<LifePoint>100</LifePoint>
+	<Intelligence>20</Intelligence>
+	<Courage>50</Courage>
+	<Initiative>0</Initiative>
+	<Pride>0</Pride>
+	<Formation>1</Formation>
+	<Shooting>0</Shooting>
+	<Fighting>40</Fighting>
+	<Endurance>30</Endurance>
+	<Rank>0</Rank>
 	<Weapon_String>SDHL</Weapon_String>
-	<Weapon_Byte>3</Weapon_Byte>
-	<Bitflags>1111 0001</Bitflags>
+	<Bee_Time>3</Bee_Time>
+	<Hostile>1</Hostile>
+	<Rider>0</Rider>
+	<Heavy>0</Heavy>
+	<VIP>0</VIP>
+	<Duty>1</Duty>
+	<Strangle>1</Strangle>
 	<Response_Purse>0</Response_Purse>
 	<Response_Apple>0</Response_Apple>
 	<Response_Beer>65</Response_Beer>
 	<Response_Whistle>15</Response_Whistle>
-	<9>12</9>
-	<Ranged_Value>0</Ranged_Value>
-	<Mounted_Knight_Value>64</Mounted_Knight_Value>
-	<10>3</10>
-	<11>2</11>
-	<12>9</12>
+	<Melee_Weapon_ID>12</Melee_Weapon_ID>
+	<Ranged_Weapon_ID>0</Ranged_Weapon_ID>
+	<MK>64</MK>
+	<WakeUp>3</WakeUp>
+	<Weapon_Material>2</Weapon_Material>
+	<Armor_Material>9</Armor_Material>
 </Guard A, Orange>
 
 <Guard A, Rouge>
 	<Unit_Block_Head>R3VhcmQgQTAzBwBHYXJkZSBBEgBIYWxsZWJhcmRpZXIgUm91Z2U=</Unit_Block_Head> 
-	<HP>110</HP>
-	<1>25</1>
-	<Thread_Threshold>55</Thread_Threshold>
-	<Officer_Value>0</Officer_Value>
-	<3>0</3>
-	<Guard_Value>1</Guard_Value>
-	<Ranged_Attack_Rate>0</Ranged_Attack_Rate>
-	<Melee_Attack_Damage>60</Melee_Attack_Damage>
-	<Melee_Attack_Rate>40</Melee_Attack_Rate>
-	<4>0</4>
+	<LifePoint>110</LifePoint>
+	<Intelligence>25</Intelligence>
+	<Courage>55</Courage>
+	<Initiative>0</Initiative>
+	<Pride>0</Pride>
+	<Formation>1</Formation>
+	<Shooting>0</Shooting>
+	<Fighting>60</Fighting>
+	<Endurance>40</Endurance>
+	<Rank>0</Rank>
 	<Weapon_String>SDHL</Weapon_String>
-	<Weapon_Byte>3</Weapon_Byte>
-	<Bitflags>1111 0001</Bitflags>
+	<Bee_Time>3</Bee_Time>
+	<Hostile>1</Hostile>
+	<Rider>0</Rider>
+	<Heavy>0</Heavy>
+	<VIP>0</VIP>
+	<Duty>1</Duty>
+	<Strangle>1</Strangle>
 	<Response_Purse>0</Response_Purse>
 	<Response_Apple>0</Response_Apple>
 	<Response_Beer>60</Response_Beer>
 	<Response_Whistle>10</Response_Whistle>
-	<9>12</9>
-	<Ranged_Value>0</Ranged_Value>
-	<Mounted_Knight_Value>64</Mounted_Knight_Value>
-	<10>3</10>
-	<11>2</11>
-	<12>9</12>
+	<Melee_Weapon_ID>12</Melee_Weapon_ID>
+	<Ranged_Weapon_ID>0</Ranged_Weapon_ID>
+	<MK>64</MK>
+	<WakeUp>3</WakeUp>
+	<Weapon_Material>2</Weapon_Material>
+	<Armor_Material>9</Armor_Material>
 </Guard A, Rouge>
 
 <Guard A, Noir>
 	<Unit_Block_Head>R3VhcmQgQTA0BwBHYXJkZSBBEQBIYWxsZWJhcmRpZXIgTm9pcg==</Unit_Block_Head> 
-	<HP>120</HP>
-	<1>30</1>
-	<Thread_Threshold>60</Thread_Threshold>
-	<Officer_Value>0</Officer_Value>
-	<3>0</3>
-	<Guard_Value>1</Guard_Value>
-	<Ranged_Attack_Rate>0</Ranged_Attack_Rate>
-	<Melee_Attack_Damage>80</Melee_Attack_Damage>
-	<Melee_Attack_Rate>50</Melee_Attack_Rate>
-	<4>0</4>
+	<LifePoint>120</LifePoint>
+	<Intelligence>30</Intelligence>
+	<Courage>60</Courage>
+	<Initiative>0</Initiative>
+	<Pride>0</Pride>
+	<Formation>1</Formation>
+	<Shooting>0</Shooting>
+	<Fighting>80</Fighting>
+	<Endurance>50</Endurance>
+	<Rank>0</Rank>
 	<Weapon_String>SDHL</Weapon_String>
-	<Weapon_Byte>3</Weapon_Byte>
-	<Bitflags>1111 0001</Bitflags>
+	<Bee_Time>3</Bee_Time>
+	<Hostile>1</Hostile>
+	<Rider>0</Rider>
+	<Heavy>0</Heavy>
+	<VIP>0</VIP>
+	<Duty>1</Duty>
+	<Strangle>1</Strangle>
 	<Response_Purse>0</Response_Purse>
 	<Response_Apple>0</Response_Apple>
 	<Response_Beer>55</Response_Beer>
 	<Response_Whistle>5</Response_Whistle>
-	<9>12</9>
-	<Ranged_Value>0</Ranged_Value>
-	<Mounted_Knight_Value>64</Mounted_Knight_Value>
-	<10>3</10>
-	<11>2</11>
-	<12>9</12>
+	<Melee_Weapon_ID>12</Melee_Weapon_ID>
+	<Ranged_Weapon_ID>0</Ranged_Weapon_ID>
+	<MK>64</MK>
+	<WakeUp>3</WakeUp>
+	<Weapon_Material>2</Weapon_Material>
+	<Armor_Material>9</Armor_Material>
 </Guard A, Noir>
 
 <Guard A, Vert>
 	<Unit_Block_Head>R3VhcmQgQTA1BwBHYXJkZSBBEQBIYWxsZWJhcmRpZXIgVmVydA==</Unit_Block_Head> 
-	<HP>100</HP>
-	<1>20</1>
-	<Thread_Threshold>50</Thread_Threshold>
-	<Officer_Value>0</Officer_Value>
-	<3>0</3>
-	<Guard_Value>1</Guard_Value>
-	<Ranged_Attack_Rate>0</Ranged_Attack_Rate>
-	<Melee_Attack_Damage>40</Melee_Attack_Damage>
-	<Melee_Attack_Rate>30</Melee_Attack_Rate>
-	<4>0</4>
+	<LifePoint>100</LifePoint>
+	<Intelligence>20</Intelligence>
+	<Courage>50</Courage>
+	<Initiative>0</Initiative>
+	<Pride>0</Pride>
+	<Formation>1</Formation>
+	<Shooting>0</Shooting>
+	<Fighting>40</Fighting>
+	<Endurance>30</Endurance>
+	<Rank>0</Rank>
 	<Weapon_String>SDHL</Weapon_String>
-	<Weapon_Byte>3</Weapon_Byte>
-	<Bitflags>1101 0000</Bitflags>
+	<Bee_Time>3</Bee_Time>
+	<Hostile>0</Hostile>
+	<Rider>0</Rider>
+	<Heavy>0</Heavy>
+	<VIP>0</VIP>
+	<Duty>1</Duty>
+	<Strangle>0</Strangle>
 	<Response_Purse>0</Response_Purse>
 	<Response_Apple>0</Response_Apple>
 	<Response_Beer>0</Response_Beer>
 	<Response_Whistle>0</Response_Whistle>
-	<9>12</9>
-	<Ranged_Value>0</Ranged_Value>
-	<Mounted_Knight_Value>64</Mounted_Knight_Value>
-	<10>3</10>
-	<11>2</11>
-	<12>11</12>
+	<Melee_Weapon_ID>12</Melee_Weapon_ID>
+	<Ranged_Weapon_ID>0</Ranged_Weapon_ID>
+	<MK>64</MK>
+	<WakeUp>3</WakeUp>
+	<Weapon_Material>2</Weapon_Material>
+	<Armor_Material>11</Armor_Material>
 </Guard A, Vert>
 
 <Soldier A, Bleu>
 	<Unit_Block_Head>U29sZGllciBBMDAIAFNvbGRhdCBBCQBFcGVlIEJsZXU=</Unit_Block_Head> 
-	<HP>80</HP>
-	<1>30</1>
-	<Thread_Threshold>40</Thread_Threshold>
-	<Officer_Value>0</Officer_Value>
-	<3>0</3>
-	<Guard_Value>0</Guard_Value>
-	<Ranged_Attack_Rate>0</Ranged_Attack_Rate>
-	<Melee_Attack_Damage>5</Melee_Attack_Damage>
-	<Melee_Attack_Rate>10</Melee_Attack_Rate>
-	<4>0</4>
+	<LifePoint>80</LifePoint>
+	<Intelligence>30</Intelligence>
+	<Courage>40</Courage>
+	<Initiative>0</Initiative>
+	<Pride>0</Pride>
+	<Formation>0</Formation>
+	<Shooting>0</Shooting>
+	<Fighting>5</Fighting>
+	<Endurance>10</Endurance>
+	<Rank>0</Rank>
 	<Weapon_String>SDSW</Weapon_String>
-	<Weapon_Byte>5</Weapon_Byte>
-	<Bitflags>1110 0001</Bitflags>
+	<Bee_Time>5</Bee_Time>
+	<Hostile>1</Hostile>
+	<Rider>0</Rider>
+	<Heavy>0</Heavy>
+	<VIP>0</VIP>
+	<Duty>0</Duty>
+	<Strangle>1</Strangle>
 	<Response_Purse>50</Response_Purse>
 	<Response_Apple>100</Response_Apple>
 	<Response_Beer>0</Response_Beer>
 	<Response_Whistle>75</Response_Whistle>
-	<9>15</9>
-	<Ranged_Value>0</Ranged_Value>
-	<Mounted_Knight_Value>64</Mounted_Knight_Value>
-	<10>1</10>
-	<11>1</11>
-	<12>11</12>
+	<Melee_Weapon_ID>15</Melee_Weapon_ID>
+	<Ranged_Weapon_ID>0</Ranged_Weapon_ID>
+	<MK>64</MK>
+	<WakeUp>1</WakeUp>
+	<Weapon_Material>1</Weapon_Material>
+	<Armor_Material>11</Armor_Material>
 </Soldier A, Bleu>
 
 <Soldier A, Jaune>
 	<Unit_Block_Head>U29sZGllciBBMDEIAFNvbGRhdCBBCgBFcGVlIEphdW5l</Unit_Block_Head> 
-	<HP>90</HP>
-	<1>35</1>
-	<Thread_Threshold>45</Thread_Threshold>
-	<Officer_Value>0</Officer_Value>
-	<3>0</3>
-	<Guard_Value>0</Guard_Value>
-	<Ranged_Attack_Rate>0</Ranged_Attack_Rate>
-	<Melee_Attack_Damage>20</Melee_Attack_Damage>
-	<Melee_Attack_Rate>20</Melee_Attack_Rate>
-	<4>0</4>
+	<LifePoint>90</LifePoint>
+	<Intelligence>35</Intelligence>
+	<Courage>45</Courage>
+	<Initiative>0</Initiative>
+	<Pride>0</Pride>
+	<Formation>0</Formation>
+	<Shooting>0</Shooting>
+	<Fighting>20</Fighting>
+	<Endurance>20</Endurance>
+	<Rank>0</Rank>
 	<Weapon_String>SDSW</Weapon_String>
-	<Weapon_Byte>5</Weapon_Byte>
-	<Bitflags>1110 0001</Bitflags>
+	<Bee_Time>5</Bee_Time>
+	<Hostile>1</Hostile>
+	<Rider>0</Rider>
+	<Heavy>0</Heavy>
+	<VIP>0</VIP>
+	<Duty>0</Duty>
+	<Strangle>1</Strangle>
 	<Response_Purse>40</Response_Purse>
 	<Response_Apple>95</Response_Apple>
 	<Response_Beer>0</Response_Beer>
 	<Response_Whistle>70</Response_Whistle>
-	<9>15</9>
-	<Ranged_Value>0</Ranged_Value>
-	<Mounted_Knight_Value>64</Mounted_Knight_Value>
-	<10>1</10>
-	<11>1</11>
-	<12>11</12>
+	<Melee_Weapon_ID>15</Melee_Weapon_ID>
+	<Ranged_Weapon_ID>0</Ranged_Weapon_ID>
+	<MK>64</MK>
+	<WakeUp>1</WakeUp>
+	<Weapon_Material>1</Weapon_Material>
+	<Armor_Material>11</Armor_Material>
 </Soldier A, Jaune>
 
 <Soldier A, Orange>
 	<Unit_Block_Head>U29sZGllciBBMDIIAFNvbGRhdCBBCwBFcGVlIE9yYW5nZQ==</Unit_Block_Head> 
-	<HP>100</HP>
-	<1>40</1>
-	<Thread_Threshold>50</Thread_Threshold>
-	<Officer_Value>0</Officer_Value>
-	<3>0</3>
-	<Guard_Value>0</Guard_Value>
-	<Ranged_Attack_Rate>0</Ranged_Attack_Rate>
-	<Melee_Attack_Damage>40</Melee_Attack_Damage>
-	<Melee_Attack_Rate>30</Melee_Attack_Rate>
-	<4>0</4>
+	<LifePoint>100</LifePoint>
+	<Intelligence>40</Intelligence>
+	<Courage>50</Courage>
+	<Initiative>0</Initiative>
+	<Pride>0</Pride>
+	<Formation>0</Formation>
+	<Shooting>0</Shooting>
+	<Fighting>40</Fighting>
+	<Endurance>30</Endurance>
+	<Rank>0</Rank>
 	<Weapon_String>SDSW</Weapon_String>
-	<Weapon_Byte>5</Weapon_Byte>
-	<Bitflags>1110 0001</Bitflags>
+	<Bee_Time>5</Bee_Time>
+	<Hostile>1</Hostile>
+	<Rider>0</Rider>
+	<Heavy>0</Heavy>
+	<VIP>0</VIP>
+	<Duty>0</Duty>
+	<Strangle>1</Strangle>
 	<Response_Purse>30</Response_Purse>
 	<Response_Apple>90</Response_Apple>
 	<Response_Beer>0</Response_Beer>
 	<Response_Whistle>65</Response_Whistle>
-	<9>15</9>
-	<Ranged_Value>0</Ranged_Value>
-	<Mounted_Knight_Value>64</Mounted_Knight_Value>
-	<10>1</10>
-	<11>1</11>
-	<12>11</12>
+	<Melee_Weapon_ID>15</Melee_Weapon_ID>
+	<Ranged_Weapon_ID>0</Ranged_Weapon_ID>
+	<MK>64</MK>
+	<WakeUp>1</WakeUp>
+	<Weapon_Material>1</Weapon_Material>
+	<Armor_Material>11</Armor_Material>
 </Soldier A, Orange>
 
 <Soldier A, Rouge>
 	<Unit_Block_Head>U29sZGllciBBMDMIAFNvbGRhdCBBCgBFcGVlIFJvdWdl</Unit_Block_Head> 
-	<HP>110</HP>
-	<1>45</1>
-	<Thread_Threshold>55</Thread_Threshold>
-	<Officer_Value>0</Officer_Value>
-	<3>0</3>
-	<Guard_Value>0</Guard_Value>
-	<Ranged_Attack_Rate>0</Ranged_Attack_Rate>
-	<Melee_Attack_Damage>60</Melee_Attack_Damage>
-	<Melee_Attack_Rate>40</Melee_Attack_Rate>
-	<4>0</4>
+	<LifePoint>110</LifePoint>
+	<Intelligence>45</Intelligence>
+	<Courage>55</Courage>
+	<Initiative>0</Initiative>
+	<Pride>0</Pride>
+	<Formation>0</Formation>
+	<Shooting>0</Shooting>
+	<Fighting>60</Fighting>
+	<Endurance>40</Endurance>
+	<Rank>0</Rank>
 	<Weapon_String>SDSW</Weapon_String>
-	<Weapon_Byte>5</Weapon_Byte>
-	<Bitflags>1110 0001</Bitflags>
+	<Bee_Time>5</Bee_Time>
+	<Hostile>1</Hostile>
+	<Rider>0</Rider>
+	<Heavy>0</Heavy>
+	<VIP>0</VIP>
+	<Duty>0</Duty>
+	<Strangle>1</Strangle>
 	<Response_Purse>20</Response_Purse>
 	<Response_Apple>85</Response_Apple>
 	<Response_Beer>0</Response_Beer>
 	<Response_Whistle>60</Response_Whistle>
-	<9>15</9>
-	<Ranged_Value>0</Ranged_Value>
-	<Mounted_Knight_Value>64</Mounted_Knight_Value>
-	<10>1</10>
-	<11>1</11>
-	<12>11</12>
+	<Melee_Weapon_ID>15</Melee_Weapon_ID>
+	<Ranged_Weapon_ID>0</Ranged_Weapon_ID>
+	<MK>64</MK>
+	<WakeUp>1</WakeUp>
+	<Weapon_Material>1</Weapon_Material>
+	<Armor_Material>11</Armor_Material>
 </Soldier A, Rouge>
 
 <Soldier A, Noir>
 	<Unit_Block_Head>U29sZGllciBBMDQIAFNvbGRhdCBBCQBFcGVlIE5vaXI=</Unit_Block_Head> 
-	<HP>120</HP>
-	<1>50</1>
-	<Thread_Threshold>60</Thread_Threshold>
-	<Officer_Value>0</Officer_Value>
-	<3>0</3>
-	<Guard_Value>0</Guard_Value>
-	<Ranged_Attack_Rate>0</Ranged_Attack_Rate>
-	<Melee_Attack_Damage>80</Melee_Attack_Damage>
-	<Melee_Attack_Rate>50</Melee_Attack_Rate>
-	<4>0</4>
+	<LifePoint>120</LifePoint>
+	<Intelligence>50</Intelligence>
+	<Courage>60</Courage>
+	<Initiative>0</Initiative>
+	<Pride>0</Pride>
+	<Formation>0</Formation>
+	<Shooting>0</Shooting>
+	<Fighting>80</Fighting>
+	<Endurance>50</Endurance>
+	<Rank>0</Rank>
 	<Weapon_String>SDSW</Weapon_String>
-	<Weapon_Byte>5</Weapon_Byte>
-	<Bitflags>1110 0001</Bitflags>
+	<Bee_Time>5</Bee_Time>
+	<Hostile>1</Hostile>
+	<Rider>0</Rider>
+	<Heavy>0</Heavy>
+	<VIP>0</VIP>
+	<Duty>0</Duty>
+	<Strangle>1</Strangle>
 	<Response_Purse>10</Response_Purse>
 	<Response_Apple>80</Response_Apple>
 	<Response_Beer>0</Response_Beer>
 	<Response_Whistle>55</Response_Whistle>
-	<9>15</9>
-	<Ranged_Value>0</Ranged_Value>
-	<Mounted_Knight_Value>64</Mounted_Knight_Value>
-	<10>1</10>
-	<11>1</11>
-	<12>11</12>
+	<Melee_Weapon_ID>15</Melee_Weapon_ID>
+	<Ranged_Weapon_ID>0</Ranged_Weapon_ID>
+	<MK>64</MK>
+	<WakeUp>1</WakeUp>
+	<Weapon_Material>1</Weapon_Material>
+	<Armor_Material>11</Armor_Material>
 </Soldier A, Noir>
 
 <Soldier A, Vert>
 	<Unit_Block_Head>U29sZGllciBBMDUIAFNvbGRhdCBBCQBFcGVlIFZlcnQ=</Unit_Block_Head> 
-	<HP>100</HP>
-	<1>40</1>
-	<Thread_Threshold>50</Thread_Threshold>
-	<Officer_Value>0</Officer_Value>
-	<3>0</3>
-	<Guard_Value>0</Guard_Value>
-	<Ranged_Attack_Rate>0</Ranged_Attack_Rate>
-	<Melee_Attack_Damage>40</Melee_Attack_Damage>
-	<Melee_Attack_Rate>30</Melee_Attack_Rate>
-	<4>0</4>
+	<LifePoint>100</LifePoint>
+	<Intelligence>40</Intelligence>
+	<Courage>50</Courage>
+	<Initiative>0</Initiative>
+	<Pride>0</Pride>
+	<Formation>0</Formation>
+	<Shooting>0</Shooting>
+	<Fighting>40</Fighting>
+	<Endurance>30</Endurance>
+	<Rank>0</Rank>
 	<Weapon_String>SDSW</Weapon_String>
-	<Weapon_Byte>5</Weapon_Byte>
-	<Bitflags>1100 0000</Bitflags>
+	<Bee_Time>5</Bee_Time>
+	<Hostile>0</Hostile>
+	<Rider>0</Rider>
+	<Heavy>0</Heavy>
+	<VIP>0</VIP>
+	<Duty>0</Duty>
+	<Strangle>0</Strangle>
 	<Response_Purse>0</Response_Purse>
 	<Response_Apple>0</Response_Apple>
 	<Response_Beer>0</Response_Beer>
 	<Response_Whistle>0</Response_Whistle>
-	<9>15</9>
-	<Ranged_Value>0</Ranged_Value>
-	<Mounted_Knight_Value>64</Mounted_Knight_Value>
-	<10>1</10>
-	<11>1</11>
-	<12>8</12>
+	<Melee_Weapon_ID>15</Melee_Weapon_ID>
+	<Ranged_Weapon_ID>0</Ranged_Weapon_ID>
+	<MK>64</MK>
+	<WakeUp>1</WakeUp>
+	<Weapon_Material>1</Weapon_Material>
+	<Armor_Material>8</Armor_Material>
 </Soldier A, Vert>
 
 <Archer0, Bleu>
 	<Unit_Block_Head>QXJjaGVyMDAGAEFyY2hlcgsAQXJjaGVyIEJsZXU=</Unit_Block_Head> 
-	<HP>30</HP>
-	<1>40</1>
-	<Thread_Threshold>0</Thread_Threshold>
-	<Officer_Value>0</Officer_Value>
-	<3>0</3>
-	<Guard_Value>0</Guard_Value>
-	<Ranged_Attack_Rate>30</Ranged_Attack_Rate>
-	<Melee_Attack_Damage>30</Melee_Attack_Damage>
-	<Melee_Attack_Rate>10</Melee_Attack_Rate>
-	<4>0</4>
+	<LifePoint>30</LifePoint>
+	<Intelligence>40</Intelligence>
+	<Courage>0</Courage>
+	<Initiative>0</Initiative>
+	<Pride>0</Pride>
+	<Formation>0</Formation>
+	<Shooting>30</Shooting>
+	<Fighting>30</Fighting>
+	<Endurance>10</Endurance>
+	<Rank>0</Rank>
 	<Weapon_String>SDBW</Weapon_String>
-	<Weapon_Byte>5</Weapon_Byte>
-	<Bitflags>1111 0001</Bitflags>
+	<Bee_Time>5</Bee_Time>
+	<Hostile>1</Hostile>
+	<Rider>0</Rider>
+	<Heavy>0</Heavy>
+	<VIP>0</VIP>
+	<Duty>1</Duty>
+	<Strangle>1</Strangle>
 	<Response_Purse>100</Response_Purse>
 	<Response_Apple>0</Response_Apple>
 	<Response_Beer>0</Response_Beer>
 	<Response_Whistle>50</Response_Whistle>
-	<9>13</9>
-	<Ranged_Value>3</Ranged_Value>
-	<Mounted_Knight_Value>64</Mounted_Knight_Value>
-	<10>0</10>
-	<11>0</11>
-	<12>8</12>
+	<Melee_Weapon_ID>13</Melee_Weapon_ID>
+	<Ranged_Weapon_ID>3</Ranged_Weapon_ID>
+	<MK>64</MK>
+	<WakeUp>0</WakeUp>
+	<Weapon_Material>0</Weapon_Material>
+	<Armor_Material>8</Armor_Material>
 </Archer0, Bleu>
 
 <Archer0, Jaune>
 	<Unit_Block_Head>QXJjaGVyMDEGAEFyY2hlcgwAQXJjaGVyIEphdW5l</Unit_Block_Head> 
-	<HP>40</HP>
-	<1>45</1>
-	<Thread_Threshold>5</Thread_Threshold>
-	<Officer_Value>0</Officer_Value>
-	<3>0</3>
-	<Guard_Value>0</Guard_Value>
-	<Ranged_Attack_Rate>40</Ranged_Attack_Rate>
-	<Melee_Attack_Damage>30</Melee_Attack_Damage>
-	<Melee_Attack_Rate>10</Melee_Attack_Rate>
-	<4>0</4>
+	<LifePoint>40</LifePoint>
+	<Intelligence>45</Intelligence>
+	<Courage>5</Courage>
+	<Initiative>0</Initiative>
+	<Pride>0</Pride>
+	<Formation>0</Formation>
+	<Shooting>40</Shooting>
+	<Fighting>30</Fighting>
+	<Endurance>10</Endurance>
+	<Rank>0</Rank>
 	<Weapon_String>SDBW</Weapon_String>
-	<Weapon_Byte>5</Weapon_Byte>
-	<Bitflags>1111 0001</Bitflags>
+	<Bee_Time>5</Bee_Time>
+	<Hostile>1</Hostile>
+	<Rider>0</Rider>
+	<Heavy>0</Heavy>
+	<VIP>0</VIP>
+	<Duty>1</Duty>
+	<Strangle>1</Strangle>
 	<Response_Purse>90</Response_Purse>
 	<Response_Apple>0</Response_Apple>
 	<Response_Beer>0</Response_Beer>
 	<Response_Whistle>45</Response_Whistle>
-	<9>13</9>
-	<Ranged_Value>3</Ranged_Value>
-	<Mounted_Knight_Value>64</Mounted_Knight_Value>
-	<10>0</10>
-	<11>0</11>
-	<12>8</12>
+	<Melee_Weapon_ID>13</Melee_Weapon_ID>
+	<Ranged_Weapon_ID>3</Ranged_Weapon_ID>
+	<MK>64</MK>
+	<WakeUp>0</WakeUp>
+	<Weapon_Material>0</Weapon_Material>
+	<Armor_Material>8</Armor_Material>
 </Archer0, Jaune>
 
 <Archer0, Orange>
 	<Unit_Block_Head>QXJjaGVyMDIGAEFyY2hlcg0AQXJjaGVyIE9yYW5nZQ==</Unit_Block_Head> 
-	<HP>50</HP>
-	<1>50</1>
-	<Thread_Threshold>10</Thread_Threshold>
-	<Officer_Value>0</Officer_Value>
-	<3>0</3>
-	<Guard_Value>0</Guard_Value>
-	<Ranged_Attack_Rate>50</Ranged_Attack_Rate>
-	<Melee_Attack_Damage>30</Melee_Attack_Damage>
-	<Melee_Attack_Rate>10</Melee_Attack_Rate>
-	<4>0</4>
+	<LifePoint>50</LifePoint>
+	<Intelligence>50</Intelligence>
+	<Courage>10</Courage>
+	<Initiative>0</Initiative>
+	<Pride>0</Pride>
+	<Formation>0</Formation>
+	<Shooting>50</Shooting>
+	<Fighting>30</Fighting>
+	<Endurance>10</Endurance>
+	<Rank>0</Rank>
 	<Weapon_String>SDBW</Weapon_String>
-	<Weapon_Byte>5</Weapon_Byte>
-	<Bitflags>1111 0001</Bitflags>
+	<Bee_Time>5</Bee_Time>
+	<Hostile>1</Hostile>
+	<Rider>0</Rider>
+	<Heavy>0</Heavy>
+	<VIP>0</VIP>
+	<Duty>1</Duty>
+	<Strangle>1</Strangle>
 	<Response_Purse>80</Response_Purse>
 	<Response_Apple>0</Response_Apple>
 	<Response_Beer>0</Response_Beer>
 	<Response_Whistle>40</Response_Whistle>
-	<9>13</9>
-	<Ranged_Value>3</Ranged_Value>
-	<Mounted_Knight_Value>64</Mounted_Knight_Value>
-	<10>0</10>
-	<11>0</11>
-	<12>8</12>
+	<Melee_Weapon_ID>13</Melee_Weapon_ID>
+	<Ranged_Weapon_ID>3</Ranged_Weapon_ID>
+	<MK>64</MK>
+	<WakeUp>0</WakeUp>
+	<Weapon_Material>0</Weapon_Material>
+	<Armor_Material>8</Armor_Material>
 </Archer0, Orange>
 
 <Archer0, Rouge>
 	<Unit_Block_Head>QXJjaGVyMDMGAEFyY2hlcgwAQXJjaGVyIFJvdWdl</Unit_Block_Head> 
-	<HP>60</HP>
-	<1>55</1>
-	<Thread_Threshold>15</Thread_Threshold>
-	<Officer_Value>0</Officer_Value>
-	<3>0</3>
-	<Guard_Value>0</Guard_Value>
-	<Ranged_Attack_Rate>60</Ranged_Attack_Rate>
-	<Melee_Attack_Damage>30</Melee_Attack_Damage>
-	<Melee_Attack_Rate>10</Melee_Attack_Rate>
-	<4>0</4>
+	<LifePoint>60</LifePoint>
+	<Intelligence>55</Intelligence>
+	<Courage>15</Courage>
+	<Initiative>0</Initiative>
+	<Pride>0</Pride>
+	<Formation>0</Formation>
+	<Shooting>60</Shooting>
+	<Fighting>30</Fighting>
+	<Endurance>10</Endurance>
+	<Rank>0</Rank>
 	<Weapon_String>SDBW</Weapon_String>
-	<Weapon_Byte>5</Weapon_Byte>
-	<Bitflags>1111 0001</Bitflags>
+	<Bee_Time>5</Bee_Time>
+	<Hostile>1</Hostile>
+	<Rider>0</Rider>
+	<Heavy>0</Heavy>
+	<VIP>0</VIP>
+	<Duty>1</Duty>
+	<Strangle>1</Strangle>
 	<Response_Purse>70</Response_Purse>
 	<Response_Apple>0</Response_Apple>
 	<Response_Beer>0</Response_Beer>
 	<Response_Whistle>35</Response_Whistle>
-	<9>13</9>
-	<Ranged_Value>3</Ranged_Value>
-	<Mounted_Knight_Value>64</Mounted_Knight_Value>
-	<10>0</10>
-	<11>0</11>
-	<12>8</12>
+	<Melee_Weapon_ID>13</Melee_Weapon_ID>
+	<Ranged_Weapon_ID>3</Ranged_Weapon_ID>
+	<MK>64</MK>
+	<WakeUp>0</WakeUp>
+	<Weapon_Material>0</Weapon_Material>
+	<Armor_Material>8</Armor_Material>
 </Archer0, Rouge>
 
 <Archer0, Noir>
 	<Unit_Block_Head>QXJjaGVyMDQGAEFyY2hlcgsAQXJjaGVyIE5vaXI=</Unit_Block_Head> 
-	<HP>70</HP>
-	<1>60</1>
-	<Thread_Threshold>20</Thread_Threshold>
-	<Officer_Value>0</Officer_Value>
-	<3>0</3>
-	<Guard_Value>0</Guard_Value>
-	<Ranged_Attack_Rate>70</Ranged_Attack_Rate>
-	<Melee_Attack_Damage>30</Melee_Attack_Damage>
-	<Melee_Attack_Rate>10</Melee_Attack_Rate>
-	<4>0</4>
+	<LifePoint>70</LifePoint>
+	<Intelligence>60</Intelligence>
+	<Courage>20</Courage>
+	<Initiative>0</Initiative>
+	<Pride>0</Pride>
+	<Formation>0</Formation>
+	<Shooting>70</Shooting>
+	<Fighting>30</Fighting>
+	<Endurance>10</Endurance>
+	<Rank>0</Rank>
 	<Weapon_String>SDBW</Weapon_String>
-	<Weapon_Byte>5</Weapon_Byte>
-	<Bitflags>1111 0001</Bitflags>
+	<Bee_Time>5</Bee_Time>
+	<Hostile>1</Hostile>
+	<Rider>0</Rider>
+	<Heavy>0</Heavy>
+	<VIP>0</VIP>
+	<Duty>1</Duty>
+	<Strangle>1</Strangle>
 	<Response_Purse>60</Response_Purse>
 	<Response_Apple>0</Response_Apple>
 	<Response_Beer>0</Response_Beer>
 	<Response_Whistle>30</Response_Whistle>
-	<9>13</9>
-	<Ranged_Value>3</Ranged_Value>
-	<Mounted_Knight_Value>64</Mounted_Knight_Value>
-	<10>0</10>
-	<11>0</11>
-	<12>8</12>
+	<Melee_Weapon_ID>13</Melee_Weapon_ID>
+	<Ranged_Weapon_ID>3</Ranged_Weapon_ID>
+	<MK>64</MK>
+	<WakeUp>0</WakeUp>
+	<Weapon_Material>0</Weapon_Material>
+	<Armor_Material>8</Armor_Material>
 </Archer0, Noir>
 
 <Archer0, Vert>
 	<Unit_Block_Head>QXJjaGVyMDUGAEFyY2hlcgsAQXJjaGVyIFZlcnQ=</Unit_Block_Head> 
-	<HP>50</HP>
-	<1>50</1>
-	<Thread_Threshold>15</Thread_Threshold>
-	<Officer_Value>0</Officer_Value>
-	<3>0</3>
-	<Guard_Value>0</Guard_Value>
-	<Ranged_Attack_Rate>50</Ranged_Attack_Rate>
-	<Melee_Attack_Damage>30</Melee_Attack_Damage>
-	<Melee_Attack_Rate>10</Melee_Attack_Rate>
-	<4>0</4>
+	<LifePoint>50</LifePoint>
+	<Intelligence>50</Intelligence>
+	<Courage>15</Courage>
+	<Initiative>0</Initiative>
+	<Pride>0</Pride>
+	<Formation>0</Formation>
+	<Shooting>50</Shooting>
+	<Fighting>30</Fighting>
+	<Endurance>10</Endurance>
+	<Rank>0</Rank>
 	<Weapon_String>SDBW</Weapon_String>
-	<Weapon_Byte>5</Weapon_Byte>
-	<Bitflags>1101 0000</Bitflags>
+	<Bee_Time>5</Bee_Time>
+	<Hostile>0</Hostile>
+	<Rider>0</Rider>
+	<Heavy>0</Heavy>
+	<VIP>0</VIP>
+	<Duty>1</Duty>
+	<Strangle>0</Strangle>
 	<Response_Purse>0</Response_Purse>
 	<Response_Apple>0</Response_Apple>
 	<Response_Beer>0</Response_Beer>
 	<Response_Whistle>0</Response_Whistle>
-	<9>13</9>
-	<Ranged_Value>3</Ranged_Value>
-	<Mounted_Knight_Value>64</Mounted_Knight_Value>
-	<10>0</10>
-	<11>0</11>
-	<12>12</12>
+	<Melee_Weapon_ID>13</Melee_Weapon_ID>
+	<Ranged_Weapon_ID>3</Ranged_Weapon_ID>
+	<MK>64</MK>
+	<WakeUp>0</WakeUp>
+	<Weapon_Material>0</Weapon_Material>
+	<Armor_Material>12</Armor_Material>
 </Archer0, Vert>
 
 <Officier B0, Bleu>
 	<Unit_Block_Head>T2ZmaWNpZXIgQjAwCQBPZmZpY2llckINAE9mZmljaWVyIEJsZXU=</Unit_Block_Head> 
-	<HP>130</HP>
-	<1>70</1>
-	<Thread_Threshold>50</Thread_Threshold>
-	<Officer_Value>80</Officer_Value>
-	<3>35</3>
-	<Guard_Value>0</Guard_Value>
-	<Ranged_Attack_Rate>0</Ranged_Attack_Rate>
-	<Melee_Attack_Damage>40</Melee_Attack_Damage>
-	<Melee_Attack_Rate>60</Melee_Attack_Rate>
-	<4>1</4>
+	<LifePoint>130</LifePoint>
+	<Intelligence>70</Intelligence>
+	<Courage>50</Courage>
+	<Initiative>80</Initiative>
+	<Pride>35</Pride>
+	<Formation>0</Formation>
+	<Shooting>0</Shooting>
+	<Fighting>40</Fighting>
+	<Endurance>60</Endurance>
+	<Rank>1</Rank>
 	<Weapon_String>SDOF</Weapon_String>
-	<Weapon_Byte>7</Weapon_Byte>
-	<Bitflags>1100 0001</Bitflags>
+	<Bee_Time>7</Bee_Time>
+	<Hostile>1</Hostile>
+	<Rider>0</Rider>
+	<Heavy>0</Heavy>
+	<VIP>0</VIP>
+	<Duty>0</Duty>
+	<Strangle>0</Strangle>
 	<Response_Purse>0</Response_Purse>
 	<Response_Apple>80</Response_Apple>
 	<Response_Beer>25</Response_Beer>
 	<Response_Whistle>100</Response_Whistle>
-	<9>16</9>
-	<Ranged_Value>0</Ranged_Value>
-	<Mounted_Knight_Value>64</Mounted_Knight_Value>
-	<10>1</10>
-	<11>1</11>
-	<12>12</12>
+	<Melee_Weapon_ID>16</Melee_Weapon_ID>
+	<Ranged_Weapon_ID>0</Ranged_Weapon_ID>
+	<MK>64</MK>
+	<WakeUp>1</WakeUp>
+	<Weapon_Material>1</Weapon_Material>
+	<Armor_Material>12</Armor_Material>
 </Officier B0, Bleu>
 
 <Officier B0, Jaune>
 	<Unit_Block_Head>T2ZmaWNpZXIgQjAxCQBPZmZpY2llckIOAE9mZmljaWVyIEphdW5l</Unit_Block_Head> 
-	<HP>140</HP>
-	<1>75</1>
-	<Thread_Threshold>55</Thread_Threshold>
-	<Officer_Value>60</Officer_Value>
-	<3>45</3>
-	<Guard_Value>0</Guard_Value>
-	<Ranged_Attack_Rate>0</Ranged_Attack_Rate>
-	<Melee_Attack_Damage>55</Melee_Attack_Damage>
-	<Melee_Attack_Rate>70</Melee_Attack_Rate>
-	<4>1</4>
+	<LifePoint>140</LifePoint>
+	<Intelligence>75</Intelligence>
+	<Courage>55</Courage>
+	<Initiative>60</Initiative>
+	<Pride>45</Pride>
+	<Formation>0</Formation>
+	<Shooting>0</Shooting>
+	<Fighting>55</Fighting>
+	<Endurance>70</Endurance>
+	<Rank>1</Rank>
 	<Weapon_String>SDOF</Weapon_String>
-	<Weapon_Byte>7</Weapon_Byte>
-	<Bitflags>1100 0001</Bitflags>
+	<Bee_Time>7</Bee_Time>
+	<Hostile>1</Hostile>
+	<Rider>0</Rider>
+	<Heavy>0</Heavy>
+	<VIP>0</VIP>
+	<Duty>0</Duty>
+	<Strangle>0</Strangle>
 	<Response_Purse>0</Response_Purse>
 	<Response_Apple>75</Response_Apple>
 	<Response_Beer>20</Response_Beer>
 	<Response_Whistle>95</Response_Whistle>
-	<9>16</9>
-	<Ranged_Value>0</Ranged_Value>
-	<Mounted_Knight_Value>64</Mounted_Knight_Value>
-	<10>1</10>
-	<11>1</11>
-	<12>12</12>
+	<Melee_Weapon_ID>16</Melee_Weapon_ID>
+	<Ranged_Weapon_ID>0</Ranged_Weapon_ID>
+	<MK>64</MK>
+	<WakeUp>1</WakeUp>
+	<Weapon_Material>1</Weapon_Material>
+	<Armor_Material>12</Armor_Material>
 </Officier B0, Jaune>
 
 <Officier B0, Orange>
 	<Unit_Block_Head>T2ZmaWNpZXIgQjAyCQBPZmZpY2llckIPAE9mZmljaWVyIE9yYW5nZQ==</Unit_Block_Head> 
-	<HP>150</HP>
-	<1>80</1>
-	<Thread_Threshold>60</Thread_Threshold>
-	<Officer_Value>40</Officer_Value>
-	<3>55</3>
-	<Guard_Value>0</Guard_Value>
-	<Ranged_Attack_Rate>0</Ranged_Attack_Rate>
-	<Melee_Attack_Damage>70</Melee_Attack_Damage>
-	<Melee_Attack_Rate>80</Melee_Attack_Rate>
-	<4>1</4>
+	<LifePoint>150</LifePoint>
+	<Intelligence>80</Intelligence>
+	<Courage>60</Courage>
+	<Initiative>40</Initiative>
+	<Pride>55</Pride>
+	<Formation>0</Formation>
+	<Shooting>0</Shooting>
+	<Fighting>70</Fighting>
+	<Endurance>80</Endurance>
+	<Rank>1</Rank>
 	<Weapon_String>SDOF</Weapon_String>
-	<Weapon_Byte>7</Weapon_Byte>
-	<Bitflags>1100 0001</Bitflags>
+	<Bee_Time>7</Bee_Time>
+	<Hostile>1</Hostile>
+	<Rider>0</Rider>
+	<Heavy>0</Heavy>
+	<VIP>0</VIP>
+	<Duty>0</Duty>
+	<Strangle>0</Strangle>
 	<Response_Purse>0</Response_Purse>
 	<Response_Apple>70</Response_Apple>
 	<Response_Beer>15</Response_Beer>
 	<Response_Whistle>90</Response_Whistle>
-	<9>16</9>
-	<Ranged_Value>0</Ranged_Value>
-	<Mounted_Knight_Value>64</Mounted_Knight_Value>
-	<10>1</10>
-	<11>1</11>
-	<12>12</12>
+	<Melee_Weapon_ID>16</Melee_Weapon_ID>
+	<Ranged_Weapon_ID>0</Ranged_Weapon_ID>
+	<MK>64</MK>
+	<WakeUp>1</WakeUp>
+	<Weapon_Material>1</Weapon_Material>
+	<Armor_Material>12</Armor_Material>
 </Officier B0, Orange>
 
 <Officier B0, Rouge>
 	<Unit_Block_Head>T2ZmaWNpZXIgQjAzCQBPZmZpY2llckIOAE9mZmljaWVyIFJvdWdl</Unit_Block_Head> 
-	<HP>160</HP>
-	<1>85</1>
-	<Thread_Threshold>65</Thread_Threshold>
-	<Officer_Value>20</Officer_Value>
-	<3>65</3>
-	<Guard_Value>0</Guard_Value>
-	<Ranged_Attack_Rate>0</Ranged_Attack_Rate>
-	<Melee_Attack_Damage>85</Melee_Attack_Damage>
-	<Melee_Attack_Rate>90</Melee_Attack_Rate>
-	<4>1</4>
+	<LifePoint>160</LifePoint>
+	<Intelligence>85</Intelligence>
+	<Courage>65</Courage>
+	<Initiative>20</Initiative>
+	<Pride>65</Pride>
+	<Formation>0</Formation>
+	<Shooting>0</Shooting>
+	<Fighting>85</Fighting>
+	<Endurance>90</Endurance>
+	<Rank>1</Rank>
 	<Weapon_String>SDOF</Weapon_String>
-	<Weapon_Byte>7</Weapon_Byte>
-	<Bitflags>1100 0001</Bitflags>
+	<Bee_Time>7</Bee_Time>
+	<Hostile>1</Hostile>
+	<Rider>0</Rider>
+	<Heavy>0</Heavy>
+	<VIP>0</VIP>
+	<Duty>0</Duty>
+	<Strangle>0</Strangle>
 	<Response_Purse>0</Response_Purse>
 	<Response_Apple>65</Response_Apple>
 	<Response_Beer>10</Response_Beer>
 	<Response_Whistle>85</Response_Whistle>
-	<9>16</9>
-	<Ranged_Value>0</Ranged_Value>
-	<Mounted_Knight_Value>64</Mounted_Knight_Value>
-	<10>1</10>
-	<11>1</11>
-	<12>12</12>
+	<Melee_Weapon_ID>16</Melee_Weapon_ID>
+	<Ranged_Weapon_ID>0</Ranged_Weapon_ID>
+	<MK>64</MK>
+	<WakeUp>1</WakeUp>
+	<Weapon_Material>1</Weapon_Material>
+	<Armor_Material>12</Armor_Material>
 </Officier B0, Rouge>
 
 <Officier B0, Noir>
 	<Unit_Block_Head>T2ZmaWNpZXIgQjA0CQBPZmZpY2llckINAE9mZmljaWVyIE5vaXI=</Unit_Block_Head> 
-	<HP>170</HP>
-	<1>90</1>
-	<Thread_Threshold>70</Thread_Threshold>
-	<Officer_Value>0</Officer_Value>
-	<3>75</3>
-	<Guard_Value>0</Guard_Value>
-	<Ranged_Attack_Rate>0</Ranged_Attack_Rate>
-	<Melee_Attack_Damage>100</Melee_Attack_Damage>
-	<Melee_Attack_Rate>100</Melee_Attack_Rate>
-	<4>1</4>
+	<LifePoint>170</LifePoint>
+	<Intelligence>90</Intelligence>
+	<Courage>70</Courage>
+	<Initiative>0</Initiative>
+	<Pride>75</Pride>
+	<Formation>0</Formation>
+	<Shooting>0</Shooting>
+	<Fighting>100</Fighting>
+	<Endurance>100</Endurance>
+	<Rank>1</Rank>
 	<Weapon_String>SDOF</Weapon_String>
-	<Weapon_Byte>7</Weapon_Byte>
-	<Bitflags>1100 0001</Bitflags>
+	<Bee_Time>7</Bee_Time>
+	<Hostile>1</Hostile>
+	<Rider>0</Rider>
+	<Heavy>0</Heavy>
+	<VIP>0</VIP>
+	<Duty>0</Duty>
+	<Strangle>0</Strangle>
 	<Response_Purse>0</Response_Purse>
 	<Response_Apple>60</Response_Apple>
 	<Response_Beer>5</Response_Beer>
 	<Response_Whistle>80</Response_Whistle>
-	<9>16</9>
-	<Ranged_Value>0</Ranged_Value>
-	<Mounted_Knight_Value>64</Mounted_Knight_Value>
-	<10>1</10>
-	<11>1</11>
-	<12>9</12>
+	<Melee_Weapon_ID>16</Melee_Weapon_ID>
+	<Ranged_Weapon_ID>0</Ranged_Weapon_ID>
+	<MK>64</MK>
+	<WakeUp>1</WakeUp>
+	<Weapon_Material>1</Weapon_Material>
+	<Armor_Material>9</Armor_Material>
 </Officier B0, Noir>
 
 <Officer, Vert>
 	<Unit_Block_Head>T2ZmaWNlcjA1CABPZmZpY2llcg0AT2ZmaWNpZXIgVmVydA==</Unit_Block_Head> 
-	<HP>150</HP>
-	<1>80</1>
-	<Thread_Threshold>60</Thread_Threshold>
-	<Officer_Value>0</Officer_Value>
-	<3>0</3>
-	<Guard_Value>0</Guard_Value>
-	<Ranged_Attack_Rate>0</Ranged_Attack_Rate>
-	<Melee_Attack_Damage>80</Melee_Attack_Damage>
-	<Melee_Attack_Rate>60</Melee_Attack_Rate>
-	<4>1</4>
+	<LifePoint>150</LifePoint>
+	<Intelligence>80</Intelligence>
+	<Courage>60</Courage>
+	<Initiative>0</Initiative>
+	<Pride>0</Pride>
+	<Formation>0</Formation>
+	<Shooting>0</Shooting>
+	<Fighting>80</Fighting>
+	<Endurance>60</Endurance>
+	<Rank>1</Rank>
 	<Weapon_String>SDOF</Weapon_String>
-	<Weapon_Byte>7</Weapon_Byte>
-	<Bitflags>1100 0000</Bitflags>
+	<Bee_Time>7</Bee_Time>
+	<Hostile>0</Hostile>
+	<Rider>0</Rider>
+	<Heavy>0</Heavy>
+	<VIP>0</VIP>
+	<Duty>0</Duty>
+	<Strangle>0</Strangle>
 	<Response_Purse>0</Response_Purse>
 	<Response_Apple>0</Response_Apple>
 	<Response_Beer>0</Response_Beer>
 	<Response_Whistle>0</Response_Whistle>
-	<9>16</9>
-	<Ranged_Value>0</Ranged_Value>
-	<Mounted_Knight_Value>64</Mounted_Knight_Value>
-	<10>1</10>
-	<11>1</11>
-	<12>11</12>
+	<Melee_Weapon_ID>16</Melee_Weapon_ID>
+	<Ranged_Weapon_ID>0</Ranged_Weapon_ID>
+	<MK>64</MK>
+	<WakeUp>1</WakeUp>
+	<Weapon_Material>1</Weapon_Material>
+	<Armor_Material>11</Armor_Material>
 </Officer, Vert>
 
 <Soldier B, Bleu>
 	<Unit_Block_Head>U29sZGllciBCMDAIAFNvbGRhdCBCDgBDaGV2YWxpZXIgQmxldQ==</Unit_Block_Head> 
-	<HP>105</HP>
-	<1>80</1>
-	<Thread_Threshold>80</Thread_Threshold>
-	<Officer_Value>0</Officer_Value>
-	<3>50</3>
-	<Guard_Value>0</Guard_Value>
-	<Ranged_Attack_Rate>0</Ranged_Attack_Rate>
-	<Melee_Attack_Damage>60</Melee_Attack_Damage>
-	<Melee_Attack_Rate>80</Melee_Attack_Rate>
-	<4>2</4>
+	<LifePoint>105</LifePoint>
+	<Intelligence>80</Intelligence>
+	<Courage>80</Courage>
+	<Initiative>0</Initiative>
+	<Pride>50</Pride>
+	<Formation>0</Formation>
+	<Shooting>0</Shooting>
+	<Fighting>60</Fighting>
+	<Endurance>80</Endurance>
+	<Rank>2</Rank>
 	<Weapon_String>SDKN</Weapon_String>
-	<Weapon_Byte>10</Weapon_Byte>
-	<Bitflags>1100 0001</Bitflags>
+	<Bee_Time>10</Bee_Time>
+	<Hostile>1</Hostile>
+	<Rider>0</Rider>
+	<Heavy>0</Heavy>
+	<VIP>0</VIP>
+	<Duty>0</Duty>
+	<Strangle>0</Strangle>
 	<Response_Purse>0</Response_Purse>
 	<Response_Apple>75</Response_Apple>
 	<Response_Beer>0</Response_Beer>
 	<Response_Whistle>0</Response_Whistle>
-	<9>17</9>
-	<Ranged_Value>0</Ranged_Value>
-	<Mounted_Knight_Value>64</Mounted_Knight_Value>
-	<10>2</10>
-	<11>2</11>
-	<12>11</12>
+	<Melee_Weapon_ID>17</Melee_Weapon_ID>
+	<Ranged_Weapon_ID>0</Ranged_Weapon_ID>
+	<MK>64</MK>
+	<WakeUp>2</WakeUp>
+	<Weapon_Material>2</Weapon_Material>
+	<Armor_Material>11</Armor_Material>
 </Soldier B, Bleu>
 
 <Soldier B, Jaune>
 	<Unit_Block_Head>U29sZGllciBCMDEIAFNvbGRhdCBCDwBDaGV2YWxpZXIgSmF1bmU=</Unit_Block_Head> 
-	<HP>115</HP>
-	<1>85</1>
-	<Thread_Threshold>85</Thread_Threshold>
-	<Officer_Value>0</Officer_Value>
-	<3>60</3>
-	<Guard_Value>0</Guard_Value>
-	<Ranged_Attack_Rate>0</Ranged_Attack_Rate>
-	<Melee_Attack_Damage>70</Melee_Attack_Damage>
-	<Melee_Attack_Rate>85</Melee_Attack_Rate>
-	<4>2</4>
+	<LifePoint>115</LifePoint>
+	<Intelligence>85</Intelligence>
+	<Courage>85</Courage>
+	<Initiative>0</Initiative>
+	<Pride>60</Pride>
+	<Formation>0</Formation>
+	<Shooting>0</Shooting>
+	<Fighting>70</Fighting>
+	<Endurance>85</Endurance>
+	<Rank>2</Rank>
 	<Weapon_String>SDKN</Weapon_String>
-	<Weapon_Byte>10</Weapon_Byte>
-	<Bitflags>1100 0001</Bitflags>
+	<Bee_Time>10</Bee_Time>
+	<Hostile>1</Hostile>
+	<Rider>0</Rider>
+	<Heavy>0</Heavy>
+	<VIP>0</VIP>
+	<Duty>0</Duty>
+	<Strangle>0</Strangle>
 	<Response_Purse>0</Response_Purse>
 	<Response_Apple>70</Response_Apple>
 	<Response_Beer>0</Response_Beer>
 	<Response_Whistle>0</Response_Whistle>
-	<9>17</9>
-	<Ranged_Value>0</Ranged_Value>
-	<Mounted_Knight_Value>64</Mounted_Knight_Value>
-	<10>2</10>
-	<11>2</11>
-	<12>11</12>
+	<Melee_Weapon_ID>17</Melee_Weapon_ID>
+	<Ranged_Weapon_ID>0</Ranged_Weapon_ID>
+	<MK>64</MK>
+	<WakeUp>2</WakeUp>
+	<Weapon_Material>2</Weapon_Material>
+	<Armor_Material>11</Armor_Material>
 </Soldier B, Jaune>
 
 <Soldier B, Orange>
 	<Unit_Block_Head>U29sZGllciBCMDIIAFNvbGRhdCBCEABDaGV2YWxpZXIgT3Jhbmdl</Unit_Block_Head> 
-	<HP>125</HP>
-	<1>90</1>
-	<Thread_Threshold>90</Thread_Threshold>
-	<Officer_Value>0</Officer_Value>
-	<3>70</3>
-	<Guard_Value>0</Guard_Value>
-	<Ranged_Attack_Rate>0</Ranged_Attack_Rate>
-	<Melee_Attack_Damage>80</Melee_Attack_Damage>
-	<Melee_Attack_Rate>90</Melee_Attack_Rate>
-	<4>2</4>
+	<LifePoint>125</LifePoint>
+	<Intelligence>90</Intelligence>
+	<Courage>90</Courage>
+	<Initiative>0</Initiative>
+	<Pride>70</Pride>
+	<Formation>0</Formation>
+	<Shooting>0</Shooting>
+	<Fighting>80</Fighting>
+	<Endurance>90</Endurance>
+	<Rank>2</Rank>
 	<Weapon_String>SDKN</Weapon_String>
-	<Weapon_Byte>10</Weapon_Byte>
-	<Bitflags>1100 0001</Bitflags>
+	<Bee_Time>10</Bee_Time>
+	<Hostile>1</Hostile>
+	<Rider>0</Rider>
+	<Heavy>0</Heavy>
+	<VIP>0</VIP>
+	<Duty>0</Duty>
+	<Strangle>0</Strangle>
 	<Response_Purse>0</Response_Purse>
 	<Response_Apple>65</Response_Apple>
 	<Response_Beer>0</Response_Beer>
 	<Response_Whistle>0</Response_Whistle>
-	<9>17</9>
-	<Ranged_Value>0</Ranged_Value>
-	<Mounted_Knight_Value>64</Mounted_Knight_Value>
-	<10>2</10>
-	<11>2</11>
-	<12>11</12>
+	<Melee_Weapon_ID>17</Melee_Weapon_ID>
+	<Ranged_Weapon_ID>0</Ranged_Weapon_ID>
+	<MK>64</MK>
+	<WakeUp>2</WakeUp>
+	<Weapon_Material>2</Weapon_Material>
+	<Armor_Material>11</Armor_Material>
 </Soldier B, Orange>
 
 <Soldier B, Rouge>
 	<Unit_Block_Head>U29sZGllciBCMDMIAFNvbGRhdCBCDwBDaGV2YWxpZXIgUm91Z2U=</Unit_Block_Head> 
-	<HP>135</HP>
-	<1>95</1>
-	<Thread_Threshold>95</Thread_Threshold>
-	<Officer_Value>0</Officer_Value>
-	<3>80</3>
-	<Guard_Value>0</Guard_Value>
-	<Ranged_Attack_Rate>0</Ranged_Attack_Rate>
-	<Melee_Attack_Damage>90</Melee_Attack_Damage>
-	<Melee_Attack_Rate>95</Melee_Attack_Rate>
-	<4>2</4>
+	<LifePoint>135</LifePoint>
+	<Intelligence>95</Intelligence>
+	<Courage>95</Courage>
+	<Initiative>0</Initiative>
+	<Pride>80</Pride>
+	<Formation>0</Formation>
+	<Shooting>0</Shooting>
+	<Fighting>90</Fighting>
+	<Endurance>95</Endurance>
+	<Rank>2</Rank>
 	<Weapon_String>SDKN</Weapon_String>
-	<Weapon_Byte>10</Weapon_Byte>
-	<Bitflags>1100 0001</Bitflags>
+	<Bee_Time>10</Bee_Time>
+	<Hostile>1</Hostile>
+	<Rider>0</Rider>
+	<Heavy>0</Heavy>
+	<VIP>0</VIP>
+	<Duty>0</Duty>
+	<Strangle>0</Strangle>
 	<Response_Purse>0</Response_Purse>
 	<Response_Apple>60</Response_Apple>
 	<Response_Beer>0</Response_Beer>
 	<Response_Whistle>0</Response_Whistle>
-	<9>17</9>
-	<Ranged_Value>0</Ranged_Value>
-	<Mounted_Knight_Value>64</Mounted_Knight_Value>
-	<10>2</10>
-	<11>2</11>
-	<12>11</12>
+	<Melee_Weapon_ID>17</Melee_Weapon_ID>
+	<Ranged_Weapon_ID>0</Ranged_Weapon_ID>
+	<MK>64</MK>
+	<WakeUp>2</WakeUp>
+	<Weapon_Material>2</Weapon_Material>
+	<Armor_Material>11</Armor_Material>
 </Soldier B, Rouge>
 
 <Soldier B, Noir>
 	<Unit_Block_Head>U29sZGllciBCMDQIAFNvbGRhdCBCDgBDaGV2YWxpZXIgTm9pcg==</Unit_Block_Head> 
-	<HP>145</HP>
-	<1>100</1>
-	<Thread_Threshold>100</Thread_Threshold>
-	<Officer_Value>0</Officer_Value>
-	<3>90</3>
-	<Guard_Value>0</Guard_Value>
-	<Ranged_Attack_Rate>0</Ranged_Attack_Rate>
-	<Melee_Attack_Damage>100</Melee_Attack_Damage>
-	<Melee_Attack_Rate>100</Melee_Attack_Rate>
-	<4>2</4>
+	<LifePoint>145</LifePoint>
+	<Intelligence>100</Intelligence>
+	<Courage>100</Courage>
+	<Initiative>0</Initiative>
+	<Pride>90</Pride>
+	<Formation>0</Formation>
+	<Shooting>0</Shooting>
+	<Fighting>100</Fighting>
+	<Endurance>100</Endurance>
+	<Rank>2</Rank>
 	<Weapon_String>SDKN</Weapon_String>
-	<Weapon_Byte>10</Weapon_Byte>
-	<Bitflags>1100 0001</Bitflags>
+	<Bee_Time>10</Bee_Time>
+	<Hostile>1</Hostile>
+	<Rider>0</Rider>
+	<Heavy>0</Heavy>
+	<VIP>0</VIP>
+	<Duty>0</Duty>
+	<Strangle>0</Strangle>
 	<Response_Purse>0</Response_Purse>
 	<Response_Apple>55</Response_Apple>
 	<Response_Beer>0</Response_Beer>
 	<Response_Whistle>0</Response_Whistle>
-	<9>17</9>
-	<Ranged_Value>0</Ranged_Value>
-	<Mounted_Knight_Value>64</Mounted_Knight_Value>
-	<10>2</10>
-	<11>2</11>
-	<12>11</12>
+	<Melee_Weapon_ID>17</Melee_Weapon_ID>
+	<Ranged_Weapon_ID>0</Ranged_Weapon_ID>
+	<MK>64</MK>
+	<WakeUp>2</WakeUp>
+	<Weapon_Material>2</Weapon_Material>
+	<Armor_Material>11</Armor_Material>
 </Soldier B, Noir>
 
 <Soldier B, Vert>
 	<Unit_Block_Head>U29sZGllciBCMDUIAFNvbGRhdCBCDgBDaGV2YWxpZXIgVmVydA==</Unit_Block_Head> 
-	<HP>125</HP>
-	<1>90</1>
-	<Thread_Threshold>90</Thread_Threshold>
-	<Officer_Value>0</Officer_Value>
-	<3>0</3>
-	<Guard_Value>0</Guard_Value>
-	<Ranged_Attack_Rate>0</Ranged_Attack_Rate>
-	<Melee_Attack_Damage>80</Melee_Attack_Damage>
-	<Melee_Attack_Rate>90</Melee_Attack_Rate>
-	<4>2</4>
+	<LifePoint>125</LifePoint>
+	<Intelligence>90</Intelligence>
+	<Courage>90</Courage>
+	<Initiative>0</Initiative>
+	<Pride>0</Pride>
+	<Formation>0</Formation>
+	<Shooting>0</Shooting>
+	<Fighting>80</Fighting>
+	<Endurance>90</Endurance>
+	<Rank>2</Rank>
 	<Weapon_String>SDKN</Weapon_String>
-	<Weapon_Byte>10</Weapon_Byte>
-	<Bitflags>1100 0000</Bitflags>
+	<Bee_Time>10</Bee_Time>
+	<Hostile>0</Hostile>
+	<Rider>0</Rider>
+	<Heavy>0</Heavy>
+	<VIP>0</VIP>
+	<Duty>0</Duty>
+	<Strangle>0</Strangle>
 	<Response_Purse>0</Response_Purse>
 	<Response_Apple>0</Response_Apple>
 	<Response_Beer>0</Response_Beer>
 	<Response_Whistle>0</Response_Whistle>
-	<9>17</9>
-	<Ranged_Value>0</Ranged_Value>
-	<Mounted_Knight_Value>64</Mounted_Knight_Value>
-	<10>2</10>
-	<11>2</11>
-	<12>9</12>
+	<Melee_Weapon_ID>17</Melee_Weapon_ID>
+	<Ranged_Weapon_ID>0</Ranged_Weapon_ID>
+	<MK>64</MK>
+	<WakeUp>2</WakeUp>
+	<Weapon_Material>2</Weapon_Material>
+	<Armor_Material>9</Armor_Material>
 </Soldier B, Vert>
 
 <Guard B, Bleu>
 	<Unit_Block_Head>R3VhcmQgQjAwBwBHYXJkZSBCDABMYW5jaWVyIEJsZXU=</Unit_Block_Head> 
-	<HP>45</HP>
-	<1>0</1>
-	<Thread_Threshold>10</Thread_Threshold>
-	<Officer_Value>0</Officer_Value>
-	<3>0</3>
-	<Guard_Value>1</Guard_Value>
-	<Ranged_Attack_Rate>0</Ranged_Attack_Rate>
-	<Melee_Attack_Damage>0</Melee_Attack_Damage>
-	<Melee_Attack_Rate>10</Melee_Attack_Rate>
-	<4>0</4>
+	<LifePoint>45</LifePoint>
+	<Intelligence>0</Intelligence>
+	<Courage>10</Courage>
+	<Initiative>0</Initiative>
+	<Pride>0</Pride>
+	<Formation>1</Formation>
+	<Shooting>0</Shooting>
+	<Fighting>0</Fighting>
+	<Endurance>10</Endurance>
+	<Rank>0</Rank>
 	<Weapon_String>SDLN</Weapon_String>
-	<Weapon_Byte>3</Weapon_Byte>
-	<Bitflags>1110 0001</Bitflags>
+	<Bee_Time>3</Bee_Time>
+	<Hostile>1</Hostile>
+	<Rider>0</Rider>
+	<Heavy>0</Heavy>
+	<VIP>0</VIP>
+	<Duty>0</Duty>
+	<Strangle>1</Strangle>
 	<Response_Purse>75</Response_Purse>
 	<Response_Apple>0</Response_Apple>
 	<Response_Beer>100</Response_Beer>
 	<Response_Whistle>0</Response_Whistle>
-	<9>14</9>
-	<Ranged_Value>0</Ranged_Value>
-	<Mounted_Knight_Value>64</Mounted_Knight_Value>
-	<10>3</10>
-	<11>0</11>
-	<12>9</12>
+	<Melee_Weapon_ID>14</Melee_Weapon_ID>
+	<Ranged_Weapon_ID>0</Ranged_Weapon_ID>
+	<MK>64</MK>
+	<WakeUp>3</WakeUp>
+	<Weapon_Material>0</Weapon_Material>
+	<Armor_Material>9</Armor_Material>
 </Guard B, Bleu>
 
 <Guard B, Jaune>
 	<Unit_Block_Head>R3VhcmQgQjAxBwBHYXJkZSBCDQBMYW5jaWVyIEphdW5l</Unit_Block_Head> 
-	<HP>55</HP>
-	<1>5</1>
-	<Thread_Threshold>15</Thread_Threshold>
-	<Officer_Value>0</Officer_Value>
-	<3>0</3>
-	<Guard_Value>1</Guard_Value>
-	<Ranged_Attack_Rate>0</Ranged_Attack_Rate>
-	<Melee_Attack_Damage>15</Melee_Attack_Damage>
-	<Melee_Attack_Rate>20</Melee_Attack_Rate>
-	<4>0</4>
+	<LifePoint>55</LifePoint>
+	<Intelligence>5</Intelligence>
+	<Courage>15</Courage>
+	<Initiative>0</Initiative>
+	<Pride>0</Pride>
+	<Formation>1</Formation>
+	<Shooting>0</Shooting>
+	<Fighting>15</Fighting>
+	<Endurance>20</Endurance>
+	<Rank>0</Rank>
 	<Weapon_String>SDLN</Weapon_String>
-	<Weapon_Byte>3</Weapon_Byte>
-	<Bitflags>1110 0001</Bitflags>
+	<Bee_Time>3</Bee_Time>
+	<Hostile>1</Hostile>
+	<Rider>0</Rider>
+	<Heavy>0</Heavy>
+	<VIP>0</VIP>
+	<Duty>0</Duty>
+	<Strangle>1</Strangle>
 	<Response_Purse>65</Response_Purse>
 	<Response_Apple>0</Response_Apple>
 	<Response_Beer>95</Response_Beer>
 	<Response_Whistle>0</Response_Whistle>
-	<9>14</9>
-	<Ranged_Value>0</Ranged_Value>
-	<Mounted_Knight_Value>64</Mounted_Knight_Value>
-	<10>3</10>
-	<11>0</11>
-	<12>9</12>
+	<Melee_Weapon_ID>14</Melee_Weapon_ID>
+	<Ranged_Weapon_ID>0</Ranged_Weapon_ID>
+	<MK>64</MK>
+	<WakeUp>3</WakeUp>
+	<Weapon_Material>0</Weapon_Material>
+	<Armor_Material>9</Armor_Material>
 </Guard B, Jaune>
 
 <Guard B, Orange>
 	<Unit_Block_Head>R3VhcmQgQjAyBwBHYXJkZSBCDgBMYW5jaWVyIE9yYW5nZQ==</Unit_Block_Head> 
-	<HP>65</HP>
-	<1>10</1>
-	<Thread_Threshold>20</Thread_Threshold>
-	<Officer_Value>0</Officer_Value>
-	<3>0</3>
-	<Guard_Value>1</Guard_Value>
-	<Ranged_Attack_Rate>0</Ranged_Attack_Rate>
-	<Melee_Attack_Damage>30</Melee_Attack_Damage>
-	<Melee_Attack_Rate>30</Melee_Attack_Rate>
-	<4>0</4>
+	<LifePoint>65</LifePoint>
+	<Intelligence>10</Intelligence>
+	<Courage>20</Courage>
+	<Initiative>0</Initiative>
+	<Pride>0</Pride>
+	<Formation>1</Formation>
+	<Shooting>0</Shooting>
+	<Fighting>30</Fighting>
+	<Endurance>30</Endurance>
+	<Rank>0</Rank>
 	<Weapon_String>SDLN</Weapon_String>
-	<Weapon_Byte>3</Weapon_Byte>
-	<Bitflags>1110 0001</Bitflags>
+	<Bee_Time>3</Bee_Time>
+	<Hostile>1</Hostile>
+	<Rider>0</Rider>
+	<Heavy>0</Heavy>
+	<VIP>0</VIP>
+	<Duty>0</Duty>
+	<Strangle>1</Strangle>
 	<Response_Purse>55</Response_Purse>
 	<Response_Apple>0</Response_Apple>
 	<Response_Beer>90</Response_Beer>
 	<Response_Whistle>0</Response_Whistle>
-	<9>14</9>
-	<Ranged_Value>0</Ranged_Value>
-	<Mounted_Knight_Value>64</Mounted_Knight_Value>
-	<10>3</10>
-	<11>0</11>
-	<12>9</12>
+	<Melee_Weapon_ID>14</Melee_Weapon_ID>
+	<Ranged_Weapon_ID>0</Ranged_Weapon_ID>
+	<MK>64</MK>
+	<WakeUp>3</WakeUp>
+	<Weapon_Material>0</Weapon_Material>
+	<Armor_Material>9</Armor_Material>
 </Guard B, Orange>
 
 <Guard B, Rouge>
 	<Unit_Block_Head>R3VhcmQgQjAzBwBHYXJkZSBCDQBMYW5jaWVyIFJvdWdl</Unit_Block_Head> 
-	<HP>75</HP>
-	<1>15</1>
-	<Thread_Threshold>25</Thread_Threshold>
-	<Officer_Value>0</Officer_Value>
-	<3>0</3>
-	<Guard_Value>1</Guard_Value>
-	<Ranged_Attack_Rate>0</Ranged_Attack_Rate>
-	<Melee_Attack_Damage>45</Melee_Attack_Damage>
-	<Melee_Attack_Rate>40</Melee_Attack_Rate>
-	<4>0</4>
+	<LifePoint>75</LifePoint>
+	<Intelligence>15</Intelligence>
+	<Courage>25</Courage>
+	<Initiative>0</Initiative>
+	<Pride>0</Pride>
+	<Formation>1</Formation>
+	<Shooting>0</Shooting>
+	<Fighting>45</Fighting>
+	<Endurance>40</Endurance>
+	<Rank>0</Rank>
 	<Weapon_String>SDLN</Weapon_String>
-	<Weapon_Byte>3</Weapon_Byte>
-	<Bitflags>1110 0001</Bitflags>
+	<Bee_Time>3</Bee_Time>
+	<Hostile>1</Hostile>
+	<Rider>0</Rider>
+	<Heavy>0</Heavy>
+	<VIP>0</VIP>
+	<Duty>0</Duty>
+	<Strangle>1</Strangle>
 	<Response_Purse>45</Response_Purse>
 	<Response_Apple>0</Response_Apple>
 	<Response_Beer>85</Response_Beer>
 	<Response_Whistle>0</Response_Whistle>
-	<9>14</9>
-	<Ranged_Value>0</Ranged_Value>
-	<Mounted_Knight_Value>64</Mounted_Knight_Value>
-	<10>3</10>
-	<11>0</11>
-	<12>9</12>
+	<Melee_Weapon_ID>14</Melee_Weapon_ID>
+	<Ranged_Weapon_ID>0</Ranged_Weapon_ID>
+	<MK>64</MK>
+	<WakeUp>3</WakeUp>
+	<Weapon_Material>0</Weapon_Material>
+	<Armor_Material>9</Armor_Material>
 </Guard B, Rouge>
 
 <Guard B, Noir>
 	<Unit_Block_Head>R3VhcmQgQjA0BwBHYXJkZSBCDABMYW5jaWVyIE5vaXI=</Unit_Block_Head> 
-	<HP>85</HP>
-	<1>20</1>
-	<Thread_Threshold>30</Thread_Threshold>
-	<Officer_Value>0</Officer_Value>
-	<3>0</3>
-	<Guard_Value>1</Guard_Value>
-	<Ranged_Attack_Rate>0</Ranged_Attack_Rate>
-	<Melee_Attack_Damage>60</Melee_Attack_Damage>
-	<Melee_Attack_Rate>50</Melee_Attack_Rate>
-	<4>0</4>
+	<LifePoint>85</LifePoint>
+	<Intelligence>20</Intelligence>
+	<Courage>30</Courage>
+	<Initiative>0</Initiative>
+	<Pride>0</Pride>
+	<Formation>1</Formation>
+	<Shooting>0</Shooting>
+	<Fighting>60</Fighting>
+	<Endurance>50</Endurance>
+	<Rank>0</Rank>
 	<Weapon_String>SDLN</Weapon_String>
-	<Weapon_Byte>3</Weapon_Byte>
-	<Bitflags>1110 0001</Bitflags>
+	<Bee_Time>3</Bee_Time>
+	<Hostile>1</Hostile>
+	<Rider>0</Rider>
+	<Heavy>0</Heavy>
+	<VIP>0</VIP>
+	<Duty>0</Duty>
+	<Strangle>1</Strangle>
 	<Response_Purse>35</Response_Purse>
 	<Response_Apple>0</Response_Apple>
 	<Response_Beer>80</Response_Beer>
 	<Response_Whistle>0</Response_Whistle>
-	<9>14</9>
-	<Ranged_Value>0</Ranged_Value>
-	<Mounted_Knight_Value>64</Mounted_Knight_Value>
-	<10>3</10>
-	<11>0</11>
-	<12>9</12>
+	<Melee_Weapon_ID>14</Melee_Weapon_ID>
+	<Ranged_Weapon_ID>0</Ranged_Weapon_ID>
+	<MK>64</MK>
+	<WakeUp>3</WakeUp>
+	<Weapon_Material>0</Weapon_Material>
+	<Armor_Material>9</Armor_Material>
 </Guard B, Noir>
 
 <Guard B, Vert>
 	<Unit_Block_Head>R3VhcmQgQjA1BwBHYXJkZSBCDABMYW5jaWVyIFZlcnQ=</Unit_Block_Head> 
-	<HP>65</HP>
-	<1>10</1>
-	<Thread_Threshold>20</Thread_Threshold>
-	<Officer_Value>0</Officer_Value>
-	<3>0</3>
-	<Guard_Value>1</Guard_Value>
-	<Ranged_Attack_Rate>0</Ranged_Attack_Rate>
-	<Melee_Attack_Damage>30</Melee_Attack_Damage>
-	<Melee_Attack_Rate>30</Melee_Attack_Rate>
-	<4>0</4>
+	<LifePoint>65</LifePoint>
+	<Intelligence>10</Intelligence>
+	<Courage>20</Courage>
+	<Initiative>0</Initiative>
+	<Pride>0</Pride>
+	<Formation>1</Formation>
+	<Shooting>0</Shooting>
+	<Fighting>30</Fighting>
+	<Endurance>30</Endurance>
+	<Rank>0</Rank>
 	<Weapon_String>SDLN</Weapon_String>
-	<Weapon_Byte>3</Weapon_Byte>
-	<Bitflags>1100 0000</Bitflags>
+	<Bee_Time>3</Bee_Time>
+	<Hostile>0</Hostile>
+	<Rider>0</Rider>
+	<Heavy>0</Heavy>
+	<VIP>0</VIP>
+	<Duty>0</Duty>
+	<Strangle>0</Strangle>
 	<Response_Purse>0</Response_Purse>
 	<Response_Apple>0</Response_Apple>
 	<Response_Beer>0</Response_Beer>
 	<Response_Whistle>0</Response_Whistle>
-	<9>14</9>
-	<Ranged_Value>0</Ranged_Value>
-	<Mounted_Knight_Value>64</Mounted_Knight_Value>
-	<10>3</10>
-	<11>0</11>
-	<12>13</12>
+	<Melee_Weapon_ID>14</Melee_Weapon_ID>
+	<Ranged_Weapon_ID>0</Ranged_Weapon_ID>
+	<MK>64</MK>
+	<WakeUp>3</WakeUp>
+	<Weapon_Material>0</Weapon_Material>
+	<Armor_Material>13</Armor_Material>
 </Guard B, Vert>
 
 <Crossbowman, Bleu>
 	<Unit_Block_Head>Q3Jvc3Nib3dtYW4wMAsAQXJiYWxldHJpZXIQAEFyYmFsZXRyaWVyIEJsZXU=</Unit_Block_Head> 
-	<HP>80</HP>
-	<1>20</1>
-	<Thread_Threshold>30</Thread_Threshold>
-	<Officer_Value>0</Officer_Value>
-	<3>0</3>
-	<Guard_Value>0</Guard_Value>
-	<Ranged_Attack_Rate>30</Ranged_Attack_Rate>
-	<Melee_Attack_Damage>30</Melee_Attack_Damage>
-	<Melee_Attack_Rate>10</Melee_Attack_Rate>
-	<4>0</4>
+	<LifePoint>80</LifePoint>
+	<Intelligence>20</Intelligence>
+	<Courage>30</Courage>
+	<Initiative>0</Initiative>
+	<Pride>0</Pride>
+	<Formation>0</Formation>
+	<Shooting>30</Shooting>
+	<Fighting>30</Fighting>
+	<Endurance>10</Endurance>
+	<Rank>0</Rank>
 	<Weapon_String>SDCB</Weapon_String>
-	<Weapon_Byte>5</Weapon_Byte>
-	<Bitflags>1110 0001</Bitflags>
+	<Bee_Time>5</Bee_Time>
+	<Hostile>1</Hostile>
+	<Rider>0</Rider>
+	<Heavy>0</Heavy>
+	<VIP>0</VIP>
+	<Duty>0</Duty>
+	<Strangle>1</Strangle>
 	<Response_Purse>0</Response_Purse>
 	<Response_Apple>50</Response_Apple>
 	<Response_Beer>50</Response_Beer>
 	<Response_Whistle>0</Response_Whistle>
-	<9>20</9>
-	<Ranged_Value>4</Ranged_Value>
-	<Mounted_Knight_Value>64</Mounted_Knight_Value>
-	<10>0</10>
-	<11>1</11>
-	<12>13</12>
+	<Melee_Weapon_ID>20</Melee_Weapon_ID>
+	<Ranged_Weapon_ID>4</Ranged_Weapon_ID>
+	<MK>64</MK>
+	<WakeUp>0</WakeUp>
+	<Weapon_Material>1</Weapon_Material>
+	<Armor_Material>13</Armor_Material>
 </Crossbowman, Bleu>
 
 <Crossbowman, Jaune>
 	<Unit_Block_Head>Q3Jvc3Nib3dtYW4wMQsAQXJiYWxldHJpZXIRAEFyYmFsZXRyaWVyIEphdW5l</Unit_Block_Head> 
-	<HP>90</HP>
-	<1>25</1>
-	<Thread_Threshold>35</Thread_Threshold>
-	<Officer_Value>0</Officer_Value>
-	<3>0</3>
-	<Guard_Value>0</Guard_Value>
-	<Ranged_Attack_Rate>40</Ranged_Attack_Rate>
-	<Melee_Attack_Damage>30</Melee_Attack_Damage>
-	<Melee_Attack_Rate>10</Melee_Attack_Rate>
-	<4>0</4>
+	<LifePoint>90</LifePoint>
+	<Intelligence>25</Intelligence>
+	<Courage>35</Courage>
+	<Initiative>0</Initiative>
+	<Pride>0</Pride>
+	<Formation>0</Formation>
+	<Shooting>40</Shooting>
+	<Fighting>30</Fighting>
+	<Endurance>10</Endurance>
+	<Rank>0</Rank>
 	<Weapon_String>SDCB</Weapon_String>
-	<Weapon_Byte>5</Weapon_Byte>
-	<Bitflags>1110 0001</Bitflags>
+	<Bee_Time>5</Bee_Time>
+	<Hostile>1</Hostile>
+	<Rider>0</Rider>
+	<Heavy>0</Heavy>
+	<VIP>0</VIP>
+	<Duty>0</Duty>
+	<Strangle>1</Strangle>
 	<Response_Purse>0</Response_Purse>
 	<Response_Apple>45</Response_Apple>
 	<Response_Beer>45</Response_Beer>
 	<Response_Whistle>0</Response_Whistle>
-	<9>20</9>
-	<Ranged_Value>4</Ranged_Value>
-	<Mounted_Knight_Value>64</Mounted_Knight_Value>
-	<10>0</10>
-	<11>1</11>
-	<12>13</12>
+	<Melee_Weapon_ID>20</Melee_Weapon_ID>
+	<Ranged_Weapon_ID>4</Ranged_Weapon_ID>
+	<MK>64</MK>
+	<WakeUp>0</WakeUp>
+	<Weapon_Material>1</Weapon_Material>
+	<Armor_Material>13</Armor_Material>
 </Crossbowman, Jaune>
 
 <Crossbowman, Orange>
 	<Unit_Block_Head>Q3Jvc3Nib3dtYW4wMgsAQXJiYWxldHJpZXISAEFyYmFsZXRyaWVyIE9yYW5nZQ==</Unit_Block_Head> 
-	<HP>100</HP>
-	<1>30</1>
-	<Thread_Threshold>40</Thread_Threshold>
-	<Officer_Value>0</Officer_Value>
-	<3>0</3>
-	<Guard_Value>0</Guard_Value>
-	<Ranged_Attack_Rate>50</Ranged_Attack_Rate>
-	<Melee_Attack_Damage>30</Melee_Attack_Damage>
-	<Melee_Attack_Rate>10</Melee_Attack_Rate>
-	<4>0</4>
+	<LifePoint>100</LifePoint>
+	<Intelligence>30</Intelligence>
+	<Courage>40</Courage>
+	<Initiative>0</Initiative>
+	<Pride>0</Pride>
+	<Formation>0</Formation>
+	<Shooting>50</Shooting>
+	<Fighting>30</Fighting>
+	<Endurance>10</Endurance>
+	<Rank>0</Rank>
 	<Weapon_String>SDCB</Weapon_String>
-	<Weapon_Byte>5</Weapon_Byte>
-	<Bitflags>1110 0001</Bitflags>
+	<Bee_Time>5</Bee_Time>
+	<Hostile>1</Hostile>
+	<Rider>0</Rider>
+	<Heavy>0</Heavy>
+	<VIP>0</VIP>
+	<Duty>0</Duty>
+	<Strangle>1</Strangle>
 	<Response_Purse>0</Response_Purse>
 	<Response_Apple>40</Response_Apple>
 	<Response_Beer>40</Response_Beer>
 	<Response_Whistle>0</Response_Whistle>
-	<9>20</9>
-	<Ranged_Value>4</Ranged_Value>
-	<Mounted_Knight_Value>64</Mounted_Knight_Value>
-	<10>0</10>
-	<11>1</11>
-	<12>13</12>
+	<Melee_Weapon_ID>20</Melee_Weapon_ID>
+	<Ranged_Weapon_ID>4</Ranged_Weapon_ID>
+	<MK>64</MK>
+	<WakeUp>0</WakeUp>
+	<Weapon_Material>1</Weapon_Material>
+	<Armor_Material>13</Armor_Material>
 </Crossbowman, Orange>
 
 <Crossbowman, Rouge>
 	<Unit_Block_Head>Q3Jvc3Nib3dtYW4wMwsAQXJiYWxldHJpZXIRAEFyYmFsZXRyaWVyIFJvdWdl</Unit_Block_Head> 
-	<HP>110</HP>
-	<1>32</1>
-	<Thread_Threshold>45</Thread_Threshold>
-	<Officer_Value>0</Officer_Value>
-	<3>0</3>
-	<Guard_Value>0</Guard_Value>
-	<Ranged_Attack_Rate>60</Ranged_Attack_Rate>
-	<Melee_Attack_Damage>30</Melee_Attack_Damage>
-	<Melee_Attack_Rate>10</Melee_Attack_Rate>
-	<4>0</4>
+	<LifePoint>110</LifePoint>
+	<Intelligence>32</Intelligence>
+	<Courage>45</Courage>
+	<Initiative>0</Initiative>
+	<Pride>0</Pride>
+	<Formation>0</Formation>
+	<Shooting>60</Shooting>
+	<Fighting>30</Fighting>
+	<Endurance>10</Endurance>
+	<Rank>0</Rank>
 	<Weapon_String>SDCB</Weapon_String>
-	<Weapon_Byte>5</Weapon_Byte>
-	<Bitflags>1110 0001</Bitflags>
+	<Bee_Time>5</Bee_Time>
+	<Hostile>1</Hostile>
+	<Rider>0</Rider>
+	<Heavy>0</Heavy>
+	<VIP>0</VIP>
+	<Duty>0</Duty>
+	<Strangle>1</Strangle>
 	<Response_Purse>0</Response_Purse>
 	<Response_Apple>35</Response_Apple>
 	<Response_Beer>35</Response_Beer>
 	<Response_Whistle>0</Response_Whistle>
-	<9>20</9>
-	<Ranged_Value>4</Ranged_Value>
-	<Mounted_Knight_Value>64</Mounted_Knight_Value>
-	<10>0</10>
-	<11>1</11>
-	<12>13</12>
+	<Melee_Weapon_ID>20</Melee_Weapon_ID>
+	<Ranged_Weapon_ID>4</Ranged_Weapon_ID>
+	<MK>64</MK>
+	<WakeUp>0</WakeUp>
+	<Weapon_Material>1</Weapon_Material>
+	<Armor_Material>13</Armor_Material>
 </Crossbowman, Rouge>
 
 <Crossbowman, Noir>
 	<Unit_Block_Head>Q3Jvc3Nib3dtYW4wNAsAQXJiYWxldHJpZXIQAEFyYmFsZXRyaWVyIE5vaXI=</Unit_Block_Head> 
-	<HP>120</HP>
-	<1>40</1>
-	<Thread_Threshold>50</Thread_Threshold>
-	<Officer_Value>0</Officer_Value>
-	<3>0</3>
-	<Guard_Value>0</Guard_Value>
-	<Ranged_Attack_Rate>70</Ranged_Attack_Rate>
-	<Melee_Attack_Damage>30</Melee_Attack_Damage>
-	<Melee_Attack_Rate>10</Melee_Attack_Rate>
-	<4>0</4>
+	<LifePoint>120</LifePoint>
+	<Intelligence>40</Intelligence>
+	<Courage>50</Courage>
+	<Initiative>0</Initiative>
+	<Pride>0</Pride>
+	<Formation>0</Formation>
+	<Shooting>70</Shooting>
+	<Fighting>30</Fighting>
+	<Endurance>10</Endurance>
+	<Rank>0</Rank>
 	<Weapon_String>SDCB</Weapon_String>
-	<Weapon_Byte>5</Weapon_Byte>
-	<Bitflags>1110 0001</Bitflags>
+	<Bee_Time>5</Bee_Time>
+	<Hostile>1</Hostile>
+	<Rider>0</Rider>
+	<Heavy>0</Heavy>
+	<VIP>0</VIP>
+	<Duty>0</Duty>
+	<Strangle>1</Strangle>
 	<Response_Purse>0</Response_Purse>
 	<Response_Apple>30</Response_Apple>
 	<Response_Beer>30</Response_Beer>
 	<Response_Whistle>0</Response_Whistle>
-	<9>20</9>
-	<Ranged_Value>4</Ranged_Value>
-	<Mounted_Knight_Value>64</Mounted_Knight_Value>
-	<10>0</10>
-	<11>1</11>
-	<12>13</12>
+	<Melee_Weapon_ID>20</Melee_Weapon_ID>
+	<Ranged_Weapon_ID>4</Ranged_Weapon_ID>
+	<MK>64</MK>
+	<WakeUp>0</WakeUp>
+	<Weapon_Material>1</Weapon_Material>
+	<Armor_Material>13</Armor_Material>
 </Crossbowman, Noir>
 
 <Crossbowman, Vert>
 	<Unit_Block_Head>Q3Jvc3Nib3dtYW4wNQsAQXJiYWxldHJpZXIQAEFyYmFsZXRyaWVyIFZlcnQ=</Unit_Block_Head> 
-	<HP>100</HP>
-	<1>30</1>
-	<Thread_Threshold>40</Thread_Threshold>
-	<Officer_Value>0</Officer_Value>
-	<3>0</3>
-	<Guard_Value>0</Guard_Value>
-	<Ranged_Attack_Rate>50</Ranged_Attack_Rate>
-	<Melee_Attack_Damage>30</Melee_Attack_Damage>
-	<Melee_Attack_Rate>10</Melee_Attack_Rate>
-	<4>0</4>
+	<LifePoint>100</LifePoint>
+	<Intelligence>30</Intelligence>
+	<Courage>40</Courage>
+	<Initiative>0</Initiative>
+	<Pride>0</Pride>
+	<Formation>0</Formation>
+	<Shooting>50</Shooting>
+	<Fighting>30</Fighting>
+	<Endurance>10</Endurance>
+	<Rank>0</Rank>
 	<Weapon_String>SDCB</Weapon_String>
-	<Weapon_Byte>5</Weapon_Byte>
-	<Bitflags>1100 0000</Bitflags>
+	<Bee_Time>5</Bee_Time>
+	<Hostile>0</Hostile>
+	<Rider>0</Rider>
+	<Heavy>0</Heavy>
+	<VIP>0</VIP>
+	<Duty>0</Duty>
+	<Strangle>0</Strangle>
 	<Response_Purse>0</Response_Purse>
 	<Response_Apple>0</Response_Apple>
 	<Response_Beer>0</Response_Beer>
 	<Response_Whistle>0</Response_Whistle>
-	<9>20</9>
-	<Ranged_Value>4</Ranged_Value>
-	<Mounted_Knight_Value>64</Mounted_Knight_Value>
-	<10>0</10>
-	<11>1</11>
-	<12>11</12>
+	<Melee_Weapon_ID>20</Melee_Weapon_ID>
+	<Ranged_Weapon_ID>4</Ranged_Weapon_ID>
+	<MK>64</MK>
+	<WakeUp>0</WakeUp>
+	<Weapon_Material>1</Weapon_Material>
+	<Armor_Material>11</Armor_Material>
 </Crossbowman, Vert>
 
 <MerryMan, Paysan>
 	<Unit_Block_Head>TWVycnlNYW5Cb3cMAFBheXNhbiBEIEFyYwgATW1lbiBBcmM=</Unit_Block_Head> 
-	<HP>80</HP>
-	<1>80</1>
-	<Thread_Threshold>100</Thread_Threshold>
-	<Officer_Value>0</Officer_Value>
-	<3>0</3>
-	<Guard_Value>0</Guard_Value>
-	<Ranged_Attack_Rate>100</Ranged_Attack_Rate>
-	<Melee_Attack_Damage>0</Melee_Attack_Damage>
-	<Melee_Attack_Rate>10</Melee_Attack_Rate>
-	<4>2</4>
+	<LifePoint>80</LifePoint>
+	<Intelligence>80</Intelligence>
+	<Courage>100</Courage>
+	<Initiative>0</Initiative>
+	<Pride>0</Pride>
+	<Formation>0</Formation>
+	<Shooting>100</Shooting>
+	<Fighting>0</Fighting>
+	<Endurance>10</Endurance>
+	<Rank>2</Rank>
 	<Weapon_String>SDMD</Weapon_String>
-	<Weapon_Byte>1</Weapon_Byte>
-	<Bitflags>1100 0000</Bitflags>
+	<Bee_Time>1</Bee_Time>
+	<Hostile>0</Hostile>
+	<Rider>0</Rider>
+	<Heavy>0</Heavy>
+	<VIP>0</VIP>
+	<Duty>0</Duty>
+	<Strangle>0</Strangle>
 	<Response_Purse>0</Response_Purse>
 	<Response_Apple>0</Response_Apple>
 	<Response_Beer>0</Response_Beer>
 	<Response_Whistle>0</Response_Whistle>
-	<9>13</9>
-	<Ranged_Value>2</Ranged_Value>
-	<Mounted_Knight_Value>64</Mounted_Knight_Value>
-	<10>0</10>
-	<11>0</11>
-	<12>13</12>
+	<Melee_Weapon_ID>13</Melee_Weapon_ID>
+	<Ranged_Weapon_ID>2</Ranged_Weapon_ID>
+	<MK>64</MK>
+	<WakeUp>0</WakeUp>
+	<Weapon_Material>0</Weapon_Material>
+	<Armor_Material>13</Armor_Material>
 </MerryMan, Paysan>
 
 <MerryMan, Paysan>
 	<Unit_Block_Head>TWVycnlNYW5TdGFmZg4AUGF5c2FuIEQgQmF0b24KAE1tZW4gQmF0b24=</Unit_Block_Head> 
-	<HP>80</HP>
-	<1>80</1>
-	<Thread_Threshold>100</Thread_Threshold>
-	<Officer_Value>0</Officer_Value>
-	<3>0</3>
-	<Guard_Value>0</Guard_Value>
-	<Ranged_Attack_Rate>80</Ranged_Attack_Rate>
-	<Melee_Attack_Damage>100</Melee_Attack_Damage>
-	<Melee_Attack_Rate>70</Melee_Attack_Rate>
-	<4>2</4>
+	<LifePoint>80</LifePoint>
+	<Intelligence>80</Intelligence>
+	<Courage>100</Courage>
+	<Initiative>0</Initiative>
+	<Pride>0</Pride>
+	<Formation>0</Formation>
+	<Shooting>80</Shooting>
+	<Fighting>100</Fighting>
+	<Endurance>70</Endurance>
+	<Rank>2</Rank>
 	<Weapon_String>SDMD</Weapon_String>
-	<Weapon_Byte>1</Weapon_Byte>
-	<Bitflags>1100 0000</Bitflags>
+	<Bee_Time>1</Bee_Time>
+	<Hostile>0</Hostile>
+	<Rider>0</Rider>
+	<Heavy>0</Heavy>
+	<VIP>0</VIP>
+	<Duty>0</Duty>
+	<Strangle>0</Strangle>
 	<Response_Purse>0</Response_Purse>
 	<Response_Apple>0</Response_Apple>
 	<Response_Beer>0</Response_Beer>
 	<Response_Whistle>0</Response_Whistle>
-	<9>11</9>
-	<Ranged_Value>0</Ranged_Value>
-	<Mounted_Knight_Value>64</Mounted_Knight_Value>
-	<10>0</10>
-	<11>0</11>
-	<12>7</12>
+	<Melee_Weapon_ID>11</Melee_Weapon_ID>
+	<Ranged_Weapon_ID>0</Ranged_Weapon_ID>
+	<MK>64</MK>
+	<WakeUp>0</WakeUp>
+	<Weapon_Material>0</Weapon_Material>
+	<Armor_Material>7</Armor_Material>
 </MerryMan, Paysan>
 
 <MerryMan, Paysan>
 	<Unit_Block_Head>VHJhaW5lcgoARW50cmFpbmV1chgAVHJhaW5lciA6IEx1aXMgRmVybmFuZGV6</Unit_Block_Head> 
-	<HP>80</HP>
-	<1>80</1>
-	<Thread_Threshold>100</Thread_Threshold>
-	<Officer_Value>0</Officer_Value>
-	<3>95</3>
-	<Guard_Value>0</Guard_Value>
-	<Ranged_Attack_Rate>80</Ranged_Attack_Rate>
-	<Melee_Attack_Damage>90</Melee_Attack_Damage>
-	<Melee_Attack_Rate>100</Melee_Attack_Rate>
-	<4>2</4>
+	<LifePoint>80</LifePoint>
+	<Intelligence>80</Intelligence>
+	<Courage>100</Courage>
+	<Initiative>0</Initiative>
+	<Pride>95</Pride>
+	<Formation>0</Formation>
+	<Shooting>80</Shooting>
+	<Fighting>90</Fighting>
+	<Endurance>100</Endurance>
+	<Rank>2</Rank>
 	<Weapon_String>SDTM</Weapon_String>
-	<Weapon_Byte>5</Weapon_Byte>
-	<Bitflags>1101 0001</Bitflags>
+	<Bee_Time>5</Bee_Time>
+	<Hostile>1</Hostile>
+	<Rider>0</Rider>
+	<Heavy>0</Heavy>
+	<VIP>0</VIP>
+	<Duty>1</Duty>
+	<Strangle>0</Strangle>
 	<Response_Purse>100</Response_Purse>
 	<Response_Apple>100</Response_Apple>
 	<Response_Beer>100</Response_Beer>
 	<Response_Whistle>100</Response_Whistle>
-	<9>13</9>
-	<Ranged_Value>0</Ranged_Value>
-	<Mounted_Knight_Value>64</Mounted_Knight_Value>
-	<10>0</10>
-	<11>0</11>
-	<12>9</12>
+	<Melee_Weapon_ID>13</Melee_Weapon_ID>
+	<Ranged_Weapon_ID>0</Ranged_Weapon_ID>
+	<MK>64</MK>
+	<WakeUp>0</WakeUp>
+	<Weapon_Material>0</Weapon_Material>
+	<Armor_Material>9</Armor_Material>
 </MerryMan, Paysan>
 
 <Guard A, Vert Mechant>
 	<Unit_Block_Head>R3VhcmQgQTA1BwBHYXJkZSBBGQBIYWxsZWJhcmRpZXIgVmVydCBNZWNoYW50</Unit_Block_Head> 
-	<HP>90</HP>
-	<1>15</1>
-	<Thread_Threshold>45</Thread_Threshold>
-	<Officer_Value>0</Officer_Value>
-	<3>0</3>
-	<Guard_Value>1</Guard_Value>
-	<Ranged_Attack_Rate>0</Ranged_Attack_Rate>
-	<Melee_Attack_Damage>20</Melee_Attack_Damage>
-	<Melee_Attack_Rate>20</Melee_Attack_Rate>
-	<4>0</4>
+	<LifePoint>90</LifePoint>
+	<Intelligence>15</Intelligence>
+	<Courage>45</Courage>
+	<Initiative>0</Initiative>
+	<Pride>0</Pride>
+	<Formation>1</Formation>
+	<Shooting>0</Shooting>
+	<Fighting>20</Fighting>
+	<Endurance>20</Endurance>
+	<Rank>0</Rank>
 	<Weapon_String>SDHL</Weapon_String>
-	<Weapon_Byte>3</Weapon_Byte>
-	<Bitflags>1111 0001</Bitflags>
+	<Bee_Time>3</Bee_Time>
+	<Hostile>1</Hostile>
+	<Rider>0</Rider>
+	<Heavy>0</Heavy>
+	<VIP>0</VIP>
+	<Duty>1</Duty>
+	<Strangle>1</Strangle>
 	<Response_Purse>0</Response_Purse>
 	<Response_Apple>0</Response_Apple>
 	<Response_Beer>70</Response_Beer>
 	<Response_Whistle>20</Response_Whistle>
-	<9>21</9>
-	<Ranged_Value>0</Ranged_Value>
-	<Mounted_Knight_Value>64</Mounted_Knight_Value>
-	<10>3</10>
-	<11>2</11>
-	<12>11</12>
+	<Melee_Weapon_ID>21</Melee_Weapon_ID>
+	<Ranged_Weapon_ID>0</Ranged_Weapon_ID>
+	<MK>64</MK>
+	<WakeUp>3</WakeUp>
+	<Weapon_Material>2</Weapon_Material>
+	<Armor_Material>11</Armor_Material>
 </Guard A, Vert Mechant>
 
 <Soldier A, Vert Mechant>
 	<Unit_Block_Head>U29sZGllciBBMDUIAFNvbGRhdCBBEQBFcGVlIFZlcnQgTWVjaGFudA==</Unit_Block_Head> 
-	<HP>90</HP>
-	<1>35</1>
-	<Thread_Threshold>45</Thread_Threshold>
-	<Officer_Value>0</Officer_Value>
-	<3>0</3>
-	<Guard_Value>0</Guard_Value>
-	<Ranged_Attack_Rate>0</Ranged_Attack_Rate>
-	<Melee_Attack_Damage>20</Melee_Attack_Damage>
-	<Melee_Attack_Rate>20</Melee_Attack_Rate>
-	<4>0</4>
+	<LifePoint>90</LifePoint>
+	<Intelligence>35</Intelligence>
+	<Courage>45</Courage>
+	<Initiative>0</Initiative>
+	<Pride>0</Pride>
+	<Formation>0</Formation>
+	<Shooting>0</Shooting>
+	<Fighting>20</Fighting>
+	<Endurance>20</Endurance>
+	<Rank>0</Rank>
 	<Weapon_String>SDSW</Weapon_String>
-	<Weapon_Byte>5</Weapon_Byte>
-	<Bitflags>1110 0001</Bitflags>
+	<Bee_Time>5</Bee_Time>
+	<Hostile>1</Hostile>
+	<Rider>0</Rider>
+	<Heavy>0</Heavy>
+	<VIP>0</VIP>
+	<Duty>0</Duty>
+	<Strangle>1</Strangle>
 	<Response_Purse>40</Response_Purse>
 	<Response_Apple>95</Response_Apple>
 	<Response_Beer>0</Response_Beer>
 	<Response_Whistle>70</Response_Whistle>
-	<9>24</9>
-	<Ranged_Value>0</Ranged_Value>
-	<Mounted_Knight_Value>64</Mounted_Knight_Value>
-	<10>1</10>
-	<11>1</11>
-	<12>8</12>
+	<Melee_Weapon_ID>24</Melee_Weapon_ID>
+	<Ranged_Weapon_ID>0</Ranged_Weapon_ID>
+	<MK>64</MK>
+	<WakeUp>1</WakeUp>
+	<Weapon_Material>1</Weapon_Material>
+	<Armor_Material>8</Armor_Material>
 </Soldier A, Vert Mechant>
 
 <Archer0, Vert Mechant>
 	<Unit_Block_Head>QXJjaGVyMDUGAEFyY2hlchMAQXJjaGVyIFZlcnQgTWVjaGFudA==</Unit_Block_Head> 
-	<HP>40</HP>
-	<1>45</1>
-	<Thread_Threshold>5</Thread_Threshold>
-	<Officer_Value>0</Officer_Value>
-	<3>0</3>
-	<Guard_Value>0</Guard_Value>
-	<Ranged_Attack_Rate>40</Ranged_Attack_Rate>
-	<Melee_Attack_Damage>30</Melee_Attack_Damage>
-	<Melee_Attack_Rate>10</Melee_Attack_Rate>
-	<4>0</4>
+	<LifePoint>40</LifePoint>
+	<Intelligence>45</Intelligence>
+	<Courage>5</Courage>
+	<Initiative>0</Initiative>
+	<Pride>0</Pride>
+	<Formation>0</Formation>
+	<Shooting>40</Shooting>
+	<Fighting>30</Fighting>
+	<Endurance>10</Endurance>
+	<Rank>0</Rank>
 	<Weapon_String>SDBW</Weapon_String>
-	<Weapon_Byte>5</Weapon_Byte>
-	<Bitflags>1111 0001</Bitflags>
+	<Bee_Time>5</Bee_Time>
+	<Hostile>1</Hostile>
+	<Rider>0</Rider>
+	<Heavy>0</Heavy>
+	<VIP>0</VIP>
+	<Duty>1</Duty>
+	<Strangle>1</Strangle>
 	<Response_Purse>90</Response_Purse>
 	<Response_Apple>0</Response_Apple>
 	<Response_Beer>0</Response_Beer>
 	<Response_Whistle>45</Response_Whistle>
-	<9>22</9>
-	<Ranged_Value>3</Ranged_Value>
-	<Mounted_Knight_Value>64</Mounted_Knight_Value>
-	<10>0</10>
-	<11>0</11>
-	<12>9</12>
+	<Melee_Weapon_ID>22</Melee_Weapon_ID>
+	<Ranged_Weapon_ID>3</Ranged_Weapon_ID>
+	<MK>64</MK>
+	<WakeUp>0</WakeUp>
+	<Weapon_Material>0</Weapon_Material>
+	<Armor_Material>9</Armor_Material>
 </Archer0, Vert Mechant>
 
 <Officer, Vert Mechant>
 	<Unit_Block_Head>T2ZmaWNlcjA1CABPZmZpY2llchUAT2ZmaWNpZXIgVmVydCBNZWNoYW50</Unit_Block_Head> 
-	<HP>140</HP>
-	<1>75</1>
-	<Thread_Threshold>55</Thread_Threshold>
-	<Officer_Value>60</Officer_Value>
-	<3>45</3>
-	<Guard_Value>0</Guard_Value>
-	<Ranged_Attack_Rate>0</Ranged_Attack_Rate>
-	<Melee_Attack_Damage>55</Melee_Attack_Damage>
-	<Melee_Attack_Rate>70</Melee_Attack_Rate>
-	<4>1</4>
+	<LifePoint>140</LifePoint>
+	<Intelligence>75</Intelligence>
+	<Courage>55</Courage>
+	<Initiative>60</Initiative>
+	<Pride>45</Pride>
+	<Formation>0</Formation>
+	<Shooting>0</Shooting>
+	<Fighting>55</Fighting>
+	<Endurance>70</Endurance>
+	<Rank>1</Rank>
 	<Weapon_String>SDOF</Weapon_String>
-	<Weapon_Byte>7</Weapon_Byte>
-	<Bitflags>1100 0001</Bitflags>
+	<Bee_Time>7</Bee_Time>
+	<Hostile>1</Hostile>
+	<Rider>0</Rider>
+	<Heavy>0</Heavy>
+	<VIP>0</VIP>
+	<Duty>0</Duty>
+	<Strangle>0</Strangle>
 	<Response_Purse>0</Response_Purse>
 	<Response_Apple>0</Response_Apple>
 	<Response_Beer>20</Response_Beer>
 	<Response_Whistle>95</Response_Whistle>
-	<9>25</9>
-	<Ranged_Value>0</Ranged_Value>
-	<Mounted_Knight_Value>64</Mounted_Knight_Value>
-	<10>1</10>
-	<11>1</11>
-	<12>11</12>
+	<Melee_Weapon_ID>25</Melee_Weapon_ID>
+	<Ranged_Weapon_ID>0</Ranged_Weapon_ID>
+	<MK>64</MK>
+	<WakeUp>1</WakeUp>
+	<Weapon_Material>1</Weapon_Material>
+	<Armor_Material>11</Armor_Material>
 </Officer, Vert Mechant>
 
 <Soldier B, Vert Mechant>
 	<Unit_Block_Head>U29sZGllciBCMDUIAFNvbGRhdCBCFgBDaGV2YWxpZXIgVmVydCBNZWNoYW50</Unit_Block_Head> 
-	<HP>115</HP>
-	<1>85</1>
-	<Thread_Threshold>85</Thread_Threshold>
-	<Officer_Value>0</Officer_Value>
-	<3>60</3>
-	<Guard_Value>0</Guard_Value>
-	<Ranged_Attack_Rate>0</Ranged_Attack_Rate>
-	<Melee_Attack_Damage>70</Melee_Attack_Damage>
-	<Melee_Attack_Rate>85</Melee_Attack_Rate>
-	<4>2</4>
+	<LifePoint>115</LifePoint>
+	<Intelligence>85</Intelligence>
+	<Courage>85</Courage>
+	<Initiative>0</Initiative>
+	<Pride>60</Pride>
+	<Formation>0</Formation>
+	<Shooting>0</Shooting>
+	<Fighting>70</Fighting>
+	<Endurance>85</Endurance>
+	<Rank>2</Rank>
 	<Weapon_String>SDKN</Weapon_String>
-	<Weapon_Byte>10</Weapon_Byte>
-	<Bitflags>1100 0001</Bitflags>
+	<Bee_Time>10</Bee_Time>
+	<Hostile>1</Hostile>
+	<Rider>0</Rider>
+	<Heavy>0</Heavy>
+	<VIP>0</VIP>
+	<Duty>0</Duty>
+	<Strangle>0</Strangle>
 	<Response_Purse>0</Response_Purse>
 	<Response_Apple>70</Response_Apple>
 	<Response_Beer>0</Response_Beer>
 	<Response_Whistle>0</Response_Whistle>
-	<9>26</9>
-	<Ranged_Value>0</Ranged_Value>
-	<Mounted_Knight_Value>64</Mounted_Knight_Value>
-	<10>2</10>
-	<11>2</11>
-	<12>9</12>
+	<Melee_Weapon_ID>26</Melee_Weapon_ID>
+	<Ranged_Weapon_ID>0</Ranged_Weapon_ID>
+	<MK>64</MK>
+	<WakeUp>2</WakeUp>
+	<Weapon_Material>2</Weapon_Material>
+	<Armor_Material>9</Armor_Material>
 </Soldier B, Vert Mechant>
 
 <Guard B, Vert Mechant>
 	<Unit_Block_Head>R3VhcmQgQjA1BwBHYXJkZSBCFABMYW5jaWVyIFZlcnQgTWVjaGFudA==</Unit_Block_Head> 
-	<HP>55</HP>
-	<1>5</1>
-	<Thread_Threshold>15</Thread_Threshold>
-	<Officer_Value>0</Officer_Value>
-	<3>0</3>
-	<Guard_Value>1</Guard_Value>
-	<Ranged_Attack_Rate>0</Ranged_Attack_Rate>
-	<Melee_Attack_Damage>15</Melee_Attack_Damage>
-	<Melee_Attack_Rate>20</Melee_Attack_Rate>
-	<4>0</4>
+	<LifePoint>55</LifePoint>
+	<Intelligence>5</Intelligence>
+	<Courage>15</Courage>
+	<Initiative>0</Initiative>
+	<Pride>0</Pride>
+	<Formation>1</Formation>
+	<Shooting>0</Shooting>
+	<Fighting>15</Fighting>
+	<Endurance>20</Endurance>
+	<Rank>0</Rank>
 	<Weapon_String>SDLN</Weapon_String>
-	<Weapon_Byte>3</Weapon_Byte>
-	<Bitflags>1110 0001</Bitflags>
+	<Bee_Time>3</Bee_Time>
+	<Hostile>1</Hostile>
+	<Rider>0</Rider>
+	<Heavy>0</Heavy>
+	<VIP>0</VIP>
+	<Duty>0</Duty>
+	<Strangle>1</Strangle>
 	<Response_Purse>65</Response_Purse>
 	<Response_Apple>0</Response_Apple>
 	<Response_Beer>95</Response_Beer>
 	<Response_Whistle>0</Response_Whistle>
-	<9>23</9>
-	<Ranged_Value>0</Ranged_Value>
-	<Mounted_Knight_Value>64</Mounted_Knight_Value>
-	<10>3</10>
-	<11>0</11>
-	<12>13</12>
+	<Melee_Weapon_ID>23</Melee_Weapon_ID>
+	<Ranged_Weapon_ID>0</Ranged_Weapon_ID>
+	<MK>64</MK>
+	<WakeUp>3</WakeUp>
+	<Weapon_Material>0</Weapon_Material>
+	<Armor_Material>13</Armor_Material>
 </Guard B, Vert Mechant>
 
 <Crossbowman, Vert Mechant>
 	<Unit_Block_Head>Q3Jvc3Nib3dtYW4wNQsAQXJiYWxldHJpZXIYAEFyYmFsZXRyaWVyIFZlcnQgTWVjaGFudA==</Unit_Block_Head> 
-	<HP>90</HP>
-	<1>25</1>
-	<Thread_Threshold>35</Thread_Threshold>
-	<Officer_Value>0</Officer_Value>
-	<3>0</3>
-	<Guard_Value>0</Guard_Value>
-	<Ranged_Attack_Rate>40</Ranged_Attack_Rate>
-	<Melee_Attack_Damage>30</Melee_Attack_Damage>
-	<Melee_Attack_Rate>10</Melee_Attack_Rate>
-	<4>0</4>
+	<LifePoint>90</LifePoint>
+	<Intelligence>25</Intelligence>
+	<Courage>35</Courage>
+	<Initiative>0</Initiative>
+	<Pride>0</Pride>
+	<Formation>0</Formation>
+	<Shooting>40</Shooting>
+	<Fighting>30</Fighting>
+	<Endurance>10</Endurance>
+	<Rank>0</Rank>
 	<Weapon_String>SDCB</Weapon_String>
-	<Weapon_Byte>5</Weapon_Byte>
-	<Bitflags>1110 0001</Bitflags>
+	<Bee_Time>5</Bee_Time>
+	<Hostile>1</Hostile>
+	<Rider>0</Rider>
+	<Heavy>0</Heavy>
+	<VIP>0</VIP>
+	<Duty>0</Duty>
+	<Strangle>1</Strangle>
 	<Response_Purse>0</Response_Purse>
 	<Response_Apple>45</Response_Apple>
 	<Response_Beer>45</Response_Beer>
 	<Response_Whistle>0</Response_Whistle>
-	<9>27</9>
-	<Ranged_Value>4</Ranged_Value>
-	<Mounted_Knight_Value>64</Mounted_Knight_Value>
-	<10>0</10>
-	<11>1</11>
-	<12>8</12>
+	<Melee_Weapon_ID>27</Melee_Weapon_ID>
+	<Ranged_Weapon_ID>4</Ranged_Weapon_ID>
+	<MK>64</MK>
+	<WakeUp>0</WakeUp>
+	<Weapon_Material>1</Weapon_Material>
+	<Armor_Material>8</Armor_Material>
 </Crossbowman, Vert Mechant>
 
 <Knight0, Ne pas utiliser1>
 	<Unit_Block_Head>S25pZ2h0MDIGAEtuaWdodBAATmUgcGFzIHV0aWxpc2VyMQ==</Unit_Block_Head> 
-	<HP>105</HP>
-	<1>50</1>
-	<Thread_Threshold>80</Thread_Threshold>
-	<Officer_Value>0</Officer_Value>
-	<3>60</3>
-	<Guard_Value>0</Guard_Value>
-	<Ranged_Attack_Rate>0</Ranged_Attack_Rate>
-	<Melee_Attack_Damage>60</Melee_Attack_Damage>
-	<Melee_Attack_Rate>80</Melee_Attack_Rate>
-	<4>2</4>
+	<LifePoint>105</LifePoint>
+	<Intelligence>50</Intelligence>
+	<Courage>80</Courage>
+	<Initiative>0</Initiative>
+	<Pride>60</Pride>
+	<Formation>0</Formation>
+	<Shooting>0</Shooting>
+	<Fighting>60</Fighting>
+	<Endurance>80</Endurance>
+	<Rank>2</Rank>
 	<Weapon_String>SDRD</Weapon_String>
-	<Weapon_Byte>15</Weapon_Byte>
-	<Bitflags>1100 0111</Bitflags>
+	<Bee_Time>15</Bee_Time>
+	<Hostile>1</Hostile>
+	<Rider>1</Rider>
+	<Heavy>1</Heavy>
+	<VIP>0</VIP>
+	<Duty>0</Duty>
+	<Strangle>0</Strangle>
 	<Response_Purse>0</Response_Purse>
 	<Response_Apple>25</Response_Apple>
 	<Response_Beer>0</Response_Beer>
 	<Response_Whistle>25</Response_Whistle>
-	<9>18</9>
-	<Ranged_Value>0</Ranged_Value>
-	<Mounted_Knight_Value>3</Mounted_Knight_Value>
-	<10>2</10>
-	<11>2</11>
-	<12>8</12>
+	<Melee_Weapon_ID>18</Melee_Weapon_ID>
+	<Ranged_Weapon_ID>0</Ranged_Weapon_ID>
+	<MK>3</MK>
+	<WakeUp>2</WakeUp>
+	<Weapon_Material>2</Weapon_Material>
+	<Armor_Material>8</Armor_Material>
 </Knight0, Ne pas utiliser1>
 
 <Knight0, Jaune>
 	<Unit_Block_Head>S25pZ2h0MDEGAEtuaWdodA4AQ2F2YWxpZXIgSmF1bmU=</Unit_Block_Head> 
-	<HP>115</HP>
-	<1>60</1>
-	<Thread_Threshold>85</Thread_Threshold>
-	<Officer_Value>0</Officer_Value>
-	<3>70</3>
-	<Guard_Value>0</Guard_Value>
-	<Ranged_Attack_Rate>0</Ranged_Attack_Rate>
-	<Melee_Attack_Damage>70</Melee_Attack_Damage>
-	<Melee_Attack_Rate>85</Melee_Attack_Rate>
-	<4>2</4>
+	<LifePoint>115</LifePoint>
+	<Intelligence>60</Intelligence>
+	<Courage>85</Courage>
+	<Initiative>0</Initiative>
+	<Pride>70</Pride>
+	<Formation>0</Formation>
+	<Shooting>0</Shooting>
+	<Fighting>70</Fighting>
+	<Endurance>85</Endurance>
+	<Rank>2</Rank>
 	<Weapon_String>SDRD</Weapon_String>
-	<Weapon_Byte>15</Weapon_Byte>
-	<Bitflags>1100 0111</Bitflags>
+	<Bee_Time>15</Bee_Time>
+	<Hostile>1</Hostile>
+	<Rider>1</Rider>
+	<Heavy>1</Heavy>
+	<VIP>0</VIP>
+	<Duty>0</Duty>
+	<Strangle>0</Strangle>
 	<Response_Purse>0</Response_Purse>
 	<Response_Apple>20</Response_Apple>
 	<Response_Beer>0</Response_Beer>
 	<Response_Whistle>20</Response_Whistle>
-	<9>18</9>
-	<Ranged_Value>0</Ranged_Value>
-	<Mounted_Knight_Value>3</Mounted_Knight_Value>
-	<10>2</10>
-	<11>2</11>
-	<12>8</12>
+	<Melee_Weapon_ID>18</Melee_Weapon_ID>
+	<Ranged_Weapon_ID>0</Ranged_Weapon_ID>
+	<MK>3</MK>
+	<WakeUp>2</WakeUp>
+	<Weapon_Material>2</Weapon_Material>
+	<Armor_Material>8</Armor_Material>
 </Knight0, Jaune>
 
 <Knight0, Orange>
 	<Unit_Block_Head>S25pZ2h0MDIGAEtuaWdodA8AQ2F2YWxpZXIgT3Jhbmdl</Unit_Block_Head> 
-	<HP>125</HP>
-	<1>70</1>
-	<Thread_Threshold>90</Thread_Threshold>
-	<Officer_Value>0</Officer_Value>
-	<3>80</3>
-	<Guard_Value>0</Guard_Value>
-	<Ranged_Attack_Rate>0</Ranged_Attack_Rate>
-	<Melee_Attack_Damage>80</Melee_Attack_Damage>
-	<Melee_Attack_Rate>90</Melee_Attack_Rate>
-	<4>2</4>
+	<LifePoint>125</LifePoint>
+	<Intelligence>70</Intelligence>
+	<Courage>90</Courage>
+	<Initiative>0</Initiative>
+	<Pride>80</Pride>
+	<Formation>0</Formation>
+	<Shooting>0</Shooting>
+	<Fighting>80</Fighting>
+	<Endurance>90</Endurance>
+	<Rank>2</Rank>
 	<Weapon_String>SDRD</Weapon_String>
-	<Weapon_Byte>15</Weapon_Byte>
-	<Bitflags>1100 0111</Bitflags>
+	<Bee_Time>15</Bee_Time>
+	<Hostile>1</Hostile>
+	<Rider>1</Rider>
+	<Heavy>1</Heavy>
+	<VIP>0</VIP>
+	<Duty>0</Duty>
+	<Strangle>0</Strangle>
 	<Response_Purse>0</Response_Purse>
 	<Response_Apple>15</Response_Apple>
 	<Response_Beer>0</Response_Beer>
 	<Response_Whistle>15</Response_Whistle>
-	<9>18</9>
-	<Ranged_Value>0</Ranged_Value>
-	<Mounted_Knight_Value>3</Mounted_Knight_Value>
-	<10>2</10>
-	<11>2</11>
-	<12>8</12>
+	<Melee_Weapon_ID>18</Melee_Weapon_ID>
+	<Ranged_Weapon_ID>0</Ranged_Weapon_ID>
+	<MK>3</MK>
+	<WakeUp>2</WakeUp>
+	<Weapon_Material>2</Weapon_Material>
+	<Armor_Material>8</Armor_Material>
 </Knight0, Orange>
 
 <Knight0, Rouge>
 	<Unit_Block_Head>S25pZ2h0MDMGAEtuaWdodA4AQ2F2YWxpZXIgUm91Z2U=</Unit_Block_Head> 
-	<HP>135</HP>
-	<1>80</1>
-	<Thread_Threshold>95</Thread_Threshold>
-	<Officer_Value>0</Officer_Value>
-	<3>90</3>
-	<Guard_Value>0</Guard_Value>
-	<Ranged_Attack_Rate>0</Ranged_Attack_Rate>
-	<Melee_Attack_Damage>90</Melee_Attack_Damage>
-	<Melee_Attack_Rate>95</Melee_Attack_Rate>
-	<4>2</4>
+	<LifePoint>135</LifePoint>
+	<Intelligence>80</Intelligence>
+	<Courage>95</Courage>
+	<Initiative>0</Initiative>
+	<Pride>90</Pride>
+	<Formation>0</Formation>
+	<Shooting>0</Shooting>
+	<Fighting>90</Fighting>
+	<Endurance>95</Endurance>
+	<Rank>2</Rank>
 	<Weapon_String>SDRD</Weapon_String>
-	<Weapon_Byte>15</Weapon_Byte>
-	<Bitflags>1100 0111</Bitflags>
+	<Bee_Time>15</Bee_Time>
+	<Hostile>1</Hostile>
+	<Rider>1</Rider>
+	<Heavy>1</Heavy>
+	<VIP>0</VIP>
+	<Duty>0</Duty>
+	<Strangle>0</Strangle>
 	<Response_Purse>0</Response_Purse>
 	<Response_Apple>10</Response_Apple>
 	<Response_Beer>0</Response_Beer>
 	<Response_Whistle>10</Response_Whistle>
-	<9>18</9>
-	<Ranged_Value>0</Ranged_Value>
-	<Mounted_Knight_Value>3</Mounted_Knight_Value>
-	<10>2</10>
-	<11>2</11>
-	<12>8</12>
+	<Melee_Weapon_ID>18</Melee_Weapon_ID>
+	<Ranged_Weapon_ID>0</Ranged_Weapon_ID>
+	<MK>3</MK>
+	<WakeUp>2</WakeUp>
+	<Weapon_Material>2</Weapon_Material>
+	<Armor_Material>8</Armor_Material>
 </Knight0, Rouge>
 
 <Knight0, Ne pas utiliser2>
 	<Unit_Block_Head>S25pZ2h0MDIGAEtuaWdodBAATmUgcGFzIHV0aWxpc2VyMg==</Unit_Block_Head> 
-	<HP>145</HP>
-	<1>90</1>
-	<Thread_Threshold>100</Thread_Threshold>
-	<Officer_Value>0</Officer_Value>
-	<3>100</3>
-	<Guard_Value>0</Guard_Value>
-	<Ranged_Attack_Rate>0</Ranged_Attack_Rate>
-	<Melee_Attack_Damage>100</Melee_Attack_Damage>
-	<Melee_Attack_Rate>100</Melee_Attack_Rate>
-	<4>2</4>
+	<LifePoint>145</LifePoint>
+	<Intelligence>90</Intelligence>
+	<Courage>100</Courage>
+	<Initiative>0</Initiative>
+	<Pride>100</Pride>
+	<Formation>0</Formation>
+	<Shooting>0</Shooting>
+	<Fighting>100</Fighting>
+	<Endurance>100</Endurance>
+	<Rank>2</Rank>
 	<Weapon_String>SDRD</Weapon_String>
-	<Weapon_Byte>15</Weapon_Byte>
-	<Bitflags>1100 0111</Bitflags>
+	<Bee_Time>15</Bee_Time>
+	<Hostile>1</Hostile>
+	<Rider>1</Rider>
+	<Heavy>1</Heavy>
+	<VIP>0</VIP>
+	<Duty>0</Duty>
+	<Strangle>0</Strangle>
 	<Response_Purse>0</Response_Purse>
 	<Response_Apple>5</Response_Apple>
 	<Response_Beer>0</Response_Beer>
 	<Response_Whistle>5</Response_Whistle>
-	<9>18</9>
-	<Ranged_Value>0</Ranged_Value>
-	<Mounted_Knight_Value>3</Mounted_Knight_Value>
-	<10>2</10>
-	<11>2</11>
-	<12>8</12>
+	<Melee_Weapon_ID>18</Melee_Weapon_ID>
+	<Ranged_Weapon_ID>0</Ranged_Weapon_ID>
+	<MK>3</MK>
+	<WakeUp>2</WakeUp>
+	<Weapon_Material>2</Weapon_Material>
+	<Armor_Material>8</Armor_Material>
 </Knight0, Ne pas utiliser2>
 
 <Knight0, Ne pas utiliser3>
 	<Unit_Block_Head>S25pZ2h0MDIGAEtuaWdodBAATmUgcGFzIHV0aWxpc2VyMw==</Unit_Block_Head> 
-	<HP>125</HP>
-	<1>70</1>
-	<Thread_Threshold>90</Thread_Threshold>
-	<Officer_Value>0</Officer_Value>
-	<3>0</3>
-	<Guard_Value>0</Guard_Value>
-	<Ranged_Attack_Rate>0</Ranged_Attack_Rate>
-	<Melee_Attack_Damage>80</Melee_Attack_Damage>
-	<Melee_Attack_Rate>90</Melee_Attack_Rate>
-	<4>2</4>
+	<LifePoint>125</LifePoint>
+	<Intelligence>70</Intelligence>
+	<Courage>90</Courage>
+	<Initiative>0</Initiative>
+	<Pride>0</Pride>
+	<Formation>0</Formation>
+	<Shooting>0</Shooting>
+	<Fighting>80</Fighting>
+	<Endurance>90</Endurance>
+	<Rank>2</Rank>
 	<Weapon_String>SDRD</Weapon_String>
-	<Weapon_Byte>15</Weapon_Byte>
-	<Bitflags>1100 0110</Bitflags>
+	<Bee_Time>15</Bee_Time>
+	<Hostile>0</Hostile>
+	<Rider>1</Rider>
+	<Heavy>1</Heavy>
+	<VIP>0</VIP>
+	<Duty>0</Duty>
+	<Strangle>0</Strangle>
 	<Response_Purse>0</Response_Purse>
 	<Response_Apple>0</Response_Apple>
 	<Response_Beer>0</Response_Beer>
 	<Response_Whistle>0</Response_Whistle>
-	<9>18</9>
-	<Ranged_Value>0</Ranged_Value>
-	<Mounted_Knight_Value>3</Mounted_Knight_Value>
-	<10>2</10>
-	<11>2</11>
-	<12>8</12>
+	<Melee_Weapon_ID>18</Melee_Weapon_ID>
+	<Ranged_Weapon_ID>0</Ranged_Weapon_ID>
+	<MK>3</MK>
+	<WakeUp>2</WakeUp>
+	<Weapon_Material>2</Weapon_Material>
+	<Armor_Material>8</Armor_Material>
 </Knight0, Ne pas utiliser3>
 
 <Knight0, Ne pas utiliser4>
 	<Unit_Block_Head>S25pZ2h0MDIGAEtuaWdodBAATmUgcGFzIHV0aWxpc2VyNA==</Unit_Block_Head> 
-	<HP>125</HP>
-	<1>70</1>
-	<Thread_Threshold>90</Thread_Threshold>
-	<Officer_Value>0</Officer_Value>
-	<3>0</3>
-	<Guard_Value>0</Guard_Value>
-	<Ranged_Attack_Rate>0</Ranged_Attack_Rate>
-	<Melee_Attack_Damage>80</Melee_Attack_Damage>
-	<Melee_Attack_Rate>90</Melee_Attack_Rate>
-	<4>2</4>
+	<LifePoint>125</LifePoint>
+	<Intelligence>70</Intelligence>
+	<Courage>90</Courage>
+	<Initiative>0</Initiative>
+	<Pride>0</Pride>
+	<Formation>0</Formation>
+	<Shooting>0</Shooting>
+	<Fighting>80</Fighting>
+	<Endurance>90</Endurance>
+	<Rank>2</Rank>
 	<Weapon_String>SDRD</Weapon_String>
-	<Weapon_Byte>15</Weapon_Byte>
-	<Bitflags>1100 0111</Bitflags>
+	<Bee_Time>15</Bee_Time>
+	<Hostile>1</Hostile>
+	<Rider>1</Rider>
+	<Heavy>1</Heavy>
+	<VIP>0</VIP>
+	<Duty>0</Duty>
+	<Strangle>0</Strangle>
 	<Response_Purse>0</Response_Purse>
 	<Response_Apple>0</Response_Apple>
 	<Response_Beer>0</Response_Beer>
 	<Response_Whistle>0</Response_Whistle>
-	<9>18</9>
-	<Ranged_Value>0</Ranged_Value>
-	<Mounted_Knight_Value>3</Mounted_Knight_Value>
-	<10>2</10>
-	<11>2</11>
-	<12>10</12>
+	<Melee_Weapon_ID>18</Melee_Weapon_ID>
+	<Ranged_Weapon_ID>0</Ranged_Weapon_ID>
+	<MK>3</MK>
+	<WakeUp>2</WakeUp>
+	<Weapon_Material>2</Weapon_Material>
+	<Armor_Material>10</Armor_Material>
 </Knight0, Ne pas utiliser4>
 
 <EnemyHero, City>
 	<Unit_Block_Head>R3Vpc2JvdXJuZQoAR3Vpc2JvdXJuZREAR3V5IG9mIEd1aXNib3VybmU=</Unit_Block_Head> 
-	<HP>250</HP>
-	<1>100</1>
-	<Thread_Threshold>100</Thread_Threshold>
-	<Officer_Value>0</Officer_Value>
-	<3>100</3>
-	<Guard_Value>0</Guard_Value>
-	<Ranged_Attack_Rate>0</Ranged_Attack_Rate>
-	<Melee_Attack_Damage>100</Melee_Attack_Damage>
-	<Melee_Attack_Rate>100</Melee_Attack_Rate>
-	<4>2</4>
+	<LifePoint>250</LifePoint>
+	<Intelligence>100</Intelligence>
+	<Courage>100</Courage>
+	<Initiative>0</Initiative>
+	<Pride>100</Pride>
+	<Formation>0</Formation>
+	<Shooting>0</Shooting>
+	<Fighting>100</Fighting>
+	<Endurance>100</Endurance>
+	<Rank>2</Rank>
 	<Weapon_String>VPGG</Weapon_String>
-	<Weapon_Byte>10</Weapon_Byte>
-	<Bitflags>1100 1001</Bitflags>
+	<Bee_Time>10</Bee_Time>
+	<Hostile>1</Hostile>
+	<Rider>0</Rider>
+	<Heavy>0</Heavy>
+	<VIP>1</VIP>
+	<Duty>0</Duty>
+	<Strangle>0</Strangle>
 	<Response_Purse>0</Response_Purse>
 	<Response_Apple>0</Response_Apple>
 	<Response_Beer>0</Response_Beer>
 	<Response_Whistle>0</Response_Whistle>
-	<9>19</9>
-	<Ranged_Value>0</Ranged_Value>
-	<Mounted_Knight_Value>10</Mounted_Knight_Value>
-	<10>1</10>
-	<11>2</11>
-	<12>9</12>
+	<Melee_Weapon_ID>19</Melee_Weapon_ID>
+	<Ranged_Weapon_ID>0</Ranged_Weapon_ID>
+	<MK>10</MK>
+	<WakeUp>1</WakeUp>
+	<Weapon_Material>2</Weapon_Material>
+	<Armor_Material>9</Armor_Material>
 </EnemyHero, City>
 
 <EnemyHero, City>
 	<Unit_Block_Head>TG9uZ2NoYW1wCQBMb25nY2hhbXAQAExvbmdjaGFtcCAoWW9yayk=</Unit_Block_Head> 
-	<HP>250</HP>
-	<1>100</1>
-	<Thread_Threshold>100</Thread_Threshold>
-	<Officer_Value>0</Officer_Value>
-	<3>100</3>
-	<Guard_Value>0</Guard_Value>
-	<Ranged_Attack_Rate>0</Ranged_Attack_Rate>
-	<Melee_Attack_Damage>100</Melee_Attack_Damage>
-	<Melee_Attack_Rate>100</Melee_Attack_Rate>
-	<4>2</4>
+	<LifePoint>250</LifePoint>
+	<Intelligence>100</Intelligence>
+	<Courage>100</Courage>
+	<Initiative>0</Initiative>
+	<Pride>100</Pride>
+	<Formation>0</Formation>
+	<Shooting>0</Shooting>
+	<Fighting>100</Fighting>
+	<Endurance>100</Endurance>
+	<Rank>2</Rank>
 	<Weapon_String>VPGL</Weapon_String>
-	<Weapon_Byte>10</Weapon_Byte>
-	<Bitflags>1100 1001</Bitflags>
+	<Bee_Time>10</Bee_Time>
+	<Hostile>1</Hostile>
+	<Rider>0</Rider>
+	<Heavy>0</Heavy>
+	<VIP>1</VIP>
+	<Duty>0</Duty>
+	<Strangle>0</Strangle>
 	<Response_Purse>0</Response_Purse>
 	<Response_Apple>0</Response_Apple>
 	<Response_Beer>0</Response_Beer>
 	<Response_Whistle>0</Response_Whistle>
-	<9>19</9>
-	<Ranged_Value>0</Ranged_Value>
-	<Mounted_Knight_Value>10</Mounted_Knight_Value>
-	<10>1</10>
-	<11>0</11>
-	<12>8</12>
+	<Melee_Weapon_ID>19</Melee_Weapon_ID>
+	<Ranged_Weapon_ID>0</Ranged_Weapon_ID>
+	<MK>10</MK>
+	<WakeUp>1</WakeUp>
+	<Weapon_Material>0</Weapon_Material>
+	<Armor_Material>8</Armor_Material>
 </EnemyHero, City>
 
 <EnemyHero, City>
 	<Unit_Block_Head>U2NhdGxvY2sIAFNjYXRsb2NrEQBTY2F0aGxvY2sgKERlcmJ5KQ==</Unit_Block_Head> 
-	<HP>250</HP>
-	<1>100</1>
-	<Thread_Threshold>100</Thread_Threshold>
-	<Officer_Value>0</Officer_Value>
-	<3>100</3>
-	<Guard_Value>0</Guard_Value>
-	<Ranged_Attack_Rate>0</Ranged_Attack_Rate>
-	<Melee_Attack_Damage>100</Melee_Attack_Damage>
-	<Melee_Attack_Rate>100</Melee_Attack_Rate>
-	<4>2</4>
+	<LifePoint>250</LifePoint>
+	<Intelligence>100</Intelligence>
+	<Courage>100</Courage>
+	<Initiative>0</Initiative>
+	<Pride>100</Pride>
+	<Formation>0</Formation>
+	<Shooting>0</Shooting>
+	<Fighting>100</Fighting>
+	<Endurance>100</Endurance>
+	<Rank>2</Rank>
 	<Weapon_String>VPSK</Weapon_String>
-	<Weapon_Byte>10</Weapon_Byte>
-	<Bitflags>1100 1001</Bitflags>
+	<Bee_Time>10</Bee_Time>
+	<Hostile>1</Hostile>
+	<Rider>0</Rider>
+	<Heavy>0</Heavy>
+	<VIP>1</VIP>
+	<Duty>0</Duty>
+	<Strangle>0</Strangle>
 	<Response_Purse>0</Response_Purse>
 	<Response_Apple>0</Response_Apple>
 	<Response_Beer>0</Response_Beer>
 	<Response_Whistle>0</Response_Whistle>
-	<9>19</9>
-	<Ranged_Value>0</Ranged_Value>
-	<Mounted_Knight_Value>10</Mounted_Knight_Value>
-	<10>2</10>
-	<11>1</11>
-	<12>6</12>
+	<Melee_Weapon_ID>19</Melee_Weapon_ID>
+	<Ranged_Weapon_ID>0</Ranged_Weapon_ID>
+	<MK>10</MK>
+	<WakeUp>2</WakeUp>
+	<Weapon_Material>1</Weapon_Material>
+	<Armor_Material>6</Armor_Material>
 </EnemyHero, City>
 
 <EnemyHero, City>
 	<Unit_Block_Head>c2hlcmlmBgBTaGVyaWYVAFNoZXJpZmYgb2YgTm90dGluZ2hhbQ==</Unit_Block_Head> 
-	<HP>250</HP>
-	<1>100</1>
-	<Thread_Threshold>100</Thread_Threshold>
-	<Officer_Value>0</Officer_Value>
-	<3>100</3>
-	<Guard_Value>0</Guard_Value>
-	<Ranged_Attack_Rate>0</Ranged_Attack_Rate>
-	<Melee_Attack_Damage>100</Melee_Attack_Damage>
-	<Melee_Attack_Rate>100</Melee_Attack_Rate>
-	<4>2</4>
+	<LifePoint>250</LifePoint>
+	<Intelligence>100</Intelligence>
+	<Courage>100</Courage>
+	<Initiative>0</Initiative>
+	<Pride>100</Pride>
+	<Formation>0</Formation>
+	<Shooting>0</Shooting>
+	<Fighting>100</Fighting>
+	<Endurance>100</Endurance>
+	<Rank>2</Rank>
 	<Weapon_String>VPSN</Weapon_String>
-	<Weapon_Byte>10</Weapon_Byte>
-	<Bitflags>1100 1001</Bitflags>
+	<Bee_Time>10</Bee_Time>
+	<Hostile>1</Hostile>
+	<Rider>0</Rider>
+	<Heavy>0</Heavy>
+	<VIP>1</VIP>
+	<Duty>0</Duty>
+	<Strangle>0</Strangle>
 	<Response_Purse>0</Response_Purse>
 	<Response_Apple>0</Response_Apple>
 	<Response_Beer>0</Response_Beer>
 	<Response_Whistle>0</Response_Whistle>
-	<9>19</9>
-	<Ranged_Value>0</Ranged_Value>
-	<Mounted_Knight_Value>10</Mounted_Knight_Value>
-	<10>1</10>
-	<11>0</11>
-	<12>9</12>
+	<Melee_Weapon_ID>19</Melee_Weapon_ID>
+	<Ranged_Weapon_ID>0</Ranged_Weapon_ID>
+	<MK>10</MK>
+	<WakeUp>1</WakeUp>
+	<Weapon_Material>0</Weapon_Material>
+	<Armor_Material>9</Armor_Material>
 </EnemyHero, City>
 
 <Officer, Ne pas utiliser5>
 	<Unit_Block_Head>T2ZmaWNlcjAyCABPZmZpY2llchAATmUgcGFzIHV0aWxpc2VyNQ==</Unit_Block_Head> 
-	<HP>130</HP>
-	<1>70</1>
-	<Thread_Threshold>50</Thread_Threshold>
-	<Officer_Value>80</Officer_Value>
-	<3>35</3>
-	<Guard_Value>0</Guard_Value>
-	<Ranged_Attack_Rate>0</Ranged_Attack_Rate>
-	<Melee_Attack_Damage>40</Melee_Attack_Damage>
-	<Melee_Attack_Rate>60</Melee_Attack_Rate>
-	<4>1</4>
+	<LifePoint>130</LifePoint>
+	<Intelligence>70</Intelligence>
+	<Courage>50</Courage>
+	<Initiative>80</Initiative>
+	<Pride>35</Pride>
+	<Formation>0</Formation>
+	<Shooting>0</Shooting>
+	<Fighting>40</Fighting>
+	<Endurance>60</Endurance>
+	<Rank>1</Rank>
 	<Weapon_String>SDOF</Weapon_String>
-	<Weapon_Byte>7</Weapon_Byte>
-	<Bitflags>1100 0001</Bitflags>
+	<Bee_Time>7</Bee_Time>
+	<Hostile>1</Hostile>
+	<Rider>0</Rider>
+	<Heavy>0</Heavy>
+	<VIP>0</VIP>
+	<Duty>0</Duty>
+	<Strangle>0</Strangle>
 	<Response_Purse>0</Response_Purse>
 	<Response_Apple>0</Response_Apple>
 	<Response_Beer>25</Response_Beer>
 	<Response_Whistle>100</Response_Whistle>
-	<9>16</9>
-	<Ranged_Value>0</Ranged_Value>
-	<Mounted_Knight_Value>64</Mounted_Knight_Value>
-	<10>1</10>
-	<11>1</11>
-	<12>9</12>
+	<Melee_Weapon_ID>16</Melee_Weapon_ID>
+	<Ranged_Weapon_ID>0</Ranged_Weapon_ID>
+	<MK>64</MK>
+	<WakeUp>1</WakeUp>
+	<Weapon_Material>1</Weapon_Material>
+	<Armor_Material>9</Armor_Material>
 </Officer, Ne pas utiliser5>
 
 <Officer, Ne pas utiliser6>
 	<Unit_Block_Head>T2ZmaWNlcjAyCABPZmZpY2llchAATmUgcGFzIHV0aWxpc2VyNg==</Unit_Block_Head> 
-	<HP>140</HP>
-	<1>75</1>
-	<Thread_Threshold>55</Thread_Threshold>
-	<Officer_Value>60</Officer_Value>
-	<3>45</3>
-	<Guard_Value>0</Guard_Value>
-	<Ranged_Attack_Rate>0</Ranged_Attack_Rate>
-	<Melee_Attack_Damage>55</Melee_Attack_Damage>
-	<Melee_Attack_Rate>70</Melee_Attack_Rate>
-	<4>1</4>
+	<LifePoint>140</LifePoint>
+	<Intelligence>75</Intelligence>
+	<Courage>55</Courage>
+	<Initiative>60</Initiative>
+	<Pride>45</Pride>
+	<Formation>0</Formation>
+	<Shooting>0</Shooting>
+	<Fighting>55</Fighting>
+	<Endurance>70</Endurance>
+	<Rank>1</Rank>
 	<Weapon_String>SDOF</Weapon_String>
-	<Weapon_Byte>7</Weapon_Byte>
-	<Bitflags>1100 0001</Bitflags>
+	<Bee_Time>7</Bee_Time>
+	<Hostile>1</Hostile>
+	<Rider>0</Rider>
+	<Heavy>0</Heavy>
+	<VIP>0</VIP>
+	<Duty>0</Duty>
+	<Strangle>0</Strangle>
 	<Response_Purse>0</Response_Purse>
 	<Response_Apple>0</Response_Apple>
 	<Response_Beer>20</Response_Beer>
 	<Response_Whistle>95</Response_Whistle>
-	<9>16</9>
-	<Ranged_Value>0</Ranged_Value>
-	<Mounted_Knight_Value>64</Mounted_Knight_Value>
-	<10>1</10>
-	<11>1</11>
-	<12>9</12>
+	<Melee_Weapon_ID>16</Melee_Weapon_ID>
+	<Ranged_Weapon_ID>0</Ranged_Weapon_ID>
+	<MK>64</MK>
+	<WakeUp>1</WakeUp>
+	<Weapon_Material>1</Weapon_Material>
+	<Armor_Material>9</Armor_Material>
 </Officer, Ne pas utiliser6>
 
 <Officer, Orange>
 	<Unit_Block_Head>T2ZmaWNlcjAyCABPZmZpY2llchcAT2ZmaWNpZXIgU3BlY2lhbCBPcmFuZ2U=</Unit_Block_Head> 
-	<HP>150</HP>
-	<1>80</1>
-	<Thread_Threshold>60</Thread_Threshold>
-	<Officer_Value>40</Officer_Value>
-	<3>55</3>
-	<Guard_Value>0</Guard_Value>
-	<Ranged_Attack_Rate>0</Ranged_Attack_Rate>
-	<Melee_Attack_Damage>70</Melee_Attack_Damage>
-	<Melee_Attack_Rate>80</Melee_Attack_Rate>
-	<4>1</4>
+	<LifePoint>150</LifePoint>
+	<Intelligence>80</Intelligence>
+	<Courage>60</Courage>
+	<Initiative>40</Initiative>
+	<Pride>55</Pride>
+	<Formation>0</Formation>
+	<Shooting>0</Shooting>
+	<Fighting>70</Fighting>
+	<Endurance>80</Endurance>
+	<Rank>1</Rank>
 	<Weapon_String>SDOF</Weapon_String>
-	<Weapon_Byte>7</Weapon_Byte>
-	<Bitflags>1100 0001</Bitflags>
+	<Bee_Time>7</Bee_Time>
+	<Hostile>1</Hostile>
+	<Rider>0</Rider>
+	<Heavy>0</Heavy>
+	<VIP>0</VIP>
+	<Duty>0</Duty>
+	<Strangle>0</Strangle>
 	<Response_Purse>0</Response_Purse>
 	<Response_Apple>0</Response_Apple>
 	<Response_Beer>15</Response_Beer>
 	<Response_Whistle>90</Response_Whistle>
-	<9>16</9>
-	<Ranged_Value>0</Ranged_Value>
-	<Mounted_Knight_Value>64</Mounted_Knight_Value>
-	<10>1</10>
-	<11>1</11>
-	<12>9</12>
+	<Melee_Weapon_ID>16</Melee_Weapon_ID>
+	<Ranged_Weapon_ID>0</Ranged_Weapon_ID>
+	<MK>64</MK>
+	<WakeUp>1</WakeUp>
+	<Weapon_Material>1</Weapon_Material>
+	<Armor_Material>9</Armor_Material>
 </Officer, Orange>
 
 <Officer, Rouge>
 	<Unit_Block_Head>T2ZmaWNlcjAzCABPZmZpY2llchYAT2ZmaWNpZXIgU3BlY2lhbCBSb3VnZQ==</Unit_Block_Head> 
-	<HP>160</HP>
-	<1>85</1>
-	<Thread_Threshold>65</Thread_Threshold>
-	<Officer_Value>20</Officer_Value>
-	<3>65</3>
-	<Guard_Value>0</Guard_Value>
-	<Ranged_Attack_Rate>0</Ranged_Attack_Rate>
-	<Melee_Attack_Damage>85</Melee_Attack_Damage>
-	<Melee_Attack_Rate>90</Melee_Attack_Rate>
-	<4>1</4>
+	<LifePoint>160</LifePoint>
+	<Intelligence>85</Intelligence>
+	<Courage>65</Courage>
+	<Initiative>20</Initiative>
+	<Pride>65</Pride>
+	<Formation>0</Formation>
+	<Shooting>0</Shooting>
+	<Fighting>85</Fighting>
+	<Endurance>90</Endurance>
+	<Rank>1</Rank>
 	<Weapon_String>SDOF</Weapon_String>
-	<Weapon_Byte>7</Weapon_Byte>
-	<Bitflags>1100 0001</Bitflags>
+	<Bee_Time>7</Bee_Time>
+	<Hostile>1</Hostile>
+	<Rider>0</Rider>
+	<Heavy>0</Heavy>
+	<VIP>0</VIP>
+	<Duty>0</Duty>
+	<Strangle>0</Strangle>
 	<Response_Purse>0</Response_Purse>
 	<Response_Apple>0</Response_Apple>
 	<Response_Beer>10</Response_Beer>
 	<Response_Whistle>85</Response_Whistle>
-	<9>16</9>
-	<Ranged_Value>0</Ranged_Value>
-	<Mounted_Knight_Value>64</Mounted_Knight_Value>
-	<10>1</10>
-	<11>1</11>
-	<12>9</12>
+	<Melee_Weapon_ID>16</Melee_Weapon_ID>
+	<Ranged_Weapon_ID>0</Ranged_Weapon_ID>
+	<MK>64</MK>
+	<WakeUp>1</WakeUp>
+	<Weapon_Material>1</Weapon_Material>
+	<Armor_Material>9</Armor_Material>
 </Officer, Rouge>
 
 <Officer, Noir>
 	<Unit_Block_Head>T2ZmaWNlcjA0CABPZmZpY2llchUAT2ZmaWNpZXIgU3BlY2lhbCBOb2ly</Unit_Block_Head> 
-	<HP>170</HP>
-	<1>90</1>
-	<Thread_Threshold>70</Thread_Threshold>
-	<Officer_Value>0</Officer_Value>
-	<3>75</3>
-	<Guard_Value>0</Guard_Value>
-	<Ranged_Attack_Rate>0</Ranged_Attack_Rate>
-	<Melee_Attack_Damage>100</Melee_Attack_Damage>
-	<Melee_Attack_Rate>100</Melee_Attack_Rate>
-	<4>1</4>
+	<LifePoint>170</LifePoint>
+	<Intelligence>90</Intelligence>
+	<Courage>70</Courage>
+	<Initiative>0</Initiative>
+	<Pride>75</Pride>
+	<Formation>0</Formation>
+	<Shooting>0</Shooting>
+	<Fighting>100</Fighting>
+	<Endurance>100</Endurance>
+	<Rank>1</Rank>
 	<Weapon_String>SDOF</Weapon_String>
-	<Weapon_Byte>7</Weapon_Byte>
-	<Bitflags>1100 0001</Bitflags>
+	<Bee_Time>7</Bee_Time>
+	<Hostile>1</Hostile>
+	<Rider>0</Rider>
+	<Heavy>0</Heavy>
+	<VIP>0</VIP>
+	<Duty>0</Duty>
+	<Strangle>0</Strangle>
 	<Response_Purse>0</Response_Purse>
 	<Response_Apple>0</Response_Apple>
 	<Response_Beer>5</Response_Beer>
 	<Response_Whistle>80</Response_Whistle>
-	<9>16</9>
-	<Ranged_Value>0</Ranged_Value>
-	<Mounted_Knight_Value>64</Mounted_Knight_Value>
-	<10>1</10>
-	<11>1</11>
-	<12>63</12>
+	<Melee_Weapon_ID>16</Melee_Weapon_ID>
+	<Ranged_Weapon_ID>0</Ranged_Weapon_ID>
+	<MK>64</MK>
+	<WakeUp>1</WakeUp>
+	<Weapon_Material>1</Weapon_Material>
+	<Armor_Material>63</Armor_Material>
 </Officer, Noir>
 
